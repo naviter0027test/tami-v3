@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddTable extends Migration
+class AddAdmin extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,12 @@ class AddTable extends Migration
     {
         Schema::create('Admin', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('account');
-            $table->string('password');
-            $table->string('mail');
+            $table->string('account')
+                ->default('');
+            $table->string('password')
+                ->default('');
+            $table->string('email')
+                ->default('');
             $table->timestamps();
         });
     }
