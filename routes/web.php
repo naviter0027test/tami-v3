@@ -26,4 +26,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() 
     Route::get('logout', 'Admin\UserController@logout');
 
     Route::get('company', 'Admin\CompanyController@index');
+    Route::get('company/create', 'Admin\CompanyController@createPage');
+    Route::post('company/create', 'Admin\CompanyController@create');
 });
