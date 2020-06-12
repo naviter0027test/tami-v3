@@ -8,7 +8,7 @@
         <link href='/css/admin/body.css' rel='stylesheet' />
     </head>
     <body>
-{{-- @include('admin.layout.menu') --}}
+@include('admin.layout.menu')
         <div class="content">
             <h3>首頁</h3>
             <div class="pagination paginationCenter">

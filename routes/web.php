@@ -21,5 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() 
     Route::post('login', 'Admin\UserController@login');
 
     Route::get('home', 'Admin\UserController@home');
+    Route::get('setting', 'Admin\UserController@passAdmin');
+    Route::post('setting', 'Admin\UserController@passUpdate');
     Route::get('logout', 'Admin\UserController@logout');
 });
