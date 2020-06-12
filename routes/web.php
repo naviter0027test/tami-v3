@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() {
+
+    Route::get('login', 'Admin\UserController@loginPage');
+    Route::post('login', 'Admin\UserController@login');
+
+    Route::get('home', 'Admin\UserController@home');
+    Route::get('logout', 'Admin\UserController@logout');
+});
