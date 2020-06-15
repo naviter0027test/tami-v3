@@ -26,9 +26,55 @@
                 <h5>是否啟用</h5>
                 <p> 
                     <select type="text" name="active"> 
-                        <option value="0">否</option>
                         <option value="1">是</option>
+                        <option value="0">否</option>
                     </select> 
+                </p>
+                <h5>點亮資訊1</h5>
+                <p> 
+                    <select type="text" name="infoMode1" class="infoMode" infoNum="1"> 
+                        <option value="1">圖片上傳</option>
+                        <option value="2">影片網址(Youtube)</option>
+                    </select> 
+                    <input type="file" name="infoPath1" /> 
+                    <input type="text" name="infoVideo1" /> 
+                </p>
+                <h5>點亮資訊2</h5>
+                <p> 
+                    <select type="text" name="infoMode2" class="infoMode" infoNum="2"> 
+                        <option value="1">圖片上傳</option>
+                        <option value="2">影片網址(Youtube)</option>
+                    </select> 
+                    <input type="file" name="infoPath2" /> 
+                    <input type="text" name="infoVideo2" /> 
+                </p>
+                <h5>點亮資訊3</h5>
+                <p> 
+                    <select type="text" name="infoMode3" class="infoMode" infoNum="3"> 
+                        <option value="1">圖片上傳</option>
+                        <option value="2">影片網址(Youtube)</option>
+                    </select> 
+                    <input type="file" name="infoPath3" /> 
+                    <input type="text" name="infoVideo3" /> 
+                </p>
+                <h5>點亮資訊4</h5>
+                <p> 
+                    <select type="text" name="infoMode4" class="infoMode" infoNum="4"> 
+                        <option value="1">圖片上傳</option>
+                        <option value="2">影片網址(Youtube)</option>
+                    </select> 
+                    <input type="file" name="infoPath4" /> 
+                    <input type="text" name="infoVideo4" /> 
+                </p>
+                <h5>點亮資訊5</h5>
+                <p> 
+                    <select type="text" name="infoMode5" class="infoMode" infoNum="5"> 
+                        <option value="1">圖片上傳</option>
+                        <option value="2">影片網址(Youtube)</option>
+                    </select> 
+                    <input type="file" name="infoPath5" /> 
+                    <input type="text" name="infoVideo5" /> 
+                </p>
                 </p>
                 <h5>聯絡方式(超連結)</h5>
                 <p> <input type="text" name="contact" /> </p>

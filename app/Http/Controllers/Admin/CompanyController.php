@@ -48,6 +48,18 @@ class CompanyController extends Controller
             'result' => true,
             'msg' => 'success',
         ];
+        if($request->hasFile('logo'))
+            $files['logo'] = $request->file('logo');
+        if($request->hasFile('infoPath1'))
+            $files['infoPath1'] = $request->file('infoPath1');
+        if($request->hasFile('infoPath2'))
+            $files['infoPath2'] = $request->file('infoPath2');
+        if($request->hasFile('infoPath3'))
+            $files['infoPath3'] = $request->file('infoPath3');
+        if($request->hasFile('infoPath4'))
+            $files['infoPath4'] = $request->file('infoPath4');
+        if($request->hasFile('infoPath5'))
+            $files['infoPath5'] = $request->file('infoPath5');
 
         try {
             $companyRepository = new CompanyRepository();
