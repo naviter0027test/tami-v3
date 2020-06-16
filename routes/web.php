@@ -28,4 +28,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() 
     Route::get('company', 'Admin\CompanyController@index');
     Route::get('company/create', 'Admin\CompanyController@createPage');
     Route::post('company/create', 'Admin\CompanyController@create');
+    Route::get('company/edit/{id}', 'Admin\CompanyController@edit');
+    Route::post('company/edit/{id}', 'Admin\CompanyController@update');
 });

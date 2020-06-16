@@ -37,7 +37,7 @@
                         <td>{{ $company->account }}</td>
                         <td>{{ $company->name }}</td>
                         <td>{{ $company->email }}</td>
-                        <td>{{ $company->active }}</td>
+                        <td>{{ $company->activeShow }}</td>
                         <td>{{ $company->created_at }}</td>
                         <td>{{ $company->updated_at }}</td>
                         <td>

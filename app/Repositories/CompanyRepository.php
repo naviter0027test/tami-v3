@@ -77,4 +77,57 @@ class CompanyRepository
             $files['infoPath5']->move($root. $path, $filename);
         }
     }
+
+    public function lists($params) {
+        $nowPage = isset($params['nowPage']) ? (int) $params['nowPage'] : 1;
+        $offset = isset($params['offset']) ? (int) $params['offset'] : 10;
+
+        $companyQuery = Company::orderBy('id', 'desc')
+            ->skip(($nowPage-1) * $offset)
+            ->take($offset);
+        $companies = $companyQuery->get();
+        foreach($companies as $i => $company) {
+            switch($company->active) {
+            case 0:
+                $companies[$i]->activeShow = '否';
+                break;
+            case 1:
+                $companies[$i]->activeShow = '是';
+                break;
+            }
+        }
+        return $companies;
+    }
+
+    public function listsAmount($params) {
+        $companyQuery = Company::orderBy('id', 'desc');
+        return $companyQuery->count();
+    }
+
+    public function getById($id) {
+        $company = Company::where('id', '=', $id)
+            ->first();
+        if(isset($company->id) == false) {
+            throw new Exception("廠商不存在 id:[$id]");
+        }
+        if(trim($company->infoPath1) != "" && $company->infoMode1 == 2) {
+            $company->infoPath1 = substr($company->infoPath1, 17);
+        }
+        if(trim($company->infoPath2) != "" && $company->infoMode2 == 2) {
+            $company->infoPath2 = substr($company->infoPath2, 17);
+        }
+        if(trim($company->infoPath3) != "" && $company->infoMode3 == 2) {
+            $company->infoPath3 = substr($company->infoPath3, 17);
+        }
+        if(trim($company->infoPath4) != "" && $company->infoMode4 == 2) {
+            $company->infoPath4 = substr($company->infoPath4, 17);
+        }
+        if(trim($company->infoPath5) != "" && $company->infoMode5 == 2) {
+            $company->infoPath5 = substr($company->infoPath5, 17);
+        }
+        return $company;
+    }
+
+    public function updateById($id, $params, $admin, $files) {
+    }
 }

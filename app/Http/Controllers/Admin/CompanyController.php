@@ -32,7 +32,16 @@ class CompanyController extends Controller
             'nowPage' => $params['nowPage'],
             'offset' => $params['offset'],
         ];
-        return view('admin.company.index', ['adm' => $admin]);
+        try {
+            $companyRepository = new CompanyRepository();
+            $result['companies'] = $companyRepository->lists($params);
+            $result['amount'] = $companyRepository->listsAmount($params);
+        }
+        catch(Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('admin.company.index', ['adm' => $admin, 'result' => $result, 'offset' => $result['offset'], 'nowPage' => $result['nowPage'], 'params' => $params]);
     }
 
     public function createPage(Request $request) {
@@ -64,6 +73,54 @@ class CompanyController extends Controller
         try {
             $companyRepository = new CompanyRepository();
             $companyRepository->create($params, $admin, $files);
+        } catch (Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('admin.proccessResult', ['adm' => $admin, 'result' => $result]);
+    }
+
+    public function edit(Request $request, $id) {
+        $admin = Session::get('admin');
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+        try {
+            $companyRepository = new CompanyRepository();
+            $result['company'] = $companyRepository->getById($id);
+        }
+        catch(Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('admin/company/edit', ['adm' => $admin, 'result' => $result]);
+    }
+
+    public function update(Request $request, $id) {
+        $admin = Session::get('admin');
+        $params = $request->all();
+        $files = [];
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+        if($request->hasFile('logo'))
+            $files['logo'] = $request->file('logo');
+        if($request->hasFile('infoPath1'))
+            $files['infoPath1'] = $request->file('infoPath1');
+        if($request->hasFile('infoPath2'))
+            $files['infoPath2'] = $request->file('infoPath2');
+        if($request->hasFile('infoPath3'))
+            $files['infoPath3'] = $request->file('infoPath3');
+        if($request->hasFile('infoPath4'))
+            $files['infoPath4'] = $request->file('infoPath4');
+        if($request->hasFile('infoPath5'))
+            $files['infoPath5'] = $request->file('infoPath5');
+
+        try {
+            $companyRepository = new CompanyRepository();
+            $companyRepository->updateById($id, $params, $admin, $files);
         } catch (Exception $e) {
             $result['result'] = false;
             $result['msg'] = $e->getMessage();
