@@ -31,3 +31,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() 
     Route::get('company/edit/{id}', 'Admin\CompanyController@edit');
     Route::post('company/edit/{id}', 'Admin\CompanyController@update');
 });
+
+Route::group(['prefix' => 'company', 'middleware' => ['check.company']], function() {
+
+    Route::get('login', 'Company\UserController@loginPage');
+    Route::post('login', 'Company\UserController@login');
+    Route::get('home', 'Company\UserController@home');
+    Route::get('setting', 'Company\UserController@passAdmin');
+    Route::post('setting', 'Company\UserController@passUpdate');
+    Route::get('logout', 'Company\UserController@logout');
+});

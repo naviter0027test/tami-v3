@@ -7,6 +7,27 @@ use Exception;
 
 class CompanyRepository
 {
+    public function checkPassword($params) {
+        $company = Company::where('account', '=', $params['account'])
+            ->where('password', '=', md5($params['password']))
+            ->first();
+        if(isset($company->id)) {
+            return $company;
+        }
+        return false;
+    }
+
+    public function updatePassword($params) {
+        $company = Company::where('account', '=', $params['account'])
+            ->where('password', '=', md5($params['passwordOld']))
+            ->first();
+        if(isset($company->id) == false) {
+            throw new Exception('舊密碼輸入錯誤');
+        }
+        $company->password = md5($params['password']);
+        $company->save();
+    }
+
     public function create($params, $admin, $files) {
         $company = new Company();
         $company->account = $params['account'];
