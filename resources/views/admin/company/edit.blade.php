@@ -20,7 +20,7 @@
                 <p> <input type="text" name="account" value="{{ $result['company']->account }}" /> </p>
                 <h5>廠商名稱</h5>
                 <p> <input type="text" name="name" value="{{ $result['company']->name }}" /> </p>
-                <h5>案件狀態</h5>
+                <h5>是否啟用</h5>
                 <p> 
                     <select type="text" name="active"> 
                         <option value="1" {{ $result['company']->active == '1' ? 'selected="selected"' : '' }} >是</option>

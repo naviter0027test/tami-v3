@@ -222,4 +222,13 @@ class CompanyRepository
             $files['infoPath5']->move($root. $path, $filename);
         }
     }
+
+    public function del($id) {
+        $company = Company::where('id', '=', $id)
+            ->first();
+        if(isset($company->id) == false) {
+            throw new Exception('廠商不存在');
+        }
+        $company->delete();
+    }
 }
