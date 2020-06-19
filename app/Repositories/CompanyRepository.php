@@ -149,16 +149,18 @@ class CompanyRepository
         return $company;
     }
 
-    public function updateById($id, $params, $admin, $files) {
+    public function updateById($id, $params, $admin = null, $files) {
         $company = Company::where('id', '=', $id)
             ->first();
         if(isset($company->id) == false)
             throw new Exception("廠商不存在 id:[$id]");
-        $company->account = $params['account'];
+        if(isset($params['account']) == true)
+            $company->account = $params['account'];
         //$company->password = md5(trim($params['password']));
         $company->name = isset($params['name']) ? $params['name'] : '';
         $company->email = isset($params['email']) ? $params['email'] : '';
-        $company->active = isset($params['active']) ? $params['active'] : 1;
+        if(isset($params['active']) == true)
+            $company->active = isset($params['active']) ? $params['active'] : 1;
         $company->infoMode1 = isset($params['infoMode1']) ? $params['infoMode1'] : 0;
         if(isset($params['infoVideo1']) && trim($params['infoVideo1']) != '' && $company->infoMode1 == 2)
             $company->infoPath1 = isset($params['infoVideo1']) ? $params['infoVideo1'] : '';

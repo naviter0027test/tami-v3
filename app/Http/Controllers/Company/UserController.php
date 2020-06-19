@@ -86,4 +86,52 @@ class UserController extends Controller
         }
         return view('company.proccessResult', ['adm' => $company, 'result' => $result]);
     }
+
+    public function edit(Request $request) {
+        $company = Session::get('company');
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+        try {
+            $companyRepository = new CompanyRepository();
+            $result['company'] = $companyRepository->getById($company->id);
+        }
+        catch(Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('company.edit', ['result' => $result]);
+    }
+
+    public function update(Request $request) {
+        $company = Session::get('company');
+        $params = $request->all();
+        $files = [];
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+        if($request->hasFile('logo'))
+            $files['logo'] = $request->file('logo');
+        if($request->hasFile('infoPath1'))
+            $files['infoPath1'] = $request->file('infoPath1');
+        if($request->hasFile('infoPath2'))
+            $files['infoPath2'] = $request->file('infoPath2');
+        if($request->hasFile('infoPath3'))
+            $files['infoPath3'] = $request->file('infoPath3');
+        if($request->hasFile('infoPath4'))
+            $files['infoPath4'] = $request->file('infoPath4');
+        if($request->hasFile('infoPath5'))
+            $files['infoPath5'] = $request->file('infoPath5');
+
+        try {
+            $companyRepository = new CompanyRepository();
+            $companyRepository->updateById($company->id, $params, null, $files);
+        } catch (Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('company.proccessResult', ['result' => $result]);
+    }
 }
