@@ -49,12 +49,17 @@ class UserController extends Controller
         $params['account'] = isset($params['account']) ? $params['account'] : '';
         $params['password'] = isset($params['password']) ? $params['password'] : '';
         $companyRepository = new CompanyRepository();
-        $adm = $companyRepository->checkPassword($params);
-        if($adm != false) {
-            Session::put('company', $adm);
+        $company = $companyRepository->checkPassword($params);
+        $result = [
+        ];
+        if(isset($company->id) == true && $company->active == 1) {
+            Session::put('company', $company);
             return redirect('/company/home');
-        }
-        return view('company.login');
+        } else if(isset($company->id) == true && $company->active == 0) {
+            $result['errMsg'] = '帳號未啟用';
+        } else
+            $result['errMsg'] = '帳密有誤';
+        return view('company.login', ['result' => $result]);
     }
 
     public function logout(Request $request) {

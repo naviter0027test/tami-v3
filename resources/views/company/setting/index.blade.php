@@ -31,6 +31,7 @@
                 <p class="loginBtnP"> <button class="btn">更改</button> </p>
             </form>
         </div>
+@include('company.layout.footer')
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
     <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>

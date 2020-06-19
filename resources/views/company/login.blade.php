@@ -18,6 +18,9 @@
                 <h5>密碼:</h5>
                 <p> <input type="password" name="password" /> </p>
                 <p class="loginBtnP"> <button class="btn loginSubmit">登入</button> </p>
+                @if(isset($result['errMsg']) == true)
+                <p>{{ $result['errMsg'] }}</p>
+                @endif
             </form>
         </div>
     </body>
