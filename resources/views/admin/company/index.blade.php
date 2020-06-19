@@ -61,6 +61,7 @@
             @endif
             </div>
         </div>
+@include('admin.layout.footer')
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
     <script src="/js/admin/company/index.js"></script>

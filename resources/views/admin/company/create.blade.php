@@ -81,6 +81,7 @@
                 <p class=""> <button class="btn">新增</button> </p>
             </form>
         </div>
+@include('admin.layout.footer')
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
     <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
