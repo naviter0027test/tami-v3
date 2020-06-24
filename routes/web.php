@@ -47,5 +47,6 @@ Route::group(['prefix' => 'company', 'middleware' => ['check.company']], functio
     Route::get('edit', 'Company\UserController@edit');
     Route::post('edit', 'Company\UserController@update');
     Route::get('product', 'Company\ProductController@index');
+    Route::get('product/create', 'Company\ProductController@createPage');
     Route::get('contact', 'Company\ContactController@index');
 });

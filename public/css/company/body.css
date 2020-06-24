@@ -18,23 +18,26 @@ body {
 .admin-bar {
     padding: 0px 0 0px 0;
 
-    background: #23282d;
+    background: #0086b3;
 }
 
 .admin-bar span {
     display: inline-block;
-    padding: 8px 15px 8px 15px;
+    padding: 12px 15px 12px 15px;
+    width: 160px;
 
     color: white;
     border: 0px solid transparent;
     -webkit-transition: background 0.5s; /* Safari prior 6.1 */
     transition: background 0.5s;
     text-decoration: none;
+    background: #006080;
+    text-align: center;
 }
 
 .admin-bar a {
     display: inline-block;
-    padding: 8px 15px 8px 15px;
+    padding: 12px 15px 12px 15px;
 
     color: white;
     border: 0px solid transparent;
@@ -87,6 +90,22 @@ body {
 .admin-menu a.clicked {
     background: #0073aa;
     color: white;
+}
+
+.admin-footer {
+    background: white;
+    border-top: 1px solid #d9d9d9;
+}
+
+.admin-footer .admin-footer-copyright {
+    display: inline-block;
+    padding: 10px 15px 10px 15px;
+    vertical-align: top;
+}
+
+.admin-footer .admin-footer-right {
+    float: right;
+    padding: 10px 15px 10px 15px;
 }
 
 .content {

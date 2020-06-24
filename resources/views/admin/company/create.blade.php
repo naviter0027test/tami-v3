@@ -87,5 +87,6 @@
     <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="/lib/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="/lib/jquery-validation/dist/localization/messages_zh_TW.min.js"></script>
+    <script src="/js/admin/left.js"></script>
     <script src="/js/admin/company/create.js"></script>
 </html>
