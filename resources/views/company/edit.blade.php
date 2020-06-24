@@ -41,7 +41,7 @@
                     無<br />
                 @endif
                     更換如下:
-                    <select type="text" name="infoMode1" class="infoMode" infoNum="1"> 
+                    <select type="text" name="infoMode1" class="infoMode hidden" infoNum="1"> 
                         <option value="1" {{ $result['company']->infoMode1 == '1' ? 'selected="selected"' : '' }} >圖片上傳</option>
                         <option value="2" {{ $result['company']->infoMode1 == '2' ? 'selected="selected"' : '' }} >影片網址(Youtube)</option>
                     </select> 
@@ -58,7 +58,7 @@
                     無<br />
                 @endif
                     更換如下:
-                    <select type="text" name="infoMode2" class="infoMode" infoNum="2"> 
+                    <select type="text" name="infoMode2" class="infoMode hidden" infoNum="2"> 
                         <option value="1" {{ $result['company']->infoMode2 == '1' ? 'selected="selected"' : '' }} >圖片上傳</option>
                         <option value="2" {{ $result['company']->infoMode2 == '2' ? 'selected="selected"' : '' }} >影片網址(Youtube)</option>
                     </select> 
@@ -75,7 +75,7 @@
                     無<br />
                 @endif
                     更換如下:
-                    <select type="text" name="infoMode3" class="infoMode" infoNum="3"> 
+                    <select type="text" name="infoMode3" class="infoMode hidden" infoNum="3"> 
                         <option value="1" {{ $result['company']->infoMode3 == '1' ? 'selected="selected"' : '' }} >圖片上傳</option>
                         <option value="2" {{ $result['company']->infoMode3 == '2' ? 'selected="selected"' : '' }} >影片網址(Youtube)</option>
                     </select> 
@@ -92,7 +92,7 @@
                     無<br />
                 @endif
                     更換如下:
-                    <select type="text" name="infoMode4" class="infoMode" infoNum="4"> 
+                    <select type="text" name="infoMode4" class="infoMode hidden" infoNum="4"> 
                         <option value="1" {{ $result['company']->infoMode4 == '1' ? 'selected="selected"' : '' }} >圖片上傳</option>
                         <option value="2" {{ $result['company']->infoMode4 == '2' ? 'selected="selected"' : '' }} >影片網址(Youtube)</option>
                     </select> 
@@ -109,7 +109,7 @@
                     無<br />
                 @endif
                     更換如下:
-                    <select type="text" name="infoMode5" class="infoMode" infoNum="5"> 
+                    <select type="text" name="infoMode5" class="infoMode hidden" infoNum="5"> 
                         <option value="1" {{ $result['company']->infoMode5 == '1' ? 'selected="selected"' : '' }} >圖片上傳</option>
                         <option value="2" {{ $result['company']->infoMode5 == '2' ? 'selected="selected"' : '' }} >影片網址(Youtube)</option>
                     </select> 
@@ -126,5 +126,6 @@
 @include('company.layout.footer')
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
+    <script src="/js/company/left.js"></script>
     <script src="/js/company/edit.js"></script>
 </html>
