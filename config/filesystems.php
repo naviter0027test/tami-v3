@@ -68,6 +68,11 @@ return [
             'root' => public_path(). '/uploads',
         ],
 
+        'product' => [
+            'driver' => 'local',
+            'root' => public_path(). '/product',
+        ],
+
     ],
 
 ];
