@@ -72,7 +72,22 @@ class ProductController extends Controller
     }
 
     public function edit(Request $request, $id) {
-        return view('company.home');
+        $company = Session::get('company');
+        $params = $request->all();
+        $files = [];
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+
+        try {
+            $productRepository = new ProductRepository();
+            $result['product'] = $productRepository->getById($id);
+        } catch (Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('company.product.edit', ['company' => $company, 'result' => $result ]);
     }
 
     public function update(Request $request) {

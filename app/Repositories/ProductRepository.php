@@ -59,4 +59,13 @@ class ProductRepository
             ->where('companyId', '=', $params['companyId']);
         return $productQuery->count();
     }
+
+    public function getById($id) {
+        $product = Product::where('id', '=', $id)
+            ->first();
+        if(isset($product->id) == false) {
+            throw new Exception("產品不存在 id:[$id]");
+        }
+        return $product;
+    }
 }
