@@ -68,4 +68,30 @@ class ProductRepository
         }
         return $product;
     }
+
+    public function updateById($id, $params, $admin = null, $files) {
+        $product = Product::where('id', '=', $id)
+            ->first();
+        if(isset($product->id) == false)
+            throw new Exception("廠商不存在 id:[$id]");
+        if(isset($params['account']) == true)
+            $product->account = $params['account'];
+        $product->name = isset($params['name']) ? $params['name'] : '';
+        $product->info = isset($params['info']) ? $params['info'] : '';
+        if(isset($params['active']) == true)
+            $product->active = isset($params['active']) ? $params['active'] : 1;
+        $product->video = isset($params['video']) ? $params['video'] : '';
+        $product->dm = isset($params['dm']) ? $params['dm'] : '';
+        $product->save();
+
+        $root = config('filesystems')['disks']['uploads']['root'];
+        $path = date('/Y/m'). '/';
+        if(isset($files['picture1'])) {
+            $ext = $files['picture1']->getClientOriginalExtension();
+            $filename = $product->id. "_picture1.$ext";
+            $product->picture1 = $path. $filename;
+            $product->save();
+            $files['picture1']->move($root. $path, $filename);
+        }
+    }
 }

@@ -90,7 +90,25 @@ class ProductController extends Controller
         return view('company.product.edit', ['company' => $company, 'result' => $result ]);
     }
 
-    public function update(Request $request) {
+    public function update(Request $request, $id) {
+        $company = Session::get('company');
+        $params = $request->all();
+        $files = [];
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+        if($request->hasFile('picture1'))
+            $files['picture1'] = $request->file('picture1');
+
+        try {
+            $productRepository = new ProductRepository();
+            $productRepository->updateById($id, $params, $company, $files);
+        } catch (Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('company.proccessResult', ['company' => $company, 'result' => $result]);
     }
 
     public function remove(Request $request) {

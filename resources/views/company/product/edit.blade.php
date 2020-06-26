@@ -14,13 +14,13 @@
             @if($result['result'] == false) 
             {{ $result['msg'] }}
             @else
-            <form method='post' action='/company/product/update' class='form1' enctype="multipart/form-data">
+            <form method='post' action='/company/product/update/{{ $result['product']->id }}' class='form1' enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <h5>產品名稱</h5>
                 <p> <input type="text" name="name" value="{{ $result['product']->name }}" /> </p>
                 <h5>產品圖片</h5>
                 @if($result['product']->picture1 != '')
-                    <img src="/uploads{{ $result['prodcut']->picture1 }}" class="custPic" /> <br />
+                    <img src="/uploads{{ $result['product']->picture1 }}" class="custPic" /> <br />
                 @else
                     無<br />
                 @endif
@@ -32,7 +32,7 @@
                 <p> 
                     <select type="text" name="active"> 
                         <option value="1" {{ $result['product']->active == '1' ? 'selected="selected"' : '' }} >是</option>
-                        <option value="0" {{ $result['product']->active == '1' ? 'selected="selected"' : '' }} >否</option>
+                        <option value="0" {{ $result['product']->active == '0' ? 'selected="selected"' : '' }} >否</option>
                     </select> 
                 </p>
                 <h5>DM(超連結)</h5>
@@ -41,7 +41,7 @@
                 </p>
                 <h5>影片(超連結，非內嵌)</h5>
                 <p> 
-                    <input type="text" name="video" {{ $result['product']->video }} /> 
+                    <input type="text" name="video" value="{{ $result['product']->video }}" /> 
                 </p>
                 <p class=""> <button class="btn">編輯</button> </p>
             </form>
