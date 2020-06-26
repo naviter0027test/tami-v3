@@ -111,6 +111,21 @@ class ProductController extends Controller
         return view('company.proccessResult', ['company' => $company, 'result' => $result]);
     }
 
-    public function remove(Request $request) {
+    public function remove(Request $request, $id) {
+        $company = Session::get('company');
+        $files = [];
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+
+        try {
+            $productRepository = new ProductRepository();
+            $productRepository->del($id);
+        } catch (Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('company.proccessResult', ['company' => $company, 'result' => $result]);
     }
 }

@@ -94,4 +94,13 @@ class ProductRepository
             $files['picture1']->move($root. $path, $filename);
         }
     }
+
+    public function del($id) {
+        $product = Product::where('id', '=', $id)
+            ->first();
+        if(isset($product->id) == false) {
+            throw new Exception('廠商不存在');
+        }
+        $product->delete();
+    }
 }
