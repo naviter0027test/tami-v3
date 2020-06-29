@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Company;
 use Exception;
+use Config;
 
 class CompanyRepository
 {
@@ -232,5 +233,34 @@ class CompanyRepository
             throw new Exception('廠商不存在');
         }
         $company->delete();
+    }
+
+    public function sendNewPassword($email) {
+        $email = trim($email);
+        $company = Company::where('email', '=', $email)
+            ->first();
+        if(isset($company->id) == false)
+            throw new Exception('帳號不存在');
+        $newPassword = $this->newPass();
+        \Mail::send('email.forget', ['password' => $newPassword, 'company' => $company], function($message) use ($company) {
+            $fromAddr = Config::get('mail.from.address');
+            $fromName = Config::get('mail.from.name');
+            $testTitle = env('APP_ENV') == 'local' ? '[Test] ' : '';
+            $message->from($fromAddr, $fromName);
+            $message->to($company->email, $company->name)->subject("$testTitle TAMI線上展 - 忘記密碼 (系統發信，請勿回覆)");
+        });
+        $company->password = md5($newPassword);
+        $company->save();
+        return $newPassword;
+    }
+
+    public function newPass($len = 8) {
+        $charArr = ['1','2','3','4','5','6','7','8','9','0','q','a','z','w','s','x','e','d','c','r','f','v','t','g','b','y','h','n','u','j','m','i','k','o','l','p'];
+        $charArrLen = count($charArr);
+        $newPass = '';
+        for($i = 0; $i < $len; ++$i) {
+            $newPass .= $charArr[rand(0, $charArrLen - 1)];
+        }
+        return $newPass;
     }
 }

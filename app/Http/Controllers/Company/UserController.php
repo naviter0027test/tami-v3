@@ -134,4 +134,38 @@ class UserController extends Controller
         }
         return view('company.proccessResult', ['result' => $result]);
     }
+
+    public function mailTest(Request $request) {
+        $emails = "";
+        if(trim($emails) != '') {
+            $title = 'hi hi mail test';
+            \Mail::send('email.test', [], function($message) use ($emails, $title) {
+                $message->to($emails)->subject($title);
+            });
+            return 'mail success';
+        } else
+            return 'no email receiver';
+    }
+
+    public function forgetPage(Request $request) {
+        return view('company.forget');
+    }
+
+    public function forget(Request $request) {
+        $res = [
+            'status' => true,
+            'message' => '發送新密碼至您的信箱'
+        ];
+        $params = $request->all();
+        $email = isset($params['email']) ? $params['email'] : '';
+        $companyRepository = new CompanyRepository();
+        try {
+            $newPass = $companyRepository->sendNewPassword($email);
+        } catch (Exception $e) {
+            $res['status'] = false;
+            $res['message'] = $e->getMessage();
+        }
+
+        return view('company.forgetResult', ['res' => $res] );
+    }
 }

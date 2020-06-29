@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/mail-test', 'Company\UserController@mailTest');
+
 Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() {
 
     Route::get('login', 'Admin\UserController@loginPage');
@@ -53,4 +55,9 @@ Route::group(['prefix' => 'company', 'middleware' => ['check.company']], functio
     Route::post('product/update/{id}', 'Company\ProductController@update');
     Route::get('product/remove/{id}', 'Company\ProductController@remove');
     Route::get('contact', 'Company\ContactController@index');
+});
+
+Route::group(['prefix' => 'company'], function() {
+    Route::get('forget', 'Company\UserController@forgetPage');
+    Route::post('forget', 'Company\UserController@forget');
 });
