@@ -246,8 +246,9 @@ class CompanyRepository
             $fromAddr = Config::get('mail.from.address');
             $fromName = Config::get('mail.from.name');
             $testTitle = env('APP_ENV') == 'local' ? '[Test] ' : '';
+            $appName = Config::get('app.name');
             $message->from($fromAddr, $fromName);
-            $message->to($company->email, $company->name)->subject("$testTitle TAMI線上展 - 忘記密碼 (系統發信，請勿回覆)");
+            $message->to($company->email, $company->name)->subject("$testTitle $appName - 忘記密碼 (系統發信，請勿回覆)");
         });
         $company->password = md5($newPassword);
         $company->save();

@@ -6,40 +6,38 @@
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
         <link href='/css/admin/body.css' rel='stylesheet' />
+        <link href='/css/company/home.css' rel='stylesheet' />
     </head>
     <body>
 @include('company.layout.menu')
         <div class="content">
             <h3>首頁</h3>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3>53</h3>
+                        <p>聯絡我們(未處理)</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-alert-circled"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">&nbsp;</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3>0</h3>
+                        <p>聯絡我們(處理中)</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-chatboxes-outline"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">&nbsp;</a>
+                </div>
+            </div>
             <div class="pagination paginationCenter">
             </div>
-<!--
-            <div class="notify">
-                <i class="glyphicon glyphicon-bell" ></i>
-                <span class="date">2019-08-02</span>
-                <span class="notify-content">這究得飛料民了然興何？腦見著作需益黃我出手岸電喜維行四展是地生條來農交眾商農大越示動十有。路望受式的可以走或經次裡、積門當應各手的如的使美起有麼在生中個在。</span>
-            </div>
-            <div class="notify">
-                <i class="glyphicon glyphicon-bell" ></i>
-                <span class="date">2019-08-02</span>
-                <span class="notify-content">這究得飛料民了然興何？腦見著作需益黃我出手岸電喜維行四展是地生條來農交眾商農大越示動十有。路望受式的可以走或經次裡、積門當應各手的如的使美起有麼在生中個在。</span>
-            </div>
-            <div class="notify">
-                <i class="glyphicon glyphicon-bell" ></i>
-                <span class="date">2019-08-02</span>
-                <span class="notify-content">這究得飛料民了然興何？腦見著作需益黃我出手岸電喜維行四展是地生條來農交眾商農大越示動十有。路望受式的可以走或經次裡、積門當應各手的如的使美起有麼在生中個在。</span>
-            </div>
-            <div class="notify">
-                <i class="glyphicon glyphicon-bell" ></i>
-                <span class="date">2019-08-02</span>
-                <span class="notify-content">這究得飛料民了然興何？腦見著作需益黃我出手岸電喜維行四展是地生條來農交眾商農大越示動十有。路望受式的可以走或經次裡、積門當應各手的如的使美起有麼在生中個在。</span>
-            </div>
-            <div class="notify">
-                <i class="glyphicon glyphicon-bell" ></i>
-                <span class="date">2019-08-02</span>
-                <span class="notify-content">這究得飛料民了然興何？腦見著作需益黃我出手岸電喜維行四展是地生條來農交眾商農大越示動十有。路望受式的可以走或經次裡、積門當應各手的如的使美起有麼在生中個在。</span>
-            </div>
--->
         </div>
 @include('company.layout.footer')
     </body>

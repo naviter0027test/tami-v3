@@ -1,5 +1,5 @@
 <div class="admin-bar">
-    <span>系統 -- 廠商</span>
+    <span>{{ config('app.name') }} -- 廠商</span>
     <div class="tool-right">
         <a href="/company/logout">登出</a>
     </div>
