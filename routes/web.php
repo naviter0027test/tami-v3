@@ -41,7 +41,7 @@ Route::group(['prefix' => 'company', 'middleware' => ['check.company']], functio
     Route::get('login', 'Company\UserController@loginPage');
     Route::post('login', 'Company\UserController@login');
     Route::get('home', 'Company\UserController@home');
-    Route::get('/', 'Company\UserController@home');
+    Route::get('/home', 'Company\UserController@home');
     Route::get('setting', 'Company\UserController@passAdmin');
     Route::post('setting', 'Company\UserController@passUpdate');
     Route::get('logout', 'Company\UserController@logout');

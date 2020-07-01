@@ -285,3 +285,7 @@ body {
 .content .nav .importCSV {
     display: none;
 }
+
+.content .fontAlert {
+    color: #ff0000;
+}

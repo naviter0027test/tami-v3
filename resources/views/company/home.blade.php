@@ -21,7 +21,7 @@
                     <div class="icon">
                         <i class="ion ion-alert-circled"></i>
                     </div>
-                    <a href="#" class="small-box-footer">&nbsp;</a>
+                    <a href="/company/contact" class="small-box-footer">&nbsp;</a>
                 </div>
             </div>
             <div class="col-lg-3 col-xs-6">
@@ -33,7 +33,7 @@
                     <div class="icon">
                         <i class="ion ion-ios-chatboxes-outline"></i>
                     </div>
-                    <a href="#" class="small-box-footer">&nbsp;</a>
+                    <a href="/company/contact" class="small-box-footer">&nbsp;</a>
                 </div>
             </div>
             <div class="pagination paginationCenter">
