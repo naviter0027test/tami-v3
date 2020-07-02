@@ -55,6 +55,8 @@ Route::group(['prefix' => 'company', 'middleware' => ['check.company']], functio
     Route::post('product/update/{id}', 'Company\ProductController@update');
     Route::get('product/remove/{id}', 'Company\ProductController@remove');
     Route::get('contact', 'Company\ContactController@index');
+    Route::get('contact/edit/{id}', 'Company\ContactController@edit');
+    Route::post('contact/update/{id}', 'Company\ContactController@update');
 });
 
 Route::group(['prefix' => 'company'], function() {

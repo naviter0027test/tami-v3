@@ -47,4 +47,13 @@ class ContactRepository
         }
         return $contact;
     }
+
+    public function updateById($id, $params, $admin = null) {
+        $contact = Contact::where('id', '=', $id)
+            ->first();
+        if(isset($contact->id) == false)
+            throw new Exception("資料不存在 id:[$id]");
+        $contact->active = isset($params['active']) ? $params['active'] : '未處理';
+        $contact->save();
+    }
 }

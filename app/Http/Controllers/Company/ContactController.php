@@ -45,4 +45,42 @@ class ContactController extends Controller
         }
         return view('company.contact.index', ['company' => $company, 'result' => $result, 'offset' => $result['offset'], 'nowPage' => $result['nowPage'], 'params' => $params]);
     }
+
+    public function edit(Request $request, $id) {
+        $company = Session::get('company');
+        $params = $request->all();
+        $files = [];
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+
+        try {
+            $contactRepository = new ContactRepository();
+            $result['contact'] = $contactRepository->getById($id);
+        } catch (Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('company.contact.edit', ['company' => $company, 'result' => $result ]);
+    }
+
+    public function update(Request $request, $id) {
+        $company = Session::get('company');
+        $params = $request->all();
+        $files = [];
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+
+        try {
+            $contactRepository = new ContactRepository();
+            $contactRepository->updateById($id, $params, $company, $files);
+        } catch (Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return view('company.proccessResult', ['company' => $company, 'result' => $result]);
+    }
 }
