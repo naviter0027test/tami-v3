@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mail-test', 'Company\UserController@mailTest');
+Route::get('/mail-test', 'Front\FrontController@mailTest');
+Route::get('/mmc-test', 'Front\FrontController@mmcTest');
+Route::post('/mmc-test', 'Front\FrontController@mmcProccess');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() {
 

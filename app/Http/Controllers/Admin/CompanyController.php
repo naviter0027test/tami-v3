@@ -46,7 +46,9 @@ class CompanyController extends Controller
 
     public function createPage(Request $request) {
         $admin = Session::get('admin');
-        return view('admin.company.create', ['adm' => $admin]);
+        $companyRepository = new CompanyRepository();
+        $companyAreas = $companyRepository->getCompanyArea();
+        return view('admin.company.create', ['adm' => $admin, 'companyAreas' => $companyAreas]);
     }
 
     public function create(Request $request) {
@@ -89,6 +91,7 @@ class CompanyController extends Controller
         try {
             $companyRepository = new CompanyRepository();
             $result['company'] = $companyRepository->getById($id);
+            $result['companyAreas'] = $companyRepository->getCompanyArea();
         }
         catch(Exception $e) {
             $result['result'] = false;

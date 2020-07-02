@@ -20,6 +20,8 @@
                 <p> <input type="text" name="account" value="{{ $result['company']->account }}" readonly /> </p>
                 <h5>廠商名稱</h5>
                 <p> <input type="text" name="name" value="{{ $result['company']->name }}" /> </p>
+                <h5>廠商名稱(英文)</h5>
+                <p> <input type="text" name="nameEn" value="{{ $result['company']->nameEn }}" /> </p>
                 <h5>Logo </h5>
                 <p>
                 @if($result['company']->logo != '')
@@ -118,6 +120,17 @@
                 </p>
                 <h5>聯絡方式(超連結)</h5>
                 <p> <input type="text" name="contact" value="{{ $result['company']->contact }}" /> </p>
+                <h5>前台樣式</h5>
+                <p>
+                    <select type="text" name="frontMode" class="frontMode "> 
+                        <option value="1" {{ $result['company']->frontMode == '1' ? 'selected="selected"' : '' }} >樣式1</option>
+                        <option value="2" {{ $result['company']->frontMode == '2' ? 'selected="selected"' : '' }} >樣式2</option>
+                        <option value="3" {{ $result['company']->frontMode == '3' ? 'selected="selected"' : '' }} >樣式3</option>
+                        <option value="4" {{ $result['company']->frontMode == '4' ? 'selected="selected"' : '' }} >樣式4</option>
+                        <option value="5" {{ $result['company']->frontMode == '5' ? 'selected="selected"' : '' }} >樣式5</option>
+                        <option value="6" {{ $result['company']->frontMode == '6' ? 'selected="selected"' : '' }} >樣式6</option>
+                    </select> 
+                </p>
                 <p class=""> <button class="btn">更改</button> </p>
             </form>
 

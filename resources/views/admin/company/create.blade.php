@@ -19,6 +19,8 @@
                 <p> <input type="password" name="password" required /> </p>
                 <h5>廠商名稱</h5>
                 <p> <input type="text" name="name" /> </p>
+                <h5>廠商名稱(英文)</h5>
+                <p> <input type="text" name="nameEn" /> </p>
                 <h5>Logo</h5>
                 <p> <input type="file" name="logo" /> </p>
                 <h5>E-mail</h5>
@@ -30,9 +32,19 @@
                         <option value="0">否</option>
                     </select> 
                 </p>
+            @if(isset($companyAreas) && count($companyAreas) > 0)
+                <h5>區域選擇</h5>
+                <p> 
+                    <select type="text" name="companyAreaId"> 
+                    @foreach($companyAreas as $companyArea)
+                        <option value="{{ $companyArea->id }}">{{ $companyArea->name }}</option>
+                    @endforeach
+                    </select> 
+                </p>
+            @endif
                 <h5>點亮資訊1</h5>
                 <p> 
-                    <select type="text" name="infoMode1" class="infoMode" infoNum="1"> 
+                    <select type="text" name="infoMode1" class="infoMode hidden" infoNum="1"> 
                         <option value="1">圖片上傳</option>
                         <option value="2">影片網址(Youtube)</option>
                     </select> 
@@ -41,7 +53,7 @@
                 </p>
                 <h5>點亮資訊2</h5>
                 <p> 
-                    <select type="text" name="infoMode2" class="infoMode" infoNum="2"> 
+                    <select type="text" name="infoMode2" class="infoMode hidden" infoNum="2"> 
                         <option value="1">圖片上傳</option>
                         <option value="2">影片網址(Youtube)</option>
                     </select> 
@@ -50,7 +62,7 @@
                 </p>
                 <h5>點亮資訊3</h5>
                 <p> 
-                    <select type="text" name="infoMode3" class="infoMode" infoNum="3"> 
+                    <select type="text" name="infoMode3" class="infoMode hidden" infoNum="3"> 
                         <option value="1">圖片上傳</option>
                         <option value="2">影片網址(Youtube)</option>
                     </select> 
@@ -59,7 +71,7 @@
                 </p>
                 <h5>點亮資訊4</h5>
                 <p> 
-                    <select type="text" name="infoMode4" class="infoMode" infoNum="4"> 
+                    <select type="text" name="infoMode4" class="infoMode hidden" infoNum="4"> 
                         <option value="1">圖片上傳</option>
                         <option value="2">影片網址(Youtube)</option>
                     </select> 
@@ -68,7 +80,7 @@
                 </p>
                 <h5>點亮資訊5</h5>
                 <p> 
-                    <select type="text" name="infoMode5" class="infoMode" infoNum="5"> 
+                    <select type="text" name="infoMode5" class="infoMode hidden" infoNum="5"> 
                         <option value="1">圖片上傳</option>
                         <option value="2">影片網址(Youtube)</option>
                     </select> 
@@ -78,6 +90,17 @@
                 </p>
                 <h5>聯絡方式(超連結)</h5>
                 <p> <input type="text" name="contact" /> </p>
+                <h5>前台樣式</h5>
+                <p>
+                    <select type="text" name="frontMode" class="frontMode "> 
+                        <option value="1" >樣式1</option>
+                        <option value="2" >樣式2</option>
+                        <option value="3" >樣式3</option>
+                        <option value="4" >樣式4</option>
+                        <option value="5" >樣式5</option>
+                        <option value="6" >樣式6</option>
+                    </select> 
+                </p>
                 <p class=""> <button class="btn">新增</button> </p>
             </form>
         </div>

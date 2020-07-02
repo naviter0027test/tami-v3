@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Company;
+use App\CompanyArea;
 use Exception;
 use Config;
 
@@ -34,8 +35,10 @@ class CompanyRepository
         $company->account = $params['account'];
         $company->password = md5(trim($params['password']));
         $company->name = isset($params['name']) ? $params['name'] : '';
+        $company->nameEn = isset($params['nameEn']) ? $params['nameEn'] : '';
         $company->email = isset($params['email']) ? $params['email'] : '';
         $company->active = isset($params['active']) ? $params['active'] : 1;
+        $company->companyAreaId = isset($params['companyAreaId']) ? $params['companyAreaId'] : 0;
         $company->infoMode1 = isset($params['infoMode1']) ? $params['infoMode1'] : 0;
         if($company->infoMode1 == 2)
             $company->infoPath1 = isset($params['infoVideo1']) ? $params['infoVideo1'] : '';
@@ -52,6 +55,9 @@ class CompanyRepository
         if($company->infoMode5 == 2)
             $company->infoPath5 = isset($params['infoVideo5']) ? $params['infoVideo5'] : '';
         $company->contact = isset($params['contact']) ? $params['contact'] : '';
+        $company->contactDesc = isset($params['contactDesc']) ? $params['contactDesc'] : '';
+        $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
+        $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
         $company->save();
 
         $root = config('filesystems')['disks']['uploads']['root'];
@@ -159,9 +165,11 @@ class CompanyRepository
             $company->account = $params['account'];
         //$company->password = md5(trim($params['password']));
         $company->name = isset($params['name']) ? $params['name'] : '';
+        $company->nameEn = isset($params['nameEn']) ? $params['nameEn'] : '';
         $company->email = isset($params['email']) ? $params['email'] : '';
         if(isset($params['active']) == true)
             $company->active = isset($params['active']) ? $params['active'] : 1;
+        $company->companyAreaId = isset($params['companyAreaId']) ? $params['companyAreaId'] : 0;
         $company->infoMode1 = isset($params['infoMode1']) ? $params['infoMode1'] : 0;
         if(isset($params['infoVideo1']) && trim($params['infoVideo1']) != '' && $company->infoMode1 == 2)
             $company->infoPath1 = isset($params['infoVideo1']) ? $params['infoVideo1'] : '';
@@ -178,6 +186,9 @@ class CompanyRepository
         if(isset($params['infoVideo5']) && trim($params['infoVideo5']) != '' && $company->infoMode5 == 2)
             $company->infoPath5 = isset($params['infoVideo5']) ? $params['infoVideo5'] : '';
         $company->contact = isset($params['contact']) ? $params['contact'] : '';
+        $company->contactDesc = isset($params['contactDesc']) ? $params['contactDesc'] : '';
+        $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
+        $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
         $company->save();
 
         $root = config('filesystems')['disks']['uploads']['root'];
@@ -263,5 +274,11 @@ class CompanyRepository
             $newPass .= $charArr[rand(0, $charArrLen - 1)];
         }
         return $newPass;
+    }
+
+    public function getCompanyArea() {
+        $companyAreas = CompanyArea::orderBy('sort', 'asc')
+            ->get();
+        return $companyAreas;
     }
 }
