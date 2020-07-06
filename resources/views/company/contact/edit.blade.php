@@ -30,6 +30,7 @@
                 <p> 
                     <select type="text" name="active"> 
                         <option value="未處理" {{ $result['contact']->active == '未處理' ? 'selected="selected"' : '' }} >未處理</option>
+                        <option value="處理中" {{ $result['contact']->active == '處理中' ? 'selected="selected"' : '' }} >處理中</option>
                         <option value="已處理" {{ $result['contact']->active == '已處理' ? 'selected="selected"' : '' }} >已處理</option>
                     </select> 
                 </p>

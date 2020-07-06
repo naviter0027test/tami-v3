@@ -56,4 +56,15 @@ class ContactRepository
         $contact->active = isset($params['active']) ? $params['active'] : '未處理';
         $contact->save();
     }
+
+    public function amountList() {
+        $countArr = [];
+        $countArr['not'] = Contact::where('active', '=', '未處理')
+            ->count();
+        $countArr['ing'] = Contact::where('active', '=', '處理中')
+            ->count();
+        $countArr['been'] = Contact::where('active', '=', '已處理')
+            ->count();
+        return $countArr;
+    }
 }

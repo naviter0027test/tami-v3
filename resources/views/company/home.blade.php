@@ -15,7 +15,11 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>53</h3>
+                        <h3>
+                    @if(isset($result['processCount']))
+                        {{ $result['processCount']['not'] }}
+                    @endif
+                        </h3>
                         <p>聯絡我們(未處理)</p>
                     </div>
                     <div class="icon">
@@ -27,7 +31,11 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3>
+                    @if(isset($result['processCount']))
+                        {{ $result['processCount']['ing'] }}
+                    @endif
+                        </h3>
                         <p>聯絡我們(處理中)</p>
                     </div>
                     <div class="icon">
