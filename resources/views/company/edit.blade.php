@@ -122,6 +122,7 @@
                 <p> <input type="text" name="contact" value="{{ $result['company']->contact }}" /> </p>
                 <h5>前台樣式</h5>
                 <p>
+                    <img src="/" class="custPic frontModePic" /> <br />
                     <select type="text" name="frontMode" class="frontMode "> 
                         <option value="1" {{ $result['company']->frontMode == '1' ? 'selected="selected"' : '' }} >樣式1</option>
                         <option value="2" {{ $result['company']->frontMode == '2' ? 'selected="selected"' : '' }} >樣式2</option>
