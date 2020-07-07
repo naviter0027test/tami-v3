@@ -11,6 +11,18 @@ use Exception;
 
 class FrontController extends Controller
 {
+    public function index(Request $request) {
+        return view('front.index');
+    }
+
+    public function company(Request $request) {
+        return view('front.company');
+    }
+
+    public function product(Request $request) {
+        return view('front.product');
+    }
+
     public function mailTest(Request $request) {
         $emails = "";
         if(trim($emails) != '') {
