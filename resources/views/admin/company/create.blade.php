@@ -92,6 +92,7 @@
                 <p> <input type="text" name="contact" /> </p>
                 <h5>前台樣式</h5>
                 <p>
+                    <img src="/" class="custPic frontModePic" /> <br />
                     <select type="text" name="frontMode" class="frontMode "> 
                         <option value="1" >樣式1</option>
                         <option value="2" >樣式2</option>
