@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use \App\Http\Controllers\Controller;
 use App\Repositories\AdminRepository;
+use App\Repositories\ContactRepository;
 use Session;
 use Exception;
 
@@ -32,7 +33,9 @@ class UserController extends Controller
             'nowPage' => $params['nowPage'],
             'offset' => $params['offset'],
         ];
-        return view('admin.home', ['adm' => $admin]);
+        $contactRepository = new ContactRepository();
+        $result['processCount'] = $contactRepository->amountListByAdmin();
+        return view('admin.home', ['adm' => $admin, 'result' => $result]);
     }
 
     public function loginPage(Request $request) {

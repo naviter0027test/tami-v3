@@ -12,6 +12,10 @@ use Exception;
 
 class UserController extends Controller
 {
+    public function index(Request $request) {
+        return redirect('/company/home');
+    }
+
     public function home(Request $request) {
         $company = Session::get('company');
         $params = $request->all();
@@ -27,6 +31,7 @@ class UserController extends Controller
         }
         $params['nowPage'] = isset($params['nowPage']) ? $params['nowPage'] : 1;
         $params['offset'] = isset($params['offset']) ? $params['offset'] : 10;
+        $params['companyId'] = $company->id;
 
         $contactRepository = new ContactRepository();
 
@@ -36,7 +41,7 @@ class UserController extends Controller
             'nowPage' => $params['nowPage'],
             'offset' => $params['offset'],
         ];
-        $result['processCount'] = $contactRepository->amountList();
+        $result['processCount'] = $contactRepository->amountList($params);
         return view('company.home', ['adm' => $company, 'result' => $result]);
     }
 

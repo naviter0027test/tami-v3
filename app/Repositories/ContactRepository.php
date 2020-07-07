@@ -18,16 +18,6 @@ class ContactRepository
             ->skip(($nowPage-1) * $offset)
             ->take($offset);
         $contacts = $contactQuery->get();
-        foreach($contacts as $i => $contact) {
-            switch($contact->active) {
-            case 0:
-                $contacts[$i]->activeShow = '否';
-                break;
-            case 1:
-                $contacts[$i]->activeShow = '是';
-                break;
-            }
-        }
         return $contacts;
     }
 
@@ -57,7 +47,39 @@ class ContactRepository
         $contact->save();
     }
 
-    public function amountList() {
+    public function amountList($params = []) {
+        if(isset($params['companyId']) == false)
+            throw new Exception('please input company id');
+        $countArr = [];
+        $countArr['not'] = Contact::where('active', '=', '未處理')
+            ->where('companyId', '=', $params['companyId'])
+            ->count();
+        $countArr['ing'] = Contact::where('active', '=', '處理中')
+            ->where('companyId', '=', $params['companyId'])
+            ->count();
+        $countArr['been'] = Contact::where('active', '=', '已處理')
+            ->where('companyId', '=', $params['companyId'])
+            ->count();
+        return $countArr;
+    }
+
+    public function listsByAdmin($params) {
+        $nowPage = isset($params['nowPage']) ? (int) $params['nowPage'] : 1;
+        $offset = isset($params['offset']) ? (int) $params['offset'] : 10;
+
+        $contactQuery = Contact::orderBy('id', 'desc')
+            ->skip(($nowPage-1) * $offset)
+            ->take($offset);
+        $contacts = $contactQuery->get();
+        return $contacts;
+    }
+
+    public function listsAmountByAdmin($params) {
+        $contactQuery = Contact::orderBy('id', 'desc');
+        return $contactQuery->count();
+    }
+
+    public function amountListByAdmin() {
         $countArr = [];
         $countArr['not'] = Contact::where('active', '=', '未處理')
             ->count();
