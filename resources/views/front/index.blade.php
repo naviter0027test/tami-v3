@@ -16,7 +16,7 @@
 <body class="body_home">
 
 <div class="home_list">
-	<div class="visited">浏览人数：00000</div>
+	<div class="visited">浏览人数：{{ $result['watchAmount'] }}</div>
 	<div class="transform">
         <div class="outer">    	
             <div class="home_title">
