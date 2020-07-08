@@ -12,14 +12,23 @@ use Exception;
 class FrontController extends Controller
 {
     public function index(Request $request) {
-        return view('front.index');
+        $params = $request->all();
+        $params['lan'] = isset($params['lan']) && trim($params['lan']) != '' ? $params['lan'] : 'CN';
+        $companyRepository = new CompanyRepository();
+        $params['companyAreas'] = $companyRepository->getAreaWithCompany();
+        
+        return view('front.index', ['result' => $params]);
     }
 
     public function company(Request $request) {
+        $params = $request->all();
+        $params['lan'] = isset($params['lan']) && trim($params['lan']) != '' ? $params['lan'] : 'CN';
         return view('front.company');
     }
 
     public function product(Request $request) {
+        $params = $request->all();
+        $params['lan'] = isset($params['lan']) && trim($params['lan']) != '' ? $params['lan'] : 'CN';
         return view('front.product');
     }
 

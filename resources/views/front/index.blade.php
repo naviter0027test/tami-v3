@@ -88,6 +88,17 @@
                     <div class="box">
                         <div class="title">缝纫机</div>
                         <div class="list_item">
+                        @foreach($result['companyAreas']['缝纫机']['companies'] as $company)
+                            <div class="item">
+                                <a href="front/company/{{ $company->id }}">
+                                    <div class="img"><img src="/uploads{{ $company->logo }}"></div>
+                                    <div class="info">
+                                        <h3>{{ $company->nameShow }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+<!--
                             <div class="item">
                                 <a href="front/company">
                                     <div class="img"><img src="images/logo/logo_02.png"></div>
@@ -97,6 +108,7 @@
                                     </div>
                                 </a>
                             </div>
+-->
                         </div>
                     </div>
                 </div>
@@ -105,6 +117,17 @@
                         <div class="title">鞋底加工及橡塑胶制鞋设备</div>
                         <div class="mobile_arrow"><img src="images/icon_arrow_down_white.svg"></div>
                         <div class="list_item">
+                        @foreach($result['companyAreas']['鞋底加工及橡塑胶制鞋设备']['companies'] as $company)
+                            <div class="item">
+                                <a href="front/company/{{ $company->id }}">
+                                    <div class="img"><img src="/uploads{{ $company->logo }}"></div>
+                                    <div class="info">
+                                        <h3>{{ $company->nameShow }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                        <!--
                             <div class="item">
                                 <a href="front/company">
                                     <div class="img"><img src="images/logo/logo_07.png"></div>
@@ -177,6 +200,7 @@
                                     </div>
                                 </a>
                             </div>                    
+-->
                         </div>
                     </div>
                 </div>
@@ -185,6 +209,17 @@
                         <div class="title">鞋面成型及鞋帮机</div>
                         <div class="mobile_arrow"><img src="images/icon_arrow_down_white.svg"></div>
                         <div class="list_item">
+                        @foreach($result['companyAreas']['鞋面成型及鞋帮机']['companies'] as $company)
+                            <div class="item">
+                                <a href="front/company/{{ $company->id }}">
+                                    <div class="img"><img src="/uploads{{ $company->logo }}"></div>
+                                    <div class="info">
+                                        <h3>{{ $company->nameShow }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                        <!--
                             <div class="item">
                                 <a href="front/company">
                                     <div class="img"><img src="images/logo/logo_05.png"></div>
@@ -275,7 +310,7 @@
                                     </div>
                                 </a>
                             </div>
-                            
+                           --> 
                             
                         </div>
                     </div>
@@ -285,6 +320,17 @@
                         <div class="title">自动化设备与整厂规划</div>
                         <div class="mobile_arrow"><img src="images/icon_arrow_down_white.svg"></div>
                         <div class="list_item">
+                        @foreach($result['companyAreas']['自动化设备与整厂规划']['companies'] as $company)
+                            <div class="item">
+                                <a href="front/company/{{ $company->id }}">
+                                    <div class="img"><img src="/uploads{{ $company->logo }}"></div>
+                                    <div class="info">
+                                        <h3>{{ $company->nameShow }}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                        <!--
                             <div class="item">
                                 <a href="front/company">
                                     <div class="img"><img src="images/logo/logo_05.png"></div>
@@ -393,6 +439,7 @@
                                     </div>
                                 </a>
                             </div>
+-->
                         </div>
                     </div>
                 </div>
