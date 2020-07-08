@@ -88,8 +88,8 @@
                     <input type="text" name="infoVideo5" /> 
                 </p>
                 </p>
-                <h5>聯絡方式(超連結)</h5>
-                <p> <input type="text" name="contact" /> </p>
+                <h5>聯絡方式</h5>
+                <p> <textarea type="text" name="contactDesc" ></textarea> </p>
                 <h5>前台樣式</h5>
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />
