@@ -8,7 +8,7 @@
         <link href='/css/company/body.css' rel='stylesheet' />
     </head>
     <body>
-@include('admin.layout.menu')
+@include('company.layout.menu')
         <div class="content">
             <h3>產品 - 新增</h3>
             <form method='post' action='/company/product/create' class='form1' enctype="multipart/form-data">
