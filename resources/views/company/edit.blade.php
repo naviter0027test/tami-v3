@@ -118,8 +118,12 @@
                     <input type="file" name="infoPath5" /> 
                     <input type="text" name="infoVideo5" /> 
                 </p>
-                <h5>聯絡方式</h5>
-                <p> <textarea name="contactDesc" >{{ $result['company']->contactDesc }}</textarea> </p>
+                <h5>聯絡方式 tel</h5>
+                <p> <input type="text" name="contactLink1" value="{{ $result['company']->contactLink1 }}" /> </p>
+                <h5>聯絡方式 fax</h5>
+                <p> <input type="text" name="contactLink2" value="{{ $result['company']->contactLink2 }}" /> </p>
+                <h5>聯絡方式 add</h5>
+                <p> <input type="text" name="contactLink3" value="{{ $result['company']->contactLink3 }}" /> </p>
                 <h5>前台樣式</h5>
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />

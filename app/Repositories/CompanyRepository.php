@@ -55,6 +55,10 @@ class CompanyRepository
         if($company->infoMode5 == 2)
             $company->infoPath5 = isset($params['infoVideo5']) ? $params['infoVideo5'] : '';
         $company->contact = isset($params['contact']) ? $params['contact'] : '';
+        $company->contactLink1 = isset($params['contactLink1']) ? $params['contactLink1'] : '';
+        $company->contactLink2 = isset($params['contactLink2']) ? $params['contactLink2'] : '';
+        $company->contactLink3 = isset($params['contactLink3']) ? $params['contactLink3'] : '';
+        $company->contactLink4 = isset($params['contactLink4']) ? $params['contactLink4'] : '';
         $company->contactDesc = isset($params['contactDesc']) ? $params['contactDesc'] : '';
         $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
         $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
@@ -186,6 +190,10 @@ class CompanyRepository
         if(isset($params['infoVideo5']) && trim($params['infoVideo5']) != '' && $company->infoMode5 == 2)
             $company->infoPath5 = isset($params['infoVideo5']) ? $params['infoVideo5'] : '';
         $company->contact = isset($params['contact']) ? $params['contact'] : '';
+        $company->contactLink1 = isset($params['contactLink1']) ? $params['contactLink1'] : '';
+        $company->contactLink2 = isset($params['contactLink2']) ? $params['contactLink2'] : '';
+        $company->contactLink3 = isset($params['contactLink3']) ? $params['contactLink3'] : '';
+        $company->contactLink4 = isset($params['contactLink4']) ? $params['contactLink4'] : '';
         $company->contactDesc = isset($params['contactDesc']) ? $params['contactDesc'] : '';
         $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
         $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
