@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="action">
-                <a href="company/product">PRODUCTS LIST<i></i></a>
+                <a href="/front/company/{{ $company->id }}/product">PRODUCTS LIST<i></i></a>
             </div>
         </div>
     </div>    

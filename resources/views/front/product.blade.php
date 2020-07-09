@@ -18,7 +18,7 @@
 
 <div class="company_list blue">
 	<div class="transform">
-        <a href="tami_01.html" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
+        <a href="/" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
         <div class="outer">
             <div class="logo"><div><img src="/images/company_logo_001.png"></div></div>
             <div class="company_name"><div>益鋐企业有限公司 YE HONE ENTERPRISE CO., LTD.</div></div>
@@ -51,11 +51,11 @@
 <div class="body_overly active"></div>
 <div class="product_detail" >
 	<div class="transform">
-        <a href="tami_02_blue.html" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
+        <a href="tami_02_blue.html" class="btn_back backToCompany"><img src="/images/icon_back_arrow.svg"></a>
         <div class="links">
             <div class="outer">
                 <div class="col01">
-                    <a href="tami_01.html" class="btn_home"><img src="/images/detail_btn_bg_01.png"><b>回首页</b></a>
+                    <a href="/" class="btn_home"><img src="/images/detail_btn_bg_01.png"><b>回首页</b></a>
                     <a href="#" class="btn_contact"><img src="/images/detail_btn_bg_02.png"><b>联络资讯</b></a>
                 </div>
                 <div class="col02">
@@ -67,6 +67,45 @@
         </div>
         <div class="slider">
             <div class="owl-carousel owl_slider">
+            @foreach($products as $product)
+                <div class="item">
+                    <div class="outer">
+                        <div class="col01">
+                            <div class="box">
+                            	<div class="bg"><img src="/images/detail_bg_001.png"></div>
+                                <div class="img"><img src="/product{{ $product->picture1 }}"></div>
+                            </div>
+                            <a href="/product{{ $product->picture1 }}" class="btn_zoom" target="_blank"><img src="/images/icon_zoom.svg" ></a>
+                        </div>
+                        <div class="col02">
+                            <div class="top_div">
+                                <div class="box">
+                                	<div class="bg"><img src="/images/detail_bg_002.png"></div>
+                                    <div class="info">
+                                        <div class="label">产品名称</div>
+                                        <div class="desc">
+                                            {{ $product->nameShow }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom_div">
+                                <div class="box">
+                                	<div class="bg"><img src="/images/detail_bg_003.png"></div>
+                                    <div class="info">
+                                    	<div class="add_padding">
+                                            <div class="scrollbar">
+                                            {{ $product->infoShow }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            @endforeach
+<!--
                 <div class="item">
                     <div class="outer">
                         <div class="col01">
@@ -143,6 +182,7 @@
                         </div>
                     </div>
                 </div>    
+-->
             </div>
         </div>
     </div>    
@@ -181,6 +221,7 @@
 <script src="/owl.carousel/owl.carousel.js"></script>
 <script src="/js/front/js/jquery.mCustomScrollbar.js"></script>
 <script src="/js/front/js/script.js"></script>
+<script src="/js/front/js/product.js"></script>
 
 </body>
 </html>

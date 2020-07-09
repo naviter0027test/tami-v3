@@ -75,7 +75,21 @@ class FrontController extends Controller
             $params['lan'] = Session::get('lan');
         else if(isset($params['lan']) == false)
             $params['lan'] = 'CN';
-        return view('front.product');
+        $productRepository = new ProductRepository();
+        $products = $productRepository->getByCompanyId($companyId);
+        foreach ($products as $i => $product) {
+            switch($params['lan']) {
+            case 'CN':
+                $products[$i]->nameShow = $product->name;
+                $products[$i]->infoShow = $product->info;
+                break;
+            case 'EN':
+                $products[$i]->nameShow = $product->nameEn;
+                $products[$i]->infoShow = $product->infoEn;
+                break;
+            }
+        }
+        return view('front.product', ['products' => $products] );
     }
 
     public function mailTest(Request $request) {

@@ -120,4 +120,11 @@ class ProductRepository
         }
         $product->delete();
     }
+
+    public function getByCompanyId($companyId) {
+        $products = Product::where('companyId', '=', $companyId)
+            ->orderBy('id', 'desc')
+            ->get();
+        return $products;
+    }
 }
