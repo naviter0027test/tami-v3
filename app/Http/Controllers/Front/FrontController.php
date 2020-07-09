@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use \App\Http\Controllers\Controller;
 use App\Repositories\CompanyRepository;
+use App\Repositories\ProductRepository;
 use Session;
 use Exception;
 
@@ -13,7 +14,10 @@ class FrontController extends Controller
 {
     public function index(Request $request) {
         $params = $request->all();
-        $params['lan'] = isset($params['lan']) && trim($params['lan']) != '' ? $params['lan'] : 'CN';
+        if(isset($params['lan']) == false && Session::has('lan') == true)
+            $params['lan'] = Session::get('lan');
+        else if(isset($params['lan']) == false)
+            $params['lan'] = 'CN';
         $companyRepository = new CompanyRepository();
         $params['companyAreas'] = $companyRepository->getAreaWithCompany();
         $watchAmount = env('WATCH_AMOUNT', 0);
@@ -23,15 +27,54 @@ class FrontController extends Controller
         return view('front.index', ['result' => $params]);
     }
 
-    public function company(Request $request) {
+    public function company(Request $request, $companyId) {
         $params = $request->all();
-        $params['lan'] = isset($params['lan']) && trim($params['lan']) != '' ? $params['lan'] : 'CN';
-        return view('front.company');
+        if(isset($params['lan']) == false && Session::has('lan') == true)
+            $params['lan'] = Session::get('lan');
+        else if(isset($params['lan']) == false)
+            $params['lan'] = 'CN';
+        $companyRepository = new CompanyRepository();
+        $company = $companyRepository->getById($companyId);
+        switch($company->frontMode) {
+        case 1:
+            $company->frontModeShow = 'black';
+            break;
+        case 2:
+            $company->frontModeShow = 'blue';
+            break;
+        case 3:
+            $company->frontModeShow = 'green';
+            break;
+        case 4:
+            $company->frontModeShow = 'red';
+            break;
+        case 5:
+            $company->frontModeShow = 'purple';
+            break;
+        case 6:
+            $company->frontModeShow = 'yellow';
+            break;
+        default:
+            $company->frontModeShow = 'black';
+            break;
+        }
+        switch($params['lan']) {
+        case 'CN':
+            $company->nameShow = $company->name;
+            break;
+        case 'EN':
+            $company->nameShow = $company->nameEn;
+            break;
+        }
+        return view('front.company', ['company' => $company]);
     }
 
-    public function product(Request $request) {
+    public function product(Request $request, $companyId) {
         $params = $request->all();
-        $params['lan'] = isset($params['lan']) && trim($params['lan']) != '' ? $params['lan'] : 'CN';
+        if(isset($params['lan']) == false && Session::has('lan') == true)
+            $params['lan'] = Session::get('lan');
+        else if(isset($params['lan']) == false)
+            $params['lan'] = 'CN';
         return view('front.product');
     }
 

@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'Front\FrontController@index');
-Route::get('/front/company', 'Front\FrontController@company');
-Route::get('/front/company/product', 'Front\FrontController@product');
+Route::get('/front/company/{companyId}', 'Front\FrontController@company');
+Route::get('/front/company/{companyId}/product', 'Front\FrontController@product');
 
 Route::get('/mail-test', 'Front\FrontController@mailTest');
 Route::get('/mmc-test', 'Front\FrontController@mmcTest');
