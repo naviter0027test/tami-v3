@@ -10,10 +10,11 @@ class ProductRepository
     public function create($params, $company, $files) {
         $product = new Product();
         $product->name = isset($params['name']) ? $params['name'] : '';
+        $product->nameEn = isset($params['nameEn']) ? $params['nameEn'] : '';
         $product->info = isset($params['info']) ? $params['info'] : '';
+        $product->infoEn = isset($params['infoEn']) ? $params['infoEn'] : '';
         $product->active = isset($params['active']) ? $params['active'] : 1;
         $product->video = isset($params['video']) ? $params['video'] : '';
-        $product->dm = isset($params['dm']) ? $params['dm'] : '';
         $product->companyId = $company->id;
         $product->save();
 
@@ -25,6 +26,13 @@ class ProductRepository
             $product->picture1 = $path. $filename;
             $product->save();
             $files['picture1']->move($root. $path, $filename);
+        }
+        if(isset($files['dm'])) {
+            $ext = $files['dm']->getClientOriginalExtension();
+            $filename = $product->id. "_dm.$ext";
+            $product->dm = $path. $filename;
+            $product->save();
+            $files['dm']->move($root. $path, $filename);
         }
     }
 
@@ -73,18 +81,20 @@ class ProductRepository
         $product = Product::where('id', '=', $id)
             ->first();
         if(isset($product->id) == false)
-            throw new Exception("廠商不存在 id:[$id]");
+            throw new Exception("資料不存在 id:[$id]");
         if(isset($params['account']) == true)
             $product->account = $params['account'];
         $product->name = isset($params['name']) ? $params['name'] : '';
+        $product->nameEn = isset($params['nameEn']) ? $params['nameEn'] : '';
         $product->info = isset($params['info']) ? $params['info'] : '';
+        $product->infoEn = isset($params['infoEn']) ? $params['infoEn'] : '';
         if(isset($params['active']) == true)
             $product->active = isset($params['active']) ? $params['active'] : 1;
         $product->video = isset($params['video']) ? $params['video'] : '';
         $product->dm = isset($params['dm']) ? $params['dm'] : '';
         $product->save();
 
-        $root = config('filesystems')['disks']['uploads']['root'];
+        $root = config('filesystems')['disks']['product']['root'];
         $path = date('/Y/m'). '/';
         if(isset($files['picture1'])) {
             $ext = $files['picture1']->getClientOriginalExtension();
@@ -92,6 +102,13 @@ class ProductRepository
             $product->picture1 = $path. $filename;
             $product->save();
             $files['picture1']->move($root. $path, $filename);
+        }
+        if(isset($files['dm'])) {
+            $ext = $files['dm']->getClientOriginalExtension();
+            $filename = $product->id. "_dm.$ext";
+            $product->dm = $path. $filename;
+            $product->save();
+            $files['dm']->move($root. $path, $filename);
         }
     }
 

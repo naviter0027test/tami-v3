@@ -60,6 +60,8 @@ class ProductController extends Controller
         ];
         if($request->hasFile('picture1'))
             $files['picture1'] = $request->file('picture1');
+        if($request->hasFile('dm'))
+            $files['dm'] = $request->file('dm');
 
         try {
             $productRepository = new ProductRepository();
@@ -100,6 +102,8 @@ class ProductController extends Controller
         ];
         if($request->hasFile('picture1'))
             $files['picture1'] = $request->file('picture1');
+        if($request->hasFile('dm'))
+            $files['dm'] = $request->file('dm');
 
         try {
             $productRepository = new ProductRepository();

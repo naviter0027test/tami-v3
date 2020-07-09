@@ -18,9 +18,11 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <h5>產品名稱</h5>
                 <p> <input type="text" name="name" value="{{ $result['product']->name }}" /> </p>
+                <h5>產品名稱(英文)</h5>
+                <p> <input type="text" name="nameEn" value="{{ $result['product']->nameEn }}" /> </p>
                 <h5>產品圖片</h5>
                 @if($result['product']->picture1 != '')
-                    <img src="/uploads{{ $result['product']->picture1 }}" class="custPic" /> <br />
+                    <img src="/product{{ $result['product']->picture1 }}" class="custPic" /> <br />
                 @else
                     無<br />
                 @endif
@@ -28,6 +30,8 @@
                 <p> <input type="file" name="picture1" /> </p>
                 <h5>亮點資訊</h5>
                 <p> <textarea type="text" name="info" >{{ $result['product']->info }}</textarea> </p>
+                <h5>亮點資訊(英文)</h5>
+                <p> <textarea type="text" name="infoEn" >{{ $result['product']->infoEn }}</textarea> </p>
                 <h5>是否啟用</h5>
                 <p> 
                     <select type="text" name="active"> 
@@ -35,14 +39,20 @@
                         <option value="0" {{ $result['product']->active == '0' ? 'selected="selected"' : '' }} >否</option>
                     </select> 
                 </p>
-                <h5>DM(超連結)</h5>
-                <p> 
-                    <input type="text" name="dm" value="{{ $result['product']->dm }}" /> 
-                </p>
+                <h5>DM</h5>
+                @if($result['product']->dm != '')
+                    <a href="/product{{ $result['product']->dm }}"  >連結</a> <br />
+                @else
+                    無<br />
+                @endif
+                    更換如下:
+                <p> <input type="file" name="dm" /> </p>
+<!--
                 <h5>影片(超連結，非內嵌)</h5>
                 <p> 
                     <input type="text" name="video" value="{{ $result['product']->video }}" /> 
                 </p>
+-->
                 <p class=""> <button class="btn">編輯</button> </p>
             </form>
 
