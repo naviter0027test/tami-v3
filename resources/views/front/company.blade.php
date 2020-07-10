@@ -6,7 +6,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>益鋐企业有限公司</title>
+<title>{{ $company->nameShow }}</title>
 
 
 <link href="/css/style.css" rel="stylesheet">
@@ -41,7 +41,22 @@
                     </div>
                 </div>
                 <div class="col02">
-                    <div class="img"><img src="/images/company_img001.jpg"></div>
+                    <div class="img"><img src="/images/company_img001.jpg" class="infoPathImg"></div>
+                    @if(trim($company->infoPath1) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath1 }}" />
+                    @endif
+                    @if(trim($company->infoPath2) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath2 }}" />
+                    @endif
+                    @if(trim($company->infoPath3) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath3 }}" />
+                    @endif
+                    @if(trim($company->infoPath4) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath4 }}" />
+                    @endif
+                    @if(trim($company->infoPath5) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath5 }}" />
+                    @endif
                 </div>
                 <div class="col03">
                     <div class="img"><a href="#"><img src="/images/company_img002.jpg"></a></div>
@@ -64,6 +79,7 @@
 
 <script src="/js/front/js/jquery.min.js"></script>
 <script src="/js/front/js/script.js"></script>
+<script src="/js/front/js/company.js"></script>
 
 </body>
 </html>
