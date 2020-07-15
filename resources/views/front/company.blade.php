@@ -27,17 +27,24 @@
                     <div class="desc">
                         @if(trim($company->email) != '')
                         <div class="item">EMAIL / {{ $company->email }}</div>
+                        @else
+                        <div class="item">&nbsp;</div>
                         @endif
                         @if(trim($company->contactLink1) != '')
                         <div class="item">TEL / {{ $company->contactLink1 }}</div>
+                        @else
+                        <div class="item">&nbsp;</div>
                         @endif
                         @if(trim($company->contactLink2) != '')
-                        <div class="item">FAX / {{ $company->contactLink2 }}<br />
+                        <div class="item">FAX / {{ $company->contactLink2 }}</div><br />
+                        @else
+                        <div class="item">&nbsp;</div>
                         @endif
                         @if(trim($company->contactLink3) != '')
                         {{ $company->contactLink3 }}
+                        @else
+                        &nbsp;
                         @endif
-                        </div>
                     </div>
                 </div>
                 <div class="col02">

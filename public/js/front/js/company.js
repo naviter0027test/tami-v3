@@ -4,6 +4,9 @@ $(document).ready(function() {
     $('.infoPathImg').css('width', '331px');
     $('.infoPathImg').css('height', '162px');
     setInterval(function() {
+        if(infoPathLen == 0)
+            return;
+
         $('.infoPathImg').fadeOut(function() {
             $('.infoPathImg').attr('src', $($('.infoPath')[infoPathCount]).val());
             $('.infoPathImg').fadeIn();

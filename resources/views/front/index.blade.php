@@ -31,7 +31,7 @@
             <div class="mobile_div">  
             	<div class="overly" title="Close with clicked !!" alt="Close with clicked !!"></div>
                 <div class="mobile_black"><img src="images/icon_back_arrow_mobile.svg"></div>
-                <div class="version"><a href="#" class="active">简中</a><a href="#">EN</a></div>                
+                <div class="version"><a href="?lan=CN" class="active">简中</a><a href="?lan=EN">EN</a></div>                
                 <div id="block01" class="block_img" data-id="popup01">
                     <img src="images/platform_01_block.png" class="block"/>
                     <img src="images/platform_01_title.png" class="title"/>
@@ -39,6 +39,8 @@
                         <div class="block01_animate"><img src="images/platform_01_01.png"></div>
                         <div class="block01_animate"><img src="images/platform_01_02.png"></div> 
                         <div class="block01_animate"><img src="images/platform_01_03.png"></div> 
+                        <div class="block01_animate"><img src="images/platform_01_04.png"></div>
+                        <div class="block01_animate"><img src="images/platform_01_05.png"></div>
                         <div class="block01_animate"><img src="images/platform_01_04.png"></div>
                         <div class="block01_animate"><img src="images/platform_01_03.png"></div> 
                         <div class="block01_animate"><img src="images/platform_01_02.png"></div>                                           
@@ -63,6 +65,10 @@
                         <div class="block03_animate"><img src="images/platform_03_02.png"></div>    
                         <div class="block03_animate"><img src="images/platform_03_03.png"></div> 
                         <div class="block03_animate"><img src="images/platform_03_04.png"></div> 
+                        <div class="block03_animate"><img src="images/platform_03_05.png"></div> 
+                        <div class="block03_animate"><img src="images/platform_03_06.png"></div> 
+                        <div class="block03_animate"><img src="images/platform_03_05.png"></div> 
+                        <div class="block03_animate"><img src="images/platform_03_04.png"></div> 
                         <div class="block03_animate"><img src="images/platform_03_03.png"></div> 
                         <div class="block03_animate"><img src="images/platform_03_02.png"></div>                    
                     </div>
@@ -75,6 +81,10 @@
                         <div class="block04_animate"><img src="images/platform_04_01.png"></div>
                         <div class="block04_animate"><img src="images/platform_04_02.png"></div>
                         <div class="block04_animate"><img src="images/platform_04_03.png"></div>
+                        <div class="block04_animate"><img src="images/platform_04_04.png"></div>
+                        <div class="block04_animate"><img src="images/platform_04_05.png"></div>
+                        <div class="block04_animate"><img src="images/platform_04_06.png"></div>
+                        <div class="block04_animate"><img src="images/platform_04_05.png"></div>
                         <div class="block04_animate"><img src="images/platform_04_04.png"></div>
                         <div class="block04_animate"><img src="images/platform_04_03.png"></div>
                         <div class="block04_animate"><img src="images/platform_04_02.png"></div>

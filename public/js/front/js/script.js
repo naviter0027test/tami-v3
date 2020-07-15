@@ -56,9 +56,9 @@ function detect_mobile_landscape(){
 
 function set_home_animate(){	
 	if($('.block01_animate').length>0){
-		loop_animate("block01_animate",300);
+		loop_animate("block01_animate",200);
 		loop_animate("block02_animate",500);
-		loop_animate("block03_animate",400);
+		loop_animate("block03_animate",150);
 		loop_animate("block04_animate",150);
 	}
 }

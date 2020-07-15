@@ -6,7 +6,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>益鋐企业有限公司</title>
+<title>{{ $company->nameShow }}</title>
 
 <link rel="stylesheet" type="text/css" href="/owl.carousel/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
