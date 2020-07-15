@@ -23,7 +23,7 @@
             <div class="company_name"><div>{{ $company->nameShow }}</div></div>
             <div class="info">
                 <div class="col01">
-                    <div class="website"><a href="#" target="_blank">Web</a></div>
+                    <div class="website"><a href="{{ $company->contactLink4 }}" target="_blank">Web</a></div>
                     <div class="desc">
                         @if(trim($company->email) != '')
                         <div class="item">EMAIL / {{ $company->email }}</div>

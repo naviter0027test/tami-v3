@@ -51,7 +51,7 @@
 <div class="body_overly active"></div>
 <div class="product_detail" >
 	<div class="transform">
-        <a href="tami_02_blue.html" class="btn_back backToCompany"><img src="/images/icon_back_arrow.svg"></a>
+        <a href="/front/company/{{ $company->id }}" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
         <div class="links">
             <div class="outer">
                 <div class="col01">
@@ -59,16 +59,19 @@
                     <a href="#" class="btn_contact"><img src="/images/detail_btn_bg_02.png"><b>联络资讯</b></a>
                 </div>
                 <div class="col02">
-                    <a href="#" class="btn_website"><img src="/images/detail_btn_bg_03.png"><b>官网</b></a>
+                    <a href="{{ $company->contactLink4 }}" class="btn_website"><img src="/images/detail_btn_bg_03.png"><b>官网</b></a>
                     <a href="#" class="btn_cate"><img src="/images/detail_btn_bg_04.png"><b>型录</b></a>
                     <a href="#" class="btn_share"><img src="/images/detail_btn_bg_05.png"><b>分享</b></a>
                 </div>
             </div>
         </div>
+        <input id="locationHref" />
+        <input type="hidden" class="maxProductNum" value="{{ count($products) }}" />
         <div class="slider">
             <div class="owl-carousel owl_slider">
-            @foreach($products as $product)
+            @foreach($products as $i => $product)
                 <div class="item">
+                    <input type="hidden" class="pdf{{ $i }}" value="{{ $product->dm }}" />
                     <div class="outer">
                         <div class="col01">
                             <div class="box">
@@ -95,7 +98,7 @@
                                     <div class="info">
                                     	<div class="add_padding">
                                             <div class="scrollbar">
-                                            {{ $product->infoShow }}
+                                            {!! nl2br($product->infoShow) !!}
                                             </div>
                                         </div>
                                     </div>

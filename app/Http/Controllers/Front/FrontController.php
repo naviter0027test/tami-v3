@@ -18,6 +18,8 @@ class FrontController extends Controller
             $params['lan'] = Session::get('lan');
         else if(isset($params['lan']) == false)
             $params['lan'] = 'CN';
+        else
+            Session::put('lan', $params['lan']);
         $companyRepository = new CompanyRepository();
         $params['companyAreas'] = $companyRepository->getAreaWithCompany();
         $watchAmount = env('WATCH_AMOUNT', 0);
@@ -33,8 +35,12 @@ class FrontController extends Controller
             $params['lan'] = Session::get('lan');
         else if(isset($params['lan']) == false)
             $params['lan'] = 'CN';
+        else
+            Session::put('lan', $params['lan']);
         $companyRepository = new CompanyRepository();
         $company = $companyRepository->getById($companyId);
+        if(trim($company->contactLink4) == '')
+            $company->contactLink4 = '#';
         switch($company->frontMode) {
         case 1:
             $company->frontModeShow = 'black';
@@ -75,6 +81,21 @@ class FrontController extends Controller
             $params['lan'] = Session::get('lan');
         else if(isset($params['lan']) == false)
             $params['lan'] = 'CN';
+        else
+            Session::put('lan', $params['lan']);
+        $companyRepository = new CompanyRepository();
+        $company = $companyRepository->getById($companyId);
+        if(trim($company->contactLink4) == '')
+            $company->contactLink4 = '#';
+        switch($params['lan']) {
+        case 'CN':
+            $company->nameShow = $company->name;
+            break;
+        case 'EN':
+            $company->nameShow = $company->nameEn;
+            break;
+        }
+
         $productRepository = new ProductRepository();
         $products = $productRepository->getByCompanyId($companyId);
         foreach ($products as $i => $product) {
@@ -89,7 +110,7 @@ class FrontController extends Controller
                 break;
             }
         }
-        return view('front.product', ['products' => $products] );
+        return view('front.product', ['products' => $products, 'company' => $company] );
     }
 
     public function mailTest(Request $request) {
