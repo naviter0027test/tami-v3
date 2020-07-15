@@ -72,6 +72,7 @@
             @foreach($products as $i => $product)
                 <div class="item">
                     <input type="hidden" class="pdf{{ $i }}" value="{{ $product->dm }}" />
+                    <input type="hidden" class="product{{ $i }}" value="{{ $product->id }}" />
                     <div class="outer">
                         <div class="col01">
                             <div class="box">
@@ -192,29 +193,34 @@
 </div>
 
 <div id="contact_form" class="contact_form">
+    <form action="/front/contact" method="post" class="contact">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="companyId" value="{{ $company->id }}" />
+        <input type="hidden" name="productId" value="" />
 	<div class="outer">
     	<div class="close_div"><button class="btn_close"><img src="/images/icon_close.svg"></button></div>
 		<div class="form_div">
         	<div class="item">
-        		<input type="text" placeholder="公司名称">
+        		<input type="text" name="companyName" placeholder="公司名称">
             </div>
         	<div class="item">
-        		<input type="text" placeholder="Email">
+        		<input type="text" name="email" placeholder="Email">
             </div>
             <div class="item">
-        		<input type="text" placeholder="联络人">
+        		<input type="text" name="name" placeholder="联络人">
             </div>
             <div class="item">
-        		<input type="text" placeholder="连络电话">
+        		<input type="text" name="phone" placeholder="连络电话">
             </div>
             <div class="item">
-            	<textarea placeholder="问题内容"></textarea>        		
+            	<textarea name="content" placeholder="问题内容"></textarea>        		
             </div>
             <div class="item action">
         		<button>提 交<i></i></button>
             </div>
         </div>
 	</div>
+    </form>
 </div>
 <div class="mobile_rotate">
 	<img src="/images/mobile_rotate.svg" >

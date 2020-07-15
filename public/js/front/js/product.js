@@ -41,4 +41,14 @@ $(document).ready(function() {
             $('.btn_cate').attr('href', '/product'+pdfHref);
         return false;
     });
+
+    $('.contact').submit(function() {
+        var productId = $('.product'+nowProductNum).val();
+        $('[name=productId]').val(productId);
+        var formData = $(this).serialize();
+        $.post($(this).attr('action'), formData, function(data) {
+            console.log(data);
+        });
+        return false;
+    });
 });

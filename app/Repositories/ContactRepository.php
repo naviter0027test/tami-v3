@@ -89,4 +89,16 @@ class ContactRepository
             ->count();
         return $countArr;
     }
+
+    public function create($params) {
+        $contact = new Contact();
+        $contact->name = isset($params['name']) ? $params['name'] : '';
+        $contact->companyName = isset($params['companyName']) ? $params['companyName'] : '';
+        $contact->email = isset($params['email']) ? $params['email'] : '';
+        $contact->phone = isset($params['phone']) ? $params['phone'] : '';
+        $contact->content = isset($params['content']) ? $params['content'] : '';
+        $contact->companyId = isset($params['companyId']) ? $params['companyId'] : 0;
+        $contact->productId = isset($params['productId']) ? $params['productId'] : 0;
+        $contact->save();
+    }
 }

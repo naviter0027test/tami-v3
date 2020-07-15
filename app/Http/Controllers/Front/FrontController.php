@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use \App\Http\Controllers\Controller;
 use App\Repositories\CompanyRepository;
 use App\Repositories\ProductRepository;
+use App\Repositories\ContactRepository;
 use Session;
 use Exception;
 
@@ -164,5 +165,22 @@ class FrontController extends Controller
         if (!file_put_contents($envFile, $str)) return false;
         return true;
 
+    }
+
+    public function contact(Request $request) {
+        $params = $request->all();
+        $result = [
+            'result' => true,
+            'msg' => 'success',
+        ];
+        try {
+            $contactRepository = new ContactRepository();
+            $contactRepository->create($params);
+        }
+        catch(Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+        }
+        return $result;
     }
 }
