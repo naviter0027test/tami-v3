@@ -48,6 +48,12 @@ $(document).ready(function() {
         var formData = $(this).serialize();
         $.post($(this).attr('action'), formData, function(data) {
             console.log(data);
+            if(data['result'] == true) {
+                alert('询问成功，静待厂商回覆');
+                location.href = "/";
+            } else {
+                alert('错误讯息:'+ data['msg'] +' 请截图并告知系统管理者');
+            }
         });
         return false;
     });

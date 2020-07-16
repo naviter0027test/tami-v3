@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 use App\Contact;
+use App\Company;
 use Exception;
+use Config;
 
 class ContactRepository
 {
@@ -31,6 +33,16 @@ class ContactRepository
 
     public function getById($id) {
         $contact = Contact::where('id', '=', $id)
+            ->first();
+        if(isset($contact->id) == false) {
+            throw new Exception("資料不存在 id:[$id]");
+        }
+        return $contact;
+    }
+
+    public function getByIdCompany($id, $companyId) {
+        $contact = Contact::where('id', '=', $id)
+            ->where('companyId', '=', $companyId)
             ->first();
         if(isset($contact->id) == false) {
             throw new Exception("資料不存在 id:[$id]");
@@ -100,5 +112,25 @@ class ContactRepository
         $contact->companyId = isset($params['companyId']) ? $params['companyId'] : 0;
         $contact->productId = isset($params['productId']) ? $params['productId'] : 0;
         $contact->save();
+
+        $params['contactId'] = $contact->id;
+        $this->notify($params);
+    }
+
+    public function notify($params) {
+        if(isset($params['companyId']) == false)
+            throw new Exception('please input companyId');
+        if(isset($params['contactId']) == false)
+            throw new Exception('please input contactId');
+        $company = Company::where('id', '=', $params['companyId'])
+            ->first();
+        \Mail::send('email.contactNotify', ['company' => $company, 'params' => $params], function($message) use ($company) {
+            $fromAddr = Config::get('mail.from.address');
+            $fromName = Config::get('mail.from.name');
+            $testTitle = env('APP_ENV') == 'local' ? '[Test] ' : '';
+            $appName = Config::get('app.name');
+            $message->from($fromAddr, $fromName);
+            $message->to($company->email, $company->name)->subject("$testTitle $appName - 聯絡通知 (系統發信，請勿回覆)");
+        });
     }
 }

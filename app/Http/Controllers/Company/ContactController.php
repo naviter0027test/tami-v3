@@ -57,7 +57,7 @@ class ContactController extends Controller
 
         try {
             $contactRepository = new ContactRepository();
-            $result['contact'] = $contactRepository->getById($id);
+            $result['contact'] = $contactRepository->getByIdCompany($id, $company->id);
         } catch (Exception $e) {
             $result['result'] = false;
             $result['msg'] = $e->getMessage();
