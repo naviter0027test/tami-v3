@@ -48,7 +48,16 @@
                     </div>
                 </div>
                 <div class="col02">
-                    <div class="img"><img src="/images/company_img001.jpg" class="infoPathImg"></div>
+                    <div class="img">
+                    <!--
+                    <img src="/images/company_img001.jpg" class="infoPathImg">
+                    -->
+                    @if(trim($company->infoPath1) == '')
+                    <img src="/images/company_img001.jpg" class="infoPathImg">
+                    @elseif(trim($company->infoPath1) != '')
+                    <img src="/uploads{{ $company->infoPath1 }}" class="infoPathImg">
+                    @endif
+                    </div>
                     @if(trim($company->infoPath1) != '')
                     <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath1 }}" />
                     @endif

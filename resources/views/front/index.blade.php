@@ -34,7 +34,7 @@
                 <div class="version"><a href="?lan=cn" class="active">简中</a><a href="?lan=en">EN</a></div>                
                 <div id="block01" class="block_img" data-id="popup01">
                     <img src="images/platform_01_block.png" class="block"/>
-                    <img src="images/platform_01_title.png" class="title"/>
+                    <img src="{{ $result['area4'] }}" class="title"/>
                     <div class="animate">
                         <div class="block01_animate"><img src="images/platform_01_01.png"></div>
                         <div class="block01_animate"><img src="images/platform_01_02.png"></div> 
@@ -49,7 +49,7 @@
                 </div>
                 <div id="block02" class="block_img" data-id="popup02">
                     <img src="images/platform_02_block.png" class="block"/>
-                    <img src="images/platform_02_title.png" class="title"/>
+                    <img src="{{ $result['area2'] }}" class="title"/>
                     <div class="animate">
                         <div class="block02_animate"><img src="images/platform_02_01.png"></div>
                         <div class="block02_animate"><img src="images/platform_02_02.png"></div>
@@ -59,7 +59,7 @@
                 </div>
                 <div id="block03" class="block_img" data-id="popup03">
                     <img src="images/platform_03_block.png" class="block"/>
-                    <img src="images/platform_03_title.png" class="title"/>
+                    <img src="{{ $result['area3'] }}" class="title"/>
                     <div class="animate">
                         <div class="block03_animate"><img src="images/platform_03_01.png"></div>
                         <div class="block03_animate"><img src="images/platform_03_02.png"></div>    
@@ -76,7 +76,7 @@
                 </div>
                 <div id="block04" class="block_img" data-id="popup04">
                     <img src="images/platform_04_block.png" class="block"/>
-                    <img src="images/platform_04_title.png" class="title"/>
+                    <img src="{{ $result['area1'] }}" class="title"/>
                     <div class="animate">
                         <div class="block04_animate"><img src="images/platform_04_01.png"></div>
                         <div class="block04_animate"><img src="images/platform_04_02.png"></div>

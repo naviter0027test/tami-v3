@@ -51,10 +51,18 @@ class FrontController extends Controller
         case 'cn':
             $params['logo'] = 'images/home_logo.gif';
             $params['logoMobile'] = 'images/home_logo_mobile.png';
+            $params['area1'] = 'images/platform_04_title.png';
+            $params['area2'] = 'images/platform_02_title.png';
+            $params['area3'] = 'images/platform_03_title.png';
+            $params['area4'] = 'images/platform_01_title.png';
             break;
         case 'en':
             $params['logo'] = 'images/home_logo_e2.gif';
             $params['logoMobile'] = 'images/home_logo_mobile.png';
+            $params['area1'] = 'images/platform_04_title_eng.png';
+            $params['area2'] = 'images/platform_02_title_eng.png';
+            $params['area3'] = 'images/platform_03_title_eng.png';
+            $params['area4'] = 'images/platform_01_title_eng.png';
             break;
         }
         
