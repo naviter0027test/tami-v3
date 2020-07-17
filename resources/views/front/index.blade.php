@@ -22,10 +22,10 @@
             <div class="home_title">
                 <div class="logo"><img src="{{ $result['logo'] }}" class="web"><img src="{{ $result['logoMobile'] }}" class="mobile"></div>
                 <div class="info">
-                    <span>2020年</span>
-                    广州国际鞋类<br />
-                    皮革及工业设备展<br />
-                    线上台湾馆
+                    <span>{{ trans('front/index.2020') }}</span>
+                    {{ trans('front/index.international_shoes') }}<br />
+                    {{ trans('front/index.leather_exhi') }}<br />
+                    {{ trans('front/index.taiwan_online') }}
                 </div>
             </div>              
             <div class="mobile_div">  
