@@ -55,13 +55,13 @@
         <div class="links">
             <div class="outer">
                 <div class="col01">
-                    <a href="/" class="btn_home"><img src="/images/detail_btn_bg_01.png"><b>回首页</b></a>
-                    <a href="#" class="btn_contact"><img src="/images/detail_btn_bg_02.png"><b>联络资讯</b></a>
+                    <a href="/" class="btn_home"><img src="/images/detail_btn_bg_01.png"><b>{{ trans('front/product.go_home') }}</b></a>
+                    <a href="#" class="btn_contact"><img src="/images/detail_btn_bg_02.png"><b>{{ trans('front/product.contact_info') }}</b></a>
                 </div>
                 <div class="col02">
-                    <a href="{{ $company->contactLink4 }}" class="btn_website"><img src="/images/detail_btn_bg_03.png"><b>官网</b></a>
-                    <a href="#" class="btn_cate"><img src="/images/detail_btn_bg_04.png"><b>型录</b></a>
-                    <a href="#" class="btn_share"><img src="/images/detail_btn_bg_05.png"><b>分享</b></a>
+                    <a href="{{ $company->contactLink4 }}" class="btn_website"><img src="/images/detail_btn_bg_03.png"><b>{{ trans('front/product.website') }}</b></a>
+                    <a href="#" class="btn_cate"><img src="/images/detail_btn_bg_04.png"><b>{{ trans('front/product.catalog') }}</b></a>
+                    <a href="#" class="btn_share"><img src="/images/detail_btn_bg_05.png"><b>{{ trans('front/product.share') }}</b></a>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
                                 <div class="box">
                                 	<div class="bg"><img src="/images/detail_bg_002.png"></div>
                                     <div class="info">
-                                        <div class="label">产品名称</div>
+                                        <div class="label">{{ trans('front/product.product_name') }}</div>
                                         <div class="desc">
                                             {{ $product->nameShow }}
                                         </div>
@@ -193,6 +193,9 @@
 </div>
 
 <div id="contact_form" class="contact_form">
+    <input type="hidden" name="none" class="askSuccess" value="{{ trans('front/product.ask_success') }}" />
+    <input type="hidden" name="none" class="errMsg" value="{{ trans('front/product.err_msg') }}" />
+    <input type="hidden" name="none" class="notifyAdm" value="{{ trans('front/product.notify_adm') }}" />
     <form action="/front/contact" method="post" class="contact">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <input type="hidden" name="companyId" value="{{ $company->id }}" />
@@ -201,22 +204,22 @@
     	<div class="close_div"><button class="btn_close"><img src="/images/icon_close.svg"></button></div>
 		<div class="form_div">
         	<div class="item">
-        		<input type="text" name="companyName" placeholder="公司名称">
+        		<input type="text" name="companyName" placeholder="{{ trans('front/product.company_name') }}">
             </div>
         	<div class="item">
         		<input type="text" name="email" placeholder="Email">
             </div>
             <div class="item">
-        		<input type="text" name="name" placeholder="联络人">
+        		<input type="text" name="name" placeholder="{{ trans('front/product.contact_name') }}">
             </div>
             <div class="item">
-        		<input type="text" name="phone" placeholder="连络电话">
+        		<input type="text" name="phone" placeholder="{{ trans('front/product.phone') }}">
             </div>
             <div class="item">
-            	<textarea name="content" placeholder="问题内容"></textarea>        		
+            	<textarea name="content" placeholder="{{ trans('front/product.content') }}"></textarea>        		
             </div>
             <div class="item action">
-        		<button>提 交<i></i></button>
+        		<button>{{ trans('front/product.submit') }}<i></i></button>
             </div>
         </div>
 	</div>

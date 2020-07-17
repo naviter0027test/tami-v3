@@ -47,12 +47,14 @@ $(document).ready(function() {
         $('[name=productId]').val(productId);
         var formData = $(this).serialize();
         $.post($(this).attr('action'), formData, function(data) {
-            console.log(data);
+            var askSuccess = $('.askSuccess').val();
+            var errMsg = $('.errMsg').val();
+            var notifyAdm = $('.notifyAdm').val();
             if(data['result'] == true) {
-                alert('询问成功，静待厂商回覆');
+                alert(askSuccess);
                 location.href = "/";
             } else {
-                alert('错误讯息:'+ data['msg'] +' 请截图并告知系统管理者');
+                alert(errMsg+ ':'+ data['msg'] +' '+ notifyAdm);
             }
         });
         return false;
