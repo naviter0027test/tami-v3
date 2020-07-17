@@ -15,29 +15,66 @@ class FrontController extends Controller
 {
     public function index(Request $request) {
         $params = $request->all();
-        if(isset($params['lan']) == false && Session::has('lan') == true)
+        if(isset($params['lan']) == false && Session::has('lan') == true) {
             $params['lan'] = Session::get('lan');
-        else if(isset($params['lan']) == false)
-            $params['lan'] = 'CN';
-        else
+            \App::setLocale($params['lan']);
+        }
+        else if(isset($params['lan']) == false) {
+            $params['lan'] = 'cn';
+            \App::setLocale($params['lan']);
+        }
+        else {
             Session::put('lan', $params['lan']);
+            \App::setLocale($params['lan']);
+        }
         $companyRepository = new CompanyRepository();
         $params['companyAreas'] = $companyRepository->getAreaWithCompany();
         $watchAmount = env('WATCH_AMOUNT', 0);
         $this->setEnvironmentValue(['WATCH_AMOUNT' => ++$watchAmount]);
         $params['watchAmount'] = str_pad($watchAmount, 5, '0', STR_PAD_LEFT);
+
+        foreach ($params['companyAreas'] as $companyArea) {
+            $params['companyAreas'][$companyArea->name] = $companyArea;
+            foreach ($params['companyAreas'][$companyArea->name]['companies'] as $i => $company) {
+                switch($params['lan']) {
+                case 'cn':
+                    $params['companyAreas'][$companyArea->name]['companies'][$i]->nameShow = $company->name;
+                    break;
+                case 'en':
+                    $params['companyAreas'][$companyArea->name]['companies'][$i]->nameShow = $company->nameEn;
+                    break;
+                }
+            }
+        }
+
+        switch($params['lan']) {
+        case 'cn':
+            $params['logo'] = 'images/home_logo.gif';
+            $params['logoMobile'] = 'images/home_logo_mobile.png';
+            break;
+        case 'en':
+            $params['logo'] = 'images/home_logo_e2.gif';
+            $params['logoMobile'] = 'images/home_logo_mobile.png';
+            break;
+        }
         
         return view('front.index', ['result' => $params]);
     }
 
     public function company(Request $request, $companyId) {
         $params = $request->all();
-        if(isset($params['lan']) == false && Session::has('lan') == true)
+        if(isset($params['lan']) == false && Session::has('lan') == true) {
             $params['lan'] = Session::get('lan');
-        else if(isset($params['lan']) == false)
-            $params['lan'] = 'CN';
-        else
+            \App::setLocale($params['lan']);
+        }
+        else if(isset($params['lan']) == false) {
+            $params['lan'] = 'cn';
+            \App::setLocale($params['lan']);
+        }
+        else {
             Session::put('lan', $params['lan']);
+            \App::setLocale($params['lan']);
+        }
         $companyRepository = new CompanyRepository();
         $company = $companyRepository->getById($companyId);
         if(trim($company->contactLink4) == '')
@@ -66,10 +103,10 @@ class FrontController extends Controller
             break;
         }
         switch($params['lan']) {
-        case 'CN':
+        case 'cn':
             $company->nameShow = $company->name;
             break;
-        case 'EN':
+        case 'en':
             $company->nameShow = $company->nameEn;
             break;
         }
@@ -78,21 +115,27 @@ class FrontController extends Controller
 
     public function product(Request $request, $companyId) {
         $params = $request->all();
-        if(isset($params['lan']) == false && Session::has('lan') == true)
+        if(isset($params['lan']) == false && Session::has('lan') == true) {
             $params['lan'] = Session::get('lan');
-        else if(isset($params['lan']) == false)
-            $params['lan'] = 'CN';
-        else
+            \App::setLocale($params['lan']);
+        }
+        else if(isset($params['lan']) == false) {
+            $params['lan'] = 'cn';
+            \App::setLocale($params['lan']);
+        }
+        else {
             Session::put('lan', $params['lan']);
+            \App::setLocale($params['lan']);
+        }
         $companyRepository = new CompanyRepository();
         $company = $companyRepository->getById($companyId);
         if(trim($company->contactLink4) == '')
             $company->contactLink4 = '#';
         switch($params['lan']) {
-        case 'CN':
+        case 'cn':
             $company->nameShow = $company->name;
             break;
-        case 'EN':
+        case 'en':
             $company->nameShow = $company->nameEn;
             break;
         }
@@ -101,11 +144,11 @@ class FrontController extends Controller
         $products = $productRepository->getByCompanyId($companyId);
         foreach ($products as $i => $product) {
             switch($params['lan']) {
-            case 'CN':
+            case 'cn':
                 $products[$i]->nameShow = $product->name;
                 $products[$i]->infoShow = $product->info;
                 break;
-            case 'EN':
+            case 'en':
                 $products[$i]->nameShow = $product->nameEn;
                 $products[$i]->infoShow = $product->infoEn;
                 break;

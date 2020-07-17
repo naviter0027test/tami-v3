@@ -1,8 +1,6 @@
 var infoPathCount = 0;
 $(document).ready(function() {
     var infoPathLen = $('.infoPath').length;
-    $('.infoPathImg').css('width', '331px');
-    $('.infoPathImg').css('height', '162px');
     setInterval(function() {
         if(infoPathLen == 0)
             return;

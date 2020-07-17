@@ -298,13 +298,6 @@ class CompanyRepository
                 ->where('Company.active', '=', 1)
                 ->get();
         }
-
-        foreach ($companyAreas as $companyArea) {
-            $companyAreas[$companyArea->name] = $companyArea;
-            foreach ($companyAreas[$companyArea->name]['companies'] as $i => $company) {
-                $companyAreas[$companyArea->name]['companies'][$i]->nameShow = $company->name;
-            }
-        }
         return $companyAreas;
     }
 }

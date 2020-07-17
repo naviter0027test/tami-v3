@@ -33,7 +33,7 @@
                     <input type="file" name="logo" /> </p>
                 <h5>E-mail</h5>
                 <p> <input type="text" name="email" value="{{ $result['company']->email }}" /> </p>
-                <h5>點亮資訊1</h5>
+                <h5>點亮資訊1 (建議寬高: 475x230)</h5>
                 <p>
                 @if($result['company']->infoPath1 != '' && $result['company']->infoMode1 == 1)
                     <img src="/uploads{{ $result['company']->infoPath1 }}" class="custPic" /> <br />
@@ -50,7 +50,7 @@
                     <input type="file" name="infoPath1" /> 
                     <input type="text" name="infoVideo1" /> 
                 </p>
-                <h5>點亮資訊2</h5>
+                <h5>點亮資訊2 (建議寬高: 475x230)</h5>
                 <p>
                 @if($result['company']->infoPath2 != '' && $result['company']->infoMode2 == 1)
                     <img src="/uploads{{ $result['company']->infoPath2 }}" class="custPic" /> <br />
@@ -67,7 +67,7 @@
                     <input type="file" name="infoPath2" /> 
                     <input type="text" name="infoVideo2" /> 
                 </p>
-                <h5>點亮資訊3</h5>
+                <h5>點亮資訊3 (建議寬高: 475x230)</h5>
                 <p>
                 @if($result['company']->infoPath3 != '' && $result['company']->infoMode3 == 1)
                     <img src="/uploads{{ $result['company']->infoPath3 }}" class="custPic" /> <br />
@@ -84,7 +84,7 @@
                     <input type="file" name="infoPath3" /> 
                     <input type="text" name="infoVideo3" /> 
                 </p>
-                <h5>點亮資訊4</h5>
+                <h5>點亮資訊4 (建議寬高: 475x230)</h5>
                 <p>
                 @if($result['company']->infoPath4 != '' && $result['company']->infoMode4 == 1)
                     <img src="/uploads{{ $result['company']->infoPath4 }}" class="custPic" /> <br />
@@ -101,7 +101,7 @@
                     <input type="file" name="infoPath4" /> 
                     <input type="text" name="infoVideo4" /> 
                 </p>
-                <h5>點亮資訊5</h5>
+                <h5>點亮資訊5 (建議寬高: 475x230)</h5>
                 <p>
                 @if($result['company']->infoPath5 != '' && $result['company']->infoMode5 == 1)
                     <img src="/uploads{{ $result['company']->infoPath5 }}" class="custPic" /> <br />

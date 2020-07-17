@@ -6,7 +6,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>TAMI 線上展</title>
+<title>{{ trans('front/common.tami_online') }}</title>
 
 <link rel="stylesheet" type="text/css" href="owl.carousel/owl.carousel.css">
 <link href="css/style.css" rel="stylesheet">
@@ -16,11 +16,11 @@
 <body class="body_home">
 
 <div class="home_list">
-	<div class="visited">浏览人数：{{ $result['watchAmount'] }}</div>
+	<div class="visited">{{ trans('front/index.browse_amount') }}：{{ $result['watchAmount'] }}</div>
 	<div class="transform">
         <div class="outer">    	
             <div class="home_title">
-                <div class="logo"><img src="images/home_logo.gif" class="web"><img src="images/home_logo_mobile.png" class="mobile"></div>
+                <div class="logo"><img src="{{ $result['logo'] }}" class="web"><img src="{{ $result['logoMobile'] }}" class="mobile"></div>
                 <div class="info">
                     <span>2020年</span>
                     广州国际鞋类<br />
@@ -31,7 +31,7 @@
             <div class="mobile_div">  
             	<div class="overly" title="Close with clicked !!" alt="Close with clicked !!"></div>
                 <div class="mobile_black"><img src="images/icon_back_arrow_mobile.svg"></div>
-                <div class="version"><a href="?lan=CN" class="active">简中</a><a href="?lan=EN">EN</a></div>                
+                <div class="version"><a href="?lan=cn" class="active">简中</a><a href="?lan=en">EN</a></div>                
                 <div id="block01" class="block_img" data-id="popup01">
                     <img src="images/platform_01_block.png" class="block"/>
                     <img src="images/platform_01_title.png" class="title"/>
@@ -45,7 +45,7 @@
                         <div class="block01_animate"><img src="images/platform_01_03.png"></div> 
                         <div class="block01_animate"><img src="images/platform_01_02.png"></div>                                           
                     </div>
-                    <div class="mobile_title">缝纫机</div>
+                    <div class="mobile_title">{{ trans('front/index.commpany_area4') }}</div>
                 </div>
                 <div id="block02" class="block_img" data-id="popup02">
                     <img src="images/platform_02_block.png" class="block"/>
@@ -55,7 +55,7 @@
                         <div class="block02_animate"><img src="images/platform_02_02.png"></div>
                         <div class="block02_animate"><img src="images/platform_02_03.png"></div>
                     </div>
-                    <div class="mobile_title">鞋底加工及橡塑胶制鞋设备</div>
+                    <div class="mobile_title">{{ trans('front/index.commpany_area2') }}</div>
                 </div>
                 <div id="block03" class="block_img" data-id="popup03">
                     <img src="images/platform_03_block.png" class="block"/>
@@ -72,7 +72,7 @@
                         <div class="block03_animate"><img src="images/platform_03_03.png"></div> 
                         <div class="block03_animate"><img src="images/platform_03_02.png"></div>                    
                     </div>
-                    <div class="mobile_title">鞋面成型及鞋帮机</div>
+                    <div class="mobile_title">{{ trans('front/index.commpany_area3') }}</div>
                 </div>
                 <div id="block04" class="block_img" data-id="popup04">
                     <img src="images/platform_04_block.png" class="block"/>
@@ -89,14 +89,14 @@
                         <div class="block04_animate"><img src="images/platform_04_03.png"></div>
                         <div class="block04_animate"><img src="images/platform_04_02.png"></div>
                     </div>
-                    <div class="mobile_title">自动化设备与整厂规划</div>
+                    <div class="mobile_title">{{ trans('front/index.commpany_area1') }}</div>
                 </div>
            </div>     
            
             	
                 <div id="popup01" class="popup_block">
                     <div class="box">
-                        <div class="title">缝纫机</div>
+                        <div class="title">{{ trans('front/index.commpany_area4') }}</div>
                         <div class="list_item">
                         @foreach($result['companyAreas']['缝纫机']['companies'] as $company)
                             <div class="item">
@@ -124,7 +124,7 @@
                 </div>
                 <div id="popup02" class="popup_block">
                     <div class="box">
-                        <div class="title">鞋底加工及橡塑胶制鞋设备</div>
+                        <div class="title">{{ trans('front/index.commpany_area2') }}</div>
                         <div class="mobile_arrow"><img src="images/icon_arrow_down_white.svg"></div>
                         <div class="list_item">
                         @foreach($result['companyAreas']['鞋底加工及橡塑胶制鞋设备']['companies'] as $company)
@@ -216,7 +216,7 @@
                 </div>
                 <div id="popup03" class="popup_block">
                     <div class="box">
-                        <div class="title">鞋面成型及鞋帮机</div>
+                        <div class="title">{{ trans('front/index.commpany_area3') }}</div>
                         <div class="mobile_arrow"><img src="images/icon_arrow_down_white.svg"></div>
                         <div class="list_item">
                         @foreach($result['companyAreas']['鞋面成型及鞋帮机']['companies'] as $company)
@@ -327,7 +327,7 @@
                 </div>
                 <div id="popup04" class="popup_block">
                     <div class="box">
-                        <div class="title">自动化设备与整厂规划</div>
+                        <div class="title">{{ trans('front/index.commpany_area1') }}</div>
                         <div class="mobile_arrow"><img src="images/icon_arrow_down_white.svg"></div>
                         <div class="list_item">
                         @foreach($result['companyAreas']['自动化设备与整厂规划']['companies'] as $company)
