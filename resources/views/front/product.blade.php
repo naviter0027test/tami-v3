@@ -204,19 +204,19 @@
     	<div class="close_div"><button class="btn_close"><img src="/images/icon_close.svg"></button></div>
 		<div class="form_div">
         	<div class="item">
-        		<input type="text" name="companyName" placeholder="{{ trans('front/product.company_name') }}">
+        		<input type="text" name="companyName" placeholder="{{ trans('front/product.company_name') }}" required>
             </div>
         	<div class="item">
-        		<input type="text" name="email" placeholder="Email">
+        		<input type="text" name="email" placeholder="Email" required>
             </div>
             <div class="item">
-        		<input type="text" name="name" placeholder="{{ trans('front/product.contact_name') }}">
+        		<input type="text" name="name" placeholder="{{ trans('front/product.contact_name') }}" required>
             </div>
             <div class="item">
-        		<input type="text" name="phone" placeholder="{{ trans('front/product.phone') }}">
+        		<input type="text" name="phone" placeholder="{{ trans('front/product.phone') }}" required>
             </div>
             <div class="item">
-            	<textarea name="content" placeholder="{{ trans('front/product.content') }}"></textarea>        		
+            	<textarea name="content" placeholder="{{ trans('front/product.content') }}" required></textarea>        		
             </div>
             <div class="item action">
         		<button>{{ trans('front/product.submit') }}<i></i></button>
