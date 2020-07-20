@@ -332,7 +332,8 @@ class CompanyRepository
         $companyAreas = CompanyArea::orderBy('sort', 'asc')
             ->get();
         foreach ($companyAreas as $i => $companyArea) {
-            $companyAreas[$i]['companies'] = Company::where('companyAreaId', '=', $companyArea->id)
+            $companyAreas[$i]['companies'] = Company::join('CompanyAreaRelation', 'CompanyAreaRelation.companyId', '=', 'Company.id')
+                ->where('CompanyAreaRelation.companyAreaId', '=', $companyArea->id)
                 ->where('Company.active', '=', 1)
                 ->get();
         }

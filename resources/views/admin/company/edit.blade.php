@@ -42,6 +42,7 @@
                 @endif
                 @foreach($result['company']->companyAreaIds as $companyAreaId)
                     <select type="text" name="companyAreaId[]" class="companyAreaId" > 
+                        <option value=""></option>
                     @foreach($result['companyAreas'] as $companyArea)
                         <option value="{{ $companyArea->id }}" {{ $companyAreaId == $companyArea->id ? 'selected="selected"' : '' }}>{{ $companyArea->name }}</option>
                     @endforeach

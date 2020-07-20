@@ -9,6 +9,7 @@ function companyAreaIdChange() {
     if(isAllHave == true) {
         var companyAreaClone = $($('.companyAreaId')[0]).clone();
         $(companyAreaClone).removeAttr('required');
+        $(companyAreaClone).val('');
         $(companyAreaClone).on('change', companyAreaIdChange);
         $('.companyAreaP').append(companyAreaClone);
     }
