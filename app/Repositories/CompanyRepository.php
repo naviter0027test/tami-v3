@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Company;
 use App\CompanyArea;
+use App\CompanyAreaRelation;
 use Exception;
 use Config;
 
@@ -38,7 +39,7 @@ class CompanyRepository
         $company->nameEn = isset($params['nameEn']) ? $params['nameEn'] : '';
         $company->email = isset($params['email']) ? $params['email'] : '';
         $company->active = isset($params['active']) ? $params['active'] : 1;
-        $company->companyAreaId = isset($params['companyAreaId']) ? $params['companyAreaId'] : 0;
+        //$company->companyAreaId = isset($params['companyAreaId']) ? $params['companyAreaId'] : 0;
         $company->infoMode1 = isset($params['infoMode1']) ? $params['infoMode1'] : 0;
         if($company->infoMode1 == 2)
             $company->infoPath1 = isset($params['infoVideo1']) ? $params['infoVideo1'] : '';
@@ -63,6 +64,21 @@ class CompanyRepository
         $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
         $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
         $company->save();
+
+        if(isset($params['companyAreaId']) && count($params['companyAreaId']) > 0) {
+            $companyAreaIdArr = [];
+            CompanyAreaRelation::where('companyId', '=', $company->id)
+                ->delete();
+            foreach($params['companyAreaId'] as $companyAreaId) {
+                if((int) $companyAreaId > 0 && in_array($companyAreaId, $companyAreaIdArr) == false) {
+                    $areaRelation = new CompanyAreaRelation();
+                    $areaRelation->companyId = $company->id;
+                    $areaRelation->companyAreaId = $companyAreaId;
+                    $areaRelation->save();
+                    $companyAreaIdArr[] = $companyAreaId;
+                }
+            }
+        }
 
         $root = config('filesystems')['disks']['uploads']['root'];
         $path = date('/Y/m'). '/';
@@ -142,6 +158,13 @@ class CompanyRepository
         if(isset($company->id) == false) {
             throw new Exception("廠商不存在 id:[$id]");
         }
+        $companyAreas = CompanyAreaRelation::where('companyId', '=', $id)
+            ->get();
+        $companyAreaIdArr = [];
+        foreach($companyAreas as $companyArea) {
+            $companyAreaIdArr[] = $companyArea->companyAreaId;
+        }
+        $company->companyAreaIds = $companyAreaIdArr;
         if(trim($company->infoPath1) != "" && $company->infoMode1 == 2) {
             $company->infoPath1 = substr($company->infoPath1, 17);
         }
@@ -173,7 +196,7 @@ class CompanyRepository
         $company->email = isset($params['email']) ? $params['email'] : '';
         if(isset($params['active']) == true)
             $company->active = isset($params['active']) ? $params['active'] : 1;
-        $company->companyAreaId = isset($params['companyAreaId']) ? $params['companyAreaId'] : 0;
+        //$company->companyAreaId = isset($params['companyAreaId']) ? $params['companyAreaId'] : 0;
         $company->infoMode1 = isset($params['infoMode1']) ? $params['infoMode1'] : 0;
         if(isset($params['infoVideo1']) && trim($params['infoVideo1']) != '' && $company->infoMode1 == 2)
             $company->infoPath1 = isset($params['infoVideo1']) ? $params['infoVideo1'] : '';
@@ -198,6 +221,21 @@ class CompanyRepository
         $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
         $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
         $company->save();
+
+        if(isset($params['companyAreaId']) && count($params['companyAreaId']) > 0) {
+            $companyAreaIdArr = [];
+            CompanyAreaRelation::where('companyId', '=', $company->id)
+                ->delete();
+            foreach($params['companyAreaId'] as $companyAreaId) {
+                if((int) $companyAreaId > 0 && in_array($companyAreaId, $companyAreaIdArr) == false) {
+                    $areaRelation = new CompanyAreaRelation();
+                    $areaRelation->companyId = $company->id;
+                    $areaRelation->companyAreaId = $companyAreaId;
+                    $areaRelation->save();
+                    $companyAreaIdArr[] = $companyAreaId;
+                }
+            }
+        }
 
         $root = config('filesystems')['disks']['uploads']['root'];
         $path = date('/Y/m'). '/';

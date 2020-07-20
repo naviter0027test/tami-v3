@@ -31,12 +31,22 @@
                 </p>
             @if(isset($result['companyAreas']) && count($result['companyAreas']) > 0)
                 <h5>區域選擇</h5>
-                <p> 
-                    <select type="text" name="companyAreaId"> 
+                <p class="companyAreaP"> 
+                @if(count($result['company']->companyAreaIds) == 0)
+                    <select type="text" name="companyAreaId[]" class="companyAreaId" required> 
+                        <option value=""></option>
                     @foreach($result['companyAreas'] as $companyArea)
-                        <option value="{{ $companyArea->id }}" {{ $result['company']->companyAreaId == $companyArea->id ? 'selected="selected"' : '' }}>{{ $companyArea->name }}</option>
+                        <option value="{{ $companyArea->id }}">{{ $companyArea->name }}</option>
                     @endforeach
                     </select> 
+                @endif
+                @foreach($result['company']->companyAreaIds as $companyAreaId)
+                    <select type="text" name="companyAreaId[]" class="companyAreaId" > 
+                    @foreach($result['companyAreas'] as $companyArea)
+                        <option value="{{ $companyArea->id }}" {{ $companyAreaId == $companyArea->id ? 'selected="selected"' : '' }}>{{ $companyArea->name }}</option>
+                    @endforeach
+                    </select> 
+                @endforeach
                 </p>
             @endif
                 <h5>Logo </h5>

@@ -1,3 +1,18 @@
+function companyAreaIdChange() {
+    var companyAreaLen = $('.companyAreaId').length;
+    var isAllHave = true;
+    for(i = 0; i < companyAreaLen;++i) {
+        console.log($($('.companyAreaId')[i]).val().trim());
+        if($($('.companyAreaId')[i]).val().trim() == '')
+            isAllHave = false;
+    }
+    if(isAllHave == true) {
+        var companyAreaClone = $($('.companyAreaId')[0]).clone();
+        $(companyAreaClone).removeAttr('required');
+        $(companyAreaClone).on('change', companyAreaIdChange);
+        $('.companyAreaP').append(companyAreaClone);
+    }
+}
 $(document).ready(function() {
     $('.infoMode').on('change', function() {
         var infoNum = $(this).attr('infoNum');
@@ -38,4 +53,7 @@ $(document).ready(function() {
     });
 
     $('.frontMode').trigger('change');
+
+    $('.companyAreaId').on('change', companyAreaIdChange);
+    $('.companyAreaId').trigger('change');
 });

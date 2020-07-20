@@ -34,8 +34,9 @@
                 </p>
             @if(isset($companyAreas) && count($companyAreas) > 0)
                 <h5>區域選擇</h5>
-                <p> 
-                    <select type="text" name="companyAreaId"> 
+                <p class="companyAreaP"> 
+                    <select type="text" name="companyAreaId[]" class="companyAreaId" required> 
+                        <option value=""></option>
                     @foreach($companyAreas as $companyArea)
                         <option value="{{ $companyArea->id }}">{{ $companyArea->name }}</option>
                     @endforeach
