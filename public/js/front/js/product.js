@@ -35,7 +35,7 @@ $(document).ready(function() {
         else 
             ++nowProductNum;
         pdfHref = $('.pdf'+nowProductNum).val();
-        if(pdfHref == '')
+        if(pdfHref == '' || typeof(pdfHref) == 'undefined')
             $('.btn_cate').attr('href', '#');
         else
             $('.btn_cate').attr('href', '/product'+pdfHref);
