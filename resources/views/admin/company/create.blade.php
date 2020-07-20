@@ -42,7 +42,7 @@
                     </select> 
                 </p>
             @endif
-                <h5>點亮資訊1 (建議寬高: 475x230)</h5>
+                <h5>點亮資訊1 (建議寬高: 475x230, Max:5M)</h5>
                 <p> 
                     <select type="text" name="infoMode1" class="infoMode hidden" infoNum="1"> 
                         <option value="1">圖片上傳</option>
@@ -51,7 +51,7 @@
                     <input type="file" name="infoPath1" /> 
                     <input type="text" name="infoVideo1" /> 
                 </p>
-                <h5>點亮資訊2 (建議寬高: 475x230)</h5>
+                <h5>點亮資訊2 (建議寬高: 475x230, Max:5M)</h5>
                 <p> 
                     <select type="text" name="infoMode2" class="infoMode hidden" infoNum="2"> 
                         <option value="1">圖片上傳</option>
@@ -60,7 +60,7 @@
                     <input type="file" name="infoPath2" /> 
                     <input type="text" name="infoVideo2" /> 
                 </p>
-                <h5>點亮資訊3 (建議寬高: 475x230)</h5>
+                <h5>點亮資訊3 (建議寬高: 475x230, Max:5M)</h5>
                 <p> 
                     <select type="text" name="infoMode3" class="infoMode hidden" infoNum="3"> 
                         <option value="1">圖片上傳</option>
@@ -69,7 +69,7 @@
                     <input type="file" name="infoPath3" /> 
                     <input type="text" name="infoVideo3" /> 
                 </p>
-                <h5>點亮資訊4 (建議寬高: 475x230)</h5>
+                <h5>點亮資訊4 (建議寬高: 475x230, Max:5M)</h5>
                 <p> 
                     <select type="text" name="infoMode4" class="infoMode hidden" infoNum="4"> 
                         <option value="1">圖片上傳</option>
@@ -78,7 +78,7 @@
                     <input type="file" name="infoPath4" /> 
                     <input type="text" name="infoVideo4" /> 
                 </p>
-                <h5>點亮資訊5 (建議寬高: 475x230)</h5>
+                <h5>點亮資訊5 (建議寬高: 475x230, Max:5M)</h5>
                 <p> 
                     <select type="text" name="infoMode5" class="infoMode hidden" infoNum="5"> 
                         <option value="1">圖片上傳</option>
