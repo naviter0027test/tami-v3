@@ -335,6 +335,7 @@ class CompanyRepository
             $companyAreas[$i]['companies'] = Company::join('CompanyAreaRelation', 'CompanyAreaRelation.companyId', '=', 'Company.id')
                 ->where('CompanyAreaRelation.companyAreaId', '=', $companyArea->id)
                 ->where('Company.active', '=', 1)
+                ->select(['Company.*'])
                 ->get();
         }
         return $companyAreas;
