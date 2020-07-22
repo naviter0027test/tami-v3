@@ -101,12 +101,12 @@
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />
                     <select type="text" name="frontMode" class="frontMode "> 
-                        <option value="1" >樣式1</option>
-                        <option value="2" >樣式2</option>
-                        <option value="3" >樣式3</option>
-                        <option value="4" >樣式4</option>
-                        <option value="5" >樣式5</option>
-                        <option value="6" >樣式6</option>
+                        <option value="1" >黑</option>
+                        <option value="2" >藍</option>
+                        <option value="3" >綠</option>
+                        <option value="4" >紅</option>
+                        <option value="5" >紫</option>
+                        <option value="6" >黃</option>
                     </select> 
                 </p>
                 <p class=""> <button class="btn">新增</button> </p>

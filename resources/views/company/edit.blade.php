@@ -130,12 +130,12 @@
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />
                     <select type="text" name="frontMode" class="frontMode "> 
-                        <option value="1" {{ $result['company']->frontMode == '1' ? 'selected="selected"' : '' }} >樣式1</option>
-                        <option value="2" {{ $result['company']->frontMode == '2' ? 'selected="selected"' : '' }} >樣式2</option>
-                        <option value="3" {{ $result['company']->frontMode == '3' ? 'selected="selected"' : '' }} >樣式3</option>
-                        <option value="4" {{ $result['company']->frontMode == '4' ? 'selected="selected"' : '' }} >樣式4</option>
-                        <option value="5" {{ $result['company']->frontMode == '5' ? 'selected="selected"' : '' }} >樣式5</option>
-                        <option value="6" {{ $result['company']->frontMode == '6' ? 'selected="selected"' : '' }} >樣式6</option>
+                        <option value="1" {{ $result['company']->frontMode == '1' ? 'selected="selected"' : '' }} >黑</option>
+                        <option value="2" {{ $result['company']->frontMode == '2' ? 'selected="selected"' : '' }} >藍</option>
+                        <option value="3" {{ $result['company']->frontMode == '3' ? 'selected="selected"' : '' }} >綠</option>
+                        <option value="4" {{ $result['company']->frontMode == '4' ? 'selected="selected"' : '' }} >紅</option>
+                        <option value="5" {{ $result['company']->frontMode == '5' ? 'selected="selected"' : '' }} >紫</option>
+                        <option value="6" {{ $result['company']->frontMode == '6' ? 'selected="selected"' : '' }} >黃</option>
                     </select> 
                 </p>
                 <p class=""> <button class="btn">更改</button> </p>

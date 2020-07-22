@@ -2,13 +2,9 @@ var infoPathCount = 0;
 function col02ImgImgResize() {
     var col02Width = $('.col02 .img').css('width');
     console.log(col02Width);
+    col02Width = parseInt(col02Width);
     var col02Height = $('.col02').css('height');
-    console.log(col02Height);
-    if(parseInt(col02Height) > 290)
-        col02Height = parseInt(col02Height) - 90;
-    else
-        col02Height = parseInt(col02Height) - 70;
-    console.log(col02Height);
+    col02Height = col02Width / 2 - 10;
     $('.col02 .img img').css('height', col02Height+ 'px');
 }
 
