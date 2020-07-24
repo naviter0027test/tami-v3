@@ -124,6 +124,8 @@ class UserController extends Controller
         ];
         if($request->hasFile('logo'))
             $files['logo'] = $request->file('logo');
+        if($request->hasFile('logo2'))
+            $files['logo2'] = $request->file('logo2');
         if($request->hasFile('infoPath1'))
             $files['infoPath1'] = $request->file('infoPath1');
         if($request->hasFile('infoPath2'))
@@ -134,6 +136,8 @@ class UserController extends Controller
             $files['infoPath4'] = $request->file('infoPath4');
         if($request->hasFile('infoPath5'))
             $files['infoPath5'] = $request->file('infoPath5');
+        if($request->hasFile('companyRightInfo'))
+            $files['companyRightInfo'] = $request->file('companyRightInfo');
 
         try {
             $companyRepository = new CompanyRepository();

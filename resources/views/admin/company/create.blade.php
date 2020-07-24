@@ -23,6 +23,8 @@
                 <p> <input type="text" name="nameEn" /> </p>
                 <h5>Logo</h5>
                 <p> <input type="file" name="logo" /> </p>
+                <h5>前台公司頁 Logo </h5>
+                <p> <input type="file" name="logo2" /> </p>
                 <h5>E-mail</h5>
                 <p> <input type="text" name="email" /> </p>
                 <h5>是否啟用</h5>
@@ -88,7 +90,8 @@
                     <input type="file" name="infoPath5" /> 
                     <input type="text" name="infoVideo5" /> 
                 </p>
-                </p>
+                <h5>前台公司頁右下圖 (Max: 5M)</h5>
+                <p> <input type="file" name="companyRightInfo" /> </p>
                 <h5>聯絡方式 tel</h5>
                 <p> <input type="text" name="contactLink1" /> </p>
                 <h5>聯絡方式 fax</h5>

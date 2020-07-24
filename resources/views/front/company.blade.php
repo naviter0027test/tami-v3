@@ -19,7 +19,7 @@
 	<div class="transform">
         <a href="/" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
         <div class="outer">
-            <div class="logo"><div><img src="/uploads{{ $company->logo }}"></div></div>
+            <div class="logo"><div><img src="/uploads{{ $company->logo2 }}"></div></div>
             <div class="company_name"><div>{{ $company->nameShow }}</div></div>
             <div class="info">
                 <div class="col01">
@@ -75,7 +75,13 @@
                     @endif
                 </div>
                 <div class="col03">
-                    <div class="img"><a href="#"><img src="/images/company_img002.jpg"></a></div>
+                    <div class="img"><a href="#">
+                    @if(trim($company->companyRightInfo) == '')
+                        <img src="/images/company_img002.jpg">
+                    @else
+                        <img src="/uploads{{ $company->companyRightInfo }}">
+                    @endif
+                    </a></div>
                 </div>
             </div>
             <div class="action">

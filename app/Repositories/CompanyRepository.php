@@ -89,6 +89,13 @@ class CompanyRepository
             $company->save();
             $files['logo']->move($root. $path, $filename);
         }
+        if(isset($files['logo2'])) {
+            $ext = $files['logo2']->getClientOriginalExtension();
+            $filename = $company->id. "_logo2.$ext";
+            $company->logo2 = $path. $filename;
+            $company->save();
+            $files['logo2']->move($root. $path, $filename);
+        }
         if(isset($files['infoPath1']) && $company->infoMode1 == 1) {
             $ext = $files['infoPath1']->getClientOriginalExtension();
             $filename = $company->id. "_companyInfo1.$ext";
@@ -123,6 +130,13 @@ class CompanyRepository
             $company->infoPath5 = $path. $filename;
             $company->save();
             $files['infoPath5']->move($root. $path, $filename);
+        }
+        if(isset($files['companyRightInfo'])) {
+            $ext = $files['companyRightInfo']->getClientOriginalExtension();
+            $filename = $company->id. "_companyRightInfo.$ext";
+            $company->companyRightInfo = $path. $filename;
+            $company->save();
+            $files['companyRightInfo']->move($root. $path, $filename);
         }
     }
 
@@ -246,6 +260,13 @@ class CompanyRepository
             $company->save();
             $files['logo']->move($root. $path, $filename);
         }
+        if(isset($files['logo2'])) {
+            $ext = $files['logo2']->getClientOriginalExtension();
+            $filename = $company->id. "_logo2.$ext";
+            $company->logo2 = $path. $filename;
+            $company->save();
+            $files['logo2']->move($root. $path, $filename);
+        }
         if(isset($files['infoPath1']) && $company->infoMode1 == 1) {
             $ext = $files['infoPath1']->getClientOriginalExtension();
             $filename = $company->id. "_companyInfo1.$ext";
@@ -280,6 +301,13 @@ class CompanyRepository
             $company->infoPath5 = $path. $filename;
             $company->save();
             $files['infoPath5']->move($root. $path, $filename);
+        }
+        if(isset($files['companyRightInfo'])) {
+            $ext = $files['companyRightInfo']->getClientOriginalExtension();
+            $filename = $company->id. "_companyRightInfo.$ext";
+            $company->companyRightInfo = $path. $filename;
+            $company->save();
+            $files['companyRightInfo']->move($root. $path, $filename);
         }
     }
 

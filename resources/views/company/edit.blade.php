@@ -31,6 +31,15 @@
                 @endif
                     更換如下:
                     <input type="file" name="logo" /> </p>
+                <h5>前台公司頁 Logo </h5>
+                <p>
+                @if($result['company']->logo2 != '')
+                    <img src="/uploads{{ $result['company']->logo2 }}" class="custPic" /> <br />
+                @else
+                    無<br />
+                @endif
+                    更換如下:
+                    <input type="file" name="logo2" /> </p>
                 <h5>E-mail</h5>
                 <p> <input type="text" name="email" value="{{ $result['company']->email }}" /> </p>
                 <h5>點亮資訊1 (建議寬高: 475x230, Max:5M)</h5>
@@ -118,6 +127,15 @@
                     <input type="file" name="infoPath5" /> 
                     <input type="text" name="infoVideo5" /> 
                 </p>
+                <h5>前台公司頁右下圖 (Max: 5M)</h5>
+                <p>
+                @if($result['company']->companyRightInfo != '')
+                    <img src="/uploads{{ $result['company']->companyRightInfo }}" class="custPic" /> <br />
+                @else
+                    無<br />
+                @endif
+                    更換如下:
+                    <input type="file" name="companyRightInfo" /> </p>
                 <h5>聯絡方式 tel</h5>
                 <p> <input type="text" name="contactLink1" value="{{ $result['company']->contactLink1 }}" /> </p>
                 <h5>聯絡方式 fax</h5>
