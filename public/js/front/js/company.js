@@ -10,6 +10,7 @@ function col02ImgImgResize() {
 
 $(document).ready(function() {
     var infoPathLen = $('.infoPath').length;
+    //$('.logo img').css('width', '11vw');
     setInterval(function() {
         if(infoPathLen == 0)
             return;

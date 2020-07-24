@@ -317,7 +317,11 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .home_list .outer #popup02{ left:7vw; top:3vw;}
 .home_list .outer #popup03{ left:52vw; top:0vw;}
 .home_list .outer #popup04{ left:28vw; top:0vw;}
-
+.home_list .outer .popup_block .box .list_item{
+	max-height: 110vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 .mobile_black{ display:none;z-index: 102; position: absolute; top: 0;}
 .mobile_black img{ height:48px; margin-left:15px; margin-top:15px; cursor:pointer;}
 .mobile_arrow{ text-align:center; display:none; padding:15px 0;}
@@ -434,7 +438,10 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 	
 	.home_list .outer .popup_block .box { padding: 15px 0px;}
 	.home_list .outer .popup_block .box .title{ font-size:24px;}
-	.home_list .outer #popup04{ top:-3vw;}
+	.home_list .outer #popup04{ top:-4vw;}
+	.home_list .outer .popup_block .box .list_item{
+		max-height: 133vh;		
+	}
 }
 
 @media screen and (max-width: 1280px){
