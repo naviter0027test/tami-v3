@@ -442,6 +442,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 	.home_list .outer .popup_block .box .list_item{
 		max-height: 133vh;		
 	}
+	.home_list .outer .home_title{ font-size:25px;}
 }
 
 @media screen and (max-width: 1280px){
@@ -472,7 +473,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 		top: calc(1280px * 0.21);
 	}
 	.product_detail .btn_back{ left:10px;}
-	
+	.home_list .outer .home_title{ font-size:23px;}
 }
 @media screen and (max-width: 1200px){
 	.body_company{ width:100%;}
