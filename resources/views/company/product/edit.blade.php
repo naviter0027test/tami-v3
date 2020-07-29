@@ -20,6 +20,8 @@
                 <p> <input type="text" name="name" value="{{ $result['product']->name }}" /> </p>
                 <h5>產品名稱(英文)</h5>
                 <p> <input type="text" name="nameEn" value="{{ $result['product']->nameEn }}" /> </p>
+                <h5>E-Mail</h5>
+                <p> <input type="text" name="email" value="{{ $result['product']->email }}" /> </p>
                 <h5>產品圖片</h5>
                 @if($result['product']->picture1 != '')
                     <img src="/product{{ $result['product']->picture1 }}" class="custPic" /> <br />
