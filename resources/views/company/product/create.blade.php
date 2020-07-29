@@ -13,24 +13,24 @@
             <h3>產品 - 新增</h3>
             <form method='post' action='/company/product/create' class='form1' enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <h5>產品名稱</h5>
+                <h5><span>產品名稱</span></h5>
                 <p> <input type="text" name="name" /> </p>
-                <h5>產品名稱(英文)</h5>
+                <h5><span>產品名稱(英文)</span></h5>
                 <p> <input type="text" name="nameEn" /> </p>
-                <h5>產品圖片</h5>
+                <h5><span>產品圖片</span></h5>
                 <p> <input type="file" name="picture1" /> </p>
-                <h5>亮點資訊</h5>
+                <h5><span>亮點資訊</span></h5>
                 <p> <textarea type="text" name="info" ></textarea> </p>
-                <h5>亮點資訊(英文)</h5>
+                <h5><span>亮點資訊(英文)</span></h5>
                 <p> <textarea type="text" name="infoEn" ></textarea> </p>
-                <h5>是否啟用</h5>
+                <h5><span>是否啟用</span></h5>
                 <p> 
                     <select type="text" name="active"> 
                         <option value="1">是</option>
                         <option value="0">否</option>
                     </select> 
                 </p>
-                <h5>DM(超連結)</h5>
+                <h5><span>DM(超連結)</span></h5>
                 <p> <input type="file" name="dm" /> </p>
 <!--
                 <h5>影片(超連結，非內嵌)</h5>

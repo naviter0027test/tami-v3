@@ -285,3 +285,16 @@ body {
 .content .nav .importCSV {
     display: none;
 }
+
+.content h5 span {
+    display: inline-block;
+    padding: 1px 8px 3px 10px;
+
+    font-size: 20px;
+    color: #eeeeee;
+    background: #0086b3;
+}
+
+.content .schematic {
+    width: 400px;
+}
