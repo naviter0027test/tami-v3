@@ -16,13 +16,13 @@
             @else
             <form method='post' action='/admin/company/edit/{{ $result['company']->id }}' companyId="{{ $result['company']->id }}" class='form1' enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <h5>帳號</h5>
+                <h5><span>帳號</span></h5>
                 <p> <input type="text" name="account" value="{{ $result['company']->account }}" /> </p>
-                <h5>廠商名稱</h5>
+                <h5><span>廠商名稱</span></h5>
                 <p> <input type="text" name="name" value="{{ $result['company']->name }}" /> </p>
-                <h5>廠商名稱(英文)</h5>
+                <h5><span>廠商名稱(英文)</span></h5>
                 <p> <input type="text" name="nameEn" value="{{ $result['company']->nameEn }}" /> </p>
-                <h5>是否啟用</h5>
+                <h5><span>是否啟用</span></h5>
                 <p> 
                     <select type="text" name="active"> 
                         <option value="1" {{ $result['company']->active == '1' ? 'selected="selected"' : '' }} >是</option>
@@ -30,7 +30,7 @@
                     </select> 
                 </p>
             @if(isset($result['companyAreas']) && count($result['companyAreas']) > 0)
-                <h5>區域選擇</h5>
+                <h5><span>區域選擇</span></h5>
                 <p class="companyAreaP"> 
                 @if(count($result['company']->companyAreaIds) == 0)
                     <select type="text" name="companyAreaId[]" class="companyAreaId" required> 
@@ -50,7 +50,7 @@
                 @endforeach
                 </p>
             @endif
-                <h5>Logo </h5>
+                <h5><span>Logo</span> </h5>
                 <p>
                 @if($result['company']->logo != '')
                     <img src="/uploads{{ $result['company']->logo }}" class="custPic" /> <br />
@@ -59,7 +59,7 @@
                 @endif
                     更換如下:
                     <input type="file" name="logo" /> </p>
-                <h5>前台公司頁 Logo </h5>
+                <h5><span>前台公司頁 Logo</span> </h5>
                 <p>
                 @if($result['company']->logo2 != '')
                     <img src="/uploads{{ $result['company']->logo2 }}" class="custPic" /> <br />
@@ -68,9 +68,11 @@
                 @endif
                     更換如下:
                     <input type="file" name="logo2" /> </p>
-                <h5>E-mail</h5>
+                <h5><span>E-mail</span></h5>
                 <p> <input type="text" name="email" value="{{ $result['company']->email }}" /> </p>
-                <h5>點亮資訊1 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊 如下圖，可放五張 (建議寬高: 475x230, Max:5M)</span></h5>
+                <img src="/images/company2020_07_24/company_info.png" class="schematic" />
+                <h5><span>點亮資訊1</span></h5>
                 <p>
                 @if($result['company']->infoPath1 != '' && $result['company']->infoMode1 == 1)
                     <img src="/uploads{{ $result['company']->infoPath1 }}" class="custPic" /> <br />
@@ -87,7 +89,7 @@
                     <input type="file" name="infoPath1" /> 
                     <input type="text" name="infoVideo1" /> 
                 </p>
-                <h5>點亮資訊2 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊2</span></h5>
                 <p>
                 @if($result['company']->infoPath2 != '' && $result['company']->infoMode2 == 1)
                     <img src="/uploads{{ $result['company']->infoPath2 }}" class="custPic" /> <br />
@@ -104,7 +106,7 @@
                     <input type="file" name="infoPath2" /> 
                     <input type="text" name="infoVideo2" /> 
                 </p>
-                <h5>點亮資訊3 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊3</span></h5>
                 <p>
                 @if($result['company']->infoPath3 != '' && $result['company']->infoMode3 == 1)
                     <img src="/uploads{{ $result['company']->infoPath3 }}" class="custPic" /> <br />
@@ -121,7 +123,7 @@
                     <input type="file" name="infoPath3" /> 
                     <input type="text" name="infoVideo3" /> 
                 </p>
-                <h5>點亮資訊4 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊4</span></h5>
                 <p>
                 @if($result['company']->infoPath4 != '' && $result['company']->infoMode4 == 1)
                     <img src="/uploads{{ $result['company']->infoPath4 }}" class="custPic" /> <br />
@@ -138,7 +140,7 @@
                     <input type="file" name="infoPath4" /> 
                     <input type="text" name="infoVideo4" /> 
                 </p>
-                <h5>點亮資訊5 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊5</span></h5>
                 <p>
                 @if($result['company']->infoPath5 != '' && $result['company']->infoMode5 == 1)
                     <img src="/uploads{{ $result['company']->infoPath5 }}" class="custPic" /> <br />
@@ -155,7 +157,10 @@
                     <input type="file" name="infoPath5" /> 
                     <input type="text" name="infoVideo5" /> 
                 </p>
-                <h5>前台公司頁右下圖 (Max: 5M)</h5>
+                <h5><span>前台公司頁右下圖 (建議寬高: 250x290, Max: 5M)</span></h5>
+                <h6>示意圖</h6>
+                <img src="/images/company2020_07_24/company_right_down.png" class="schematic" />
+                <h6></h6>
                 <p>
                 @if($result['company']->companyRightInfo != '')
                     <img src="/uploads{{ $result['company']->companyRightInfo }}" class="custPic" /> <br />
@@ -164,15 +169,15 @@
                 @endif
                     更換如下:
                     <input type="file" name="companyRightInfo" /> </p>
-                <h5>聯絡方式 tel</h5>
+                <h5><span>聯絡方式 tel</span></h5>
                 <p> <input type="text" name="contactLink1" value="{{ $result['company']->contactLink1 }}" /> </p>
-                <h5>聯絡方式 fax</h5>
+                <h5><span>聯絡方式 fax</span></h5>
                 <p> <input type="text" name="contactLink2" value="{{ $result['company']->contactLink2 }}" /> </p>
-                <h5>聯絡方式 add</h5>
+                <h5><span>聯絡方式 add</span></h5>
                 <p> <input type="text" name="contactLink3" value="{{ $result['company']->contactLink3 }}" /> </p>
-                <h5>官網網址 web</h5>
+                <h5><span>官網網址 web</span></h5>
                 <p> <input type="text" name="contactLink4" value="{{ $result['company']->contactLink4 }}" /> </p>
-                <h5>前台樣式</h5>
+                <h5><span>前台樣式</span></h5>
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />
                     <select type="text" name="frontMode" class="frontMode "> 

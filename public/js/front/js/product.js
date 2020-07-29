@@ -13,6 +13,7 @@ $(document).ready(function() {
         var copyText = document.getElementById("locationHref");
         copyText.select();
         document.execCommand("copy");
+        alert('分享連結 複製成功');
         return false;
     });
 

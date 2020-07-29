@@ -13,21 +13,21 @@
             <h3>廠商 - 新增</h3>
             <form method='post' action='/admin/company/create' class='form1' enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <h5>帳號</h5>
+                <h5><span>帳號</span></h5>
                 <p> <input type="text" name="account" required /> </p>
-                <h5>密碼</h5>
+                <h5><span>密碼</span></h5>
                 <p> <input type="password" name="password" required /> </p>
-                <h5>廠商名稱</h5>
+                <h5><span>廠商名稱</span></h5>
                 <p> <input type="text" name="name" /> </p>
-                <h5>廠商名稱(英文)</h5>
+                <h5><span>廠商名稱(英文)</span></h5>
                 <p> <input type="text" name="nameEn" /> </p>
-                <h5>Logo</h5>
+                <h5><span>Logo</span> </h5>
                 <p> <input type="file" name="logo" /> </p>
-                <h5>前台公司頁 Logo </h5>
+                <h5><span>前台公司頁 Logo</span> </h5>
                 <p> <input type="file" name="logo2" /> </p>
-                <h5>E-mail</h5>
+                <h5><span>E-mail</span></h5>
                 <p> <input type="text" name="email" /> </p>
-                <h5>是否啟用</h5>
+                <h5><span>是否啟用</span></h5>
                 <p> 
                     <select type="text" name="active"> 
                         <option value="1">是</option>
@@ -35,7 +35,7 @@
                     </select> 
                 </p>
             @if(isset($companyAreas) && count($companyAreas) > 0)
-                <h5>區域選擇</h5>
+                <h5><span>區域選擇</span></h5>
                 <p class="companyAreaP"> 
                     <select type="text" name="companyAreaId[]" class="companyAreaId" required> 
                         <option value=""></option>
@@ -45,7 +45,9 @@
                     </select> 
                 </p>
             @endif
-                <h5>點亮資訊1 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊 如下圖，可放五張 (建議寬高: 475x230, Max:5M)</span></h5>
+                <img src="/images/company2020_07_24/company_info.png" class="schematic" />
+                <h5><span>點亮資訊1</span></h5>
                 <p> 
                     <select type="text" name="infoMode1" class="infoMode hidden" infoNum="1"> 
                         <option value="1">圖片上傳</option>
@@ -54,7 +56,7 @@
                     <input type="file" name="infoPath1" /> 
                     <input type="text" name="infoVideo1" /> 
                 </p>
-                <h5>點亮資訊2 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊2</span></h5>
                 <p> 
                     <select type="text" name="infoMode2" class="infoMode hidden" infoNum="2"> 
                         <option value="1">圖片上傳</option>
@@ -63,7 +65,7 @@
                     <input type="file" name="infoPath2" /> 
                     <input type="text" name="infoVideo2" /> 
                 </p>
-                <h5>點亮資訊3 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊3</span></h5>
                 <p> 
                     <select type="text" name="infoMode3" class="infoMode hidden" infoNum="3"> 
                         <option value="1">圖片上傳</option>
@@ -72,7 +74,7 @@
                     <input type="file" name="infoPath3" /> 
                     <input type="text" name="infoVideo3" /> 
                 </p>
-                <h5>點亮資訊4 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊4</span></h5>
                 <p> 
                     <select type="text" name="infoMode4" class="infoMode hidden" infoNum="4"> 
                         <option value="1">圖片上傳</option>
@@ -81,7 +83,7 @@
                     <input type="file" name="infoPath4" /> 
                     <input type="text" name="infoVideo4" /> 
                 </p>
-                <h5>點亮資訊5 (建議寬高: 475x230, Max:5M)</h5>
+                <h5><span>點亮資訊5</span></h5>
                 <p> 
                     <select type="text" name="infoMode5" class="infoMode hidden" infoNum="5"> 
                         <option value="1">圖片上傳</option>
@@ -90,17 +92,20 @@
                     <input type="file" name="infoPath5" /> 
                     <input type="text" name="infoVideo5" /> 
                 </p>
-                <h5>前台公司頁右下圖 (Max: 5M)</h5>
+                <h5><span>前台公司頁右下圖 (建議寬高: 250x290, Max: 5M)</span></h5>
+                <h6>示意圖</h6>
+                <img src="/images/company2020_07_24/company_right_down.png" class="schematic" />
+                <h6></h6>
                 <p> <input type="file" name="companyRightInfo" /> </p>
-                <h5>聯絡方式 tel</h5>
+                <h5><span>聯絡方式 tel</span></h5>
                 <p> <input type="text" name="contactLink1" /> </p>
-                <h5>聯絡方式 fax</h5>
+                <h5><span>聯絡方式 fax</span></h5>
                 <p> <input type="text" name="contactLink2" /> </p>
-                <h5>聯絡方式 add</h5>
+                <h5><span>聯絡方式 add</span></h5>
                 <p> <input type="text" name="contactLink3" /> </p>
-                <h5>官網網址 web</h5>
+                <h5><span>官網網址 web</span></h5>
                 <p> <input type="text" name="contactLink4" /> </p>
-                <h5>前台樣式</h5>
+                <h5><span>前台樣式</span></h5>
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />
                     <select type="text" name="frontMode" class="frontMode "> 

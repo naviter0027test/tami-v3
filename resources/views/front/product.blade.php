@@ -60,7 +60,7 @@
                 </div>
                 <div class="col02">
                     <a href="{{ $company->contactLink4 }}" class="btn_website"><img src="/images/detail_btn_bg_03.png"><b>{{ trans('front/product.website') }}</b></a>
-                    <a href="#" class="btn_cate"><img src="/images/detail_btn_bg_04.png"><b>{{ trans('front/product.catalog') }}</b></a>
+                    <a target="_blank" href="#" class="btn_cate"><img src="/images/detail_btn_bg_04.png"><b>{{ trans('front/product.catalog') }}</b></a>
                     <a href="#" class="btn_share"><img src="/images/detail_btn_bg_05.png"><b>{{ trans('front/product.share') }}</b></a>
                 </div>
             </div>

@@ -289,3 +289,16 @@ body {
 .content .fontAlert {
     color: #ff0000;
 }
+
+.content h5 span {
+    display: inline-block;
+    padding: 1px 8px 1px 10px;
+
+    font-size: 20px;
+    color: #eeeeee;
+    background: #0086b3;
+}
+
+.content .schematic {
+    width: 400px;
+}
