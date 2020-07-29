@@ -128,9 +128,9 @@ class ContactRepository
             $fromAddr = Config::get('mail.from.address');
             $fromName = Config::get('mail.from.name');
             $testTitle = env('APP_ENV') == 'local' ? '[Test] ' : '';
-            $appName = Config::get('app.name');
+            $appSmall = env('APP_SMALL');
             $message->from($fromAddr, $fromName);
-            $message->to($company->email, $company->name)->subject("$testTitle $appName - 聯絡通知 (系統發信，請勿回覆)");
+            $message->to($company->email, $company->name)->subject("$testTitle <$appSmall 台湾鞋机线上展 询问信函>");
         });
     }
 }

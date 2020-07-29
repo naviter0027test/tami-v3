@@ -204,7 +204,8 @@ class CompanyRepository
             throw new Exception("廠商不存在 id:[$id]");
         if(isset($params['account']) == true)
             $company->account = $params['account'];
-        //$company->password = md5(trim($params['password']));
+        if(isset($params['password']) == true && trim($params['password']) != '')
+            $company->password = md5(trim($params['password']));
         $company->name = isset($params['name']) ? $params['name'] : '';
         $company->nameEn = isset($params['nameEn']) ? $params['nameEn'] : '';
         $company->email = isset($params['email']) ? $params['email'] : '';

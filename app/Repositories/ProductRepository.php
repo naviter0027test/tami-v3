@@ -123,6 +123,7 @@ class ProductRepository
 
     public function getByCompanyId($companyId) {
         $products = Product::where('companyId', '=', $companyId)
+            ->where('active', '=', 1)
             ->orderBy('id', 'desc')
             ->get();
         return $products;
