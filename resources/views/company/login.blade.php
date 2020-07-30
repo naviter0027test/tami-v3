@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="loginDiv">
-            <h3 class="companyName">管理系統</h3>
+            <h3 class="companyName">廠商管理系統</h3>
             <form class="loginForm" method="post" action="/company/login">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <h5>帳號:</h5>
