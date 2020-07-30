@@ -123,9 +123,11 @@ class ContactRepository
             throw new Exception('please input companyId');
         if(isset($params['contactId']) == false)
             throw new Exception('please input contactId');
+        if(isset($params['productId']) == false)
+            throw new Exception('please input productId');
         $company = Company::where('id', '=', $params['companyId'])
             ->first();
-        $product = Company::where('id', '=', $params['productId'])
+        $product = Product::where('id', '=', $params['productId'])
             ->first();
         if(trim($product->email) != '')
             \Mail::send('email.contactNotify', ['company' => $company, 'params' => $params], function($message) use ($company, $product) {
@@ -138,6 +140,6 @@ class ContactRepository
                 $message->to($product->email, $company->name)->subject("$testTitle <$appSmall 台湾鞋机线上展 询问信函>");
             });
         else
-            \Log::info('product['. $product->id. '] email is empty');
+            \Log::info('product id:['. $product->id. '], name:['. $product->name. '] email is empty');
     }
 }
