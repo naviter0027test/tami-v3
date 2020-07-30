@@ -212,7 +212,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .home_list .outer{ max-width:1750px; position:relative; margin:0 auto; padding-top:20px;    min-height: 90vh;}
 .home_list .outer .popup_block{ display:none;}
 .home_list .outer .popup_block.active{ display:block;}
-.home_list .outer .home_title{ text-align:right; font-size:44px; color:#fff; font-weight:800;text-shadow: 2px 2px 2px rgba(20, 20, 20, 1);}
+.home_list .outer .home_title{ text-align:right; /*font-size:44px;*/ font-size:2.3vw; color:#fff; font-weight:800;text-shadow: 2px 2px 2px rgba(20, 20, 20, 1);}
 .home_list .outer .home_title .logo .web{ width:400px; margin-right:-45px; margin-bottom:-55px}
 .home_list .outer .home_title .logo .mobile{ display:none; width:90%;}
 .home_list .outer .home_title .info span{ display:block;}
@@ -439,10 +439,8 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 	.home_list .outer .popup_block .box { padding: 15px 0px;}
 	.home_list .outer .popup_block .box .title{ font-size:24px;}
 	.home_list .outer #popup04{ top:-4vw;}
-	.home_list .outer .popup_block .box .list_item{
-		max-height: 133vh;		
-	}
-	.home_list .outer .home_title{ font-size:25px;}
+	.home_list .outer .popup_block .box .list_item{max-height: 133vh;}
+	.home_list .outer .home_title{ /*font-size:25px;*/font-size: 1.8vw;}
 }
 
 @media screen and (max-width: 1280px){
