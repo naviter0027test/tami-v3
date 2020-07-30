@@ -20,9 +20,9 @@
                 <p> <input type="text" name="name" value="{{ $result['product']->name }}" /> </p>
                 <h5><span>產品名稱(英文)</span></h5>
                 <p> <input type="text" name="nameEn" value="{{ $result['product']->nameEn }}" /> </p>
-                <h5>E-Mail</h5>
+                <h5><span>產品聯絡人E-Mail</span></h5>
                 <p> <input type="text" name="email" value="{{ $result['product']->email }}" /> </p>
-                <h5>產品圖片</h5>
+                <h5><span>產品圖片</span></h5>
                 @if($result['product']->picture1 != '')
                     <img src="/product{{ $result['product']->picture1 }}" class="custPic" /> <br />
                 @else
@@ -34,14 +34,7 @@
                 <p> <textarea type="text" name="info" >{{ $result['product']->info }}</textarea> </p>
                 <h5><span>亮點資訊(英文)</span></h5>
                 <p> <textarea type="text" name="infoEn" >{{ $result['product']->infoEn }}</textarea> </p>
-                <h5><span>是否啟用</span></h5>
-                <p> 
-                    <select type="text" name="active"> 
-                        <option value="1" {{ $result['product']->active == '1' ? 'selected="selected"' : '' }} >是</option>
-                        <option value="0" {{ $result['product']->active == '0' ? 'selected="selected"' : '' }} >否</option>
-                    </select> 
-                </p>
-                <h5><span>DM</span></h5>
+                <h5><span>DM(超連結)</span></h5>
                 @if($result['product']->dm != '')
                     <a href="/product{{ $result['product']->dm }}"  >連結</a> <br />
                 @else
@@ -49,7 +42,7 @@
                 @endif
                     更換如下:
                 <p> <input type="file" name="dm" /> </p>
-                <h5>是否啟用</h5>
+                <h5><span>是否啟用</span></h5>
                 <p> 
                     <select type="text" name="active"> 
                         <option value="1" {{ $result['product']->active == '1' ? 'selected="selected"' : '' }} >是</option>
