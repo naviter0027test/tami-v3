@@ -25,6 +25,8 @@
                 <p> <textarea type="text" name="info" ></textarea> </p>
                 <h5>亮點資訊(英文)</h5>
                 <p> <textarea type="text" name="infoEn" ></textarea> </p>
+                <h5>DM(超連結)</h5>
+                <p> <input type="file" name="dm" /> </p>
                 <h5>是否啟用</h5>
                 <p> 
                     <select type="text" name="active"> 
@@ -32,8 +34,6 @@
                         <option value="0">否</option>
                     </select> 
                 </p>
-                <h5>DM(超連結)</h5>
-                <p> <input type="file" name="dm" /> </p>
 <!--
                 <h5>影片(超連結，非內嵌)</h5>
                 <p> 

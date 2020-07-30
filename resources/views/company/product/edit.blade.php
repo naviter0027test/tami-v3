@@ -34,13 +34,6 @@
                 <p> <textarea type="text" name="info" >{{ $result['product']->info }}</textarea> </p>
                 <h5>亮點資訊(英文)</h5>
                 <p> <textarea type="text" name="infoEn" >{{ $result['product']->infoEn }}</textarea> </p>
-                <h5>是否啟用</h5>
-                <p> 
-                    <select type="text" name="active"> 
-                        <option value="1" {{ $result['product']->active == '1' ? 'selected="selected"' : '' }} >是</option>
-                        <option value="0" {{ $result['product']->active == '0' ? 'selected="selected"' : '' }} >否</option>
-                    </select> 
-                </p>
                 <h5>DM</h5>
                 @if($result['product']->dm != '')
                     <a href="/product{{ $result['product']->dm }}"  >連結</a> <br />
@@ -49,6 +42,13 @@
                 @endif
                     更換如下:
                 <p> <input type="file" name="dm" /> </p>
+                <h5>是否啟用</h5>
+                <p> 
+                    <select type="text" name="active"> 
+                        <option value="1" {{ $result['product']->active == '1' ? 'selected="selected"' : '' }} >是</option>
+                        <option value="0" {{ $result['product']->active == '0' ? 'selected="selected"' : '' }} >否</option>
+                    </select> 
+                </p>
 <!--
                 <h5>影片(超連結，非內嵌)</h5>
                 <p> 
