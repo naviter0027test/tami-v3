@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Contact;
 use App\Company;
+use App\Product;
 use Exception;
 use Config;
 
@@ -124,13 +125,19 @@ class ContactRepository
             throw new Exception('please input contactId');
         $company = Company::where('id', '=', $params['companyId'])
             ->first();
-        \Mail::send('email.contactNotify', ['company' => $company, 'params' => $params], function($message) use ($company) {
-            $fromAddr = Config::get('mail.from.address');
-            $fromName = Config::get('mail.from.name');
-            $testTitle = env('APP_ENV') == 'local' ? '[Test] ' : '';
-            $appSmall = env('APP_SMALL');
-            $message->from($fromAddr, $fromName);
-            $message->to($company->email, $company->name)->subject("$testTitle <$appSmall 台湾鞋机线上展 询问信函>");
-        });
+        $product = Company::where('id', '=', $params['productId'])
+            ->first();
+        if(trim($product->email) != '')
+            \Mail::send('email.contactNotify', ['company' => $company, 'params' => $params], function($message) use ($company, $product) {
+                $fromAddr = Config::get('mail.from.address');
+                $fromName = Config::get('mail.from.name');
+                $testTitle = env('APP_ENV') == 'local' ? '[Test] ' : '';
+                $appSmall = env('APP_SMALL');
+                $message->from($fromAddr, $fromName);
+                \Log::info('mail product');
+                $message->to($product->email, $company->name)->subject("$testTitle <$appSmall 台湾鞋机线上展 询问信函>");
+            });
+        else
+            \Log::info('product['. $product->id. '] email is empty');
     }
 }

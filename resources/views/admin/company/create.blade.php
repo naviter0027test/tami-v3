@@ -25,8 +25,6 @@
                 <p> <input type="file" name="logo" /> </p>
                 <h5><span>前台公司頁 Logo</span> </h5>
                 <p> <input type="file" name="logo2" /> </p>
-                <h5><span>E-mail</span></h5>
-                <p> <input type="text" name="email" /> </p>
                 <h5><span>是否啟用</span></h5>
                 <p> 
                     <select type="text" name="active"> 
@@ -97,6 +95,8 @@
                 <img src="/images/company2020_07_24/company_right_down.png" class="schematic" />
                 <h6></h6>
                 <p> <input type="file" name="companyRightInfo" /> </p>
+                <h5><span>E-mail</span></h5>
+                <p> <input type="text" name="email" /> </p>
                 <h5><span>聯絡方式 tel</span></h5>
                 <p> <input type="text" name="contactLink1" /> </p>
                 <h5><span>聯絡方式 fax</span></h5>

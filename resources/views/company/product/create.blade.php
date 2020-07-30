@@ -17,21 +17,23 @@
                 <p> <input type="text" name="name" /> </p>
                 <h5><span>產品名稱(英文)</span></h5>
                 <p> <input type="text" name="nameEn" /> </p>
-                <h5><span>產品圖片</span></h5>
+                <h5>E-Mail</h5>
+                <p> <input type="text" name="email" /> </p>
+                <h5>產品圖片</h5>
                 <p> <input type="file" name="picture1" /> </p>
                 <h5><span>亮點資訊</span></h5>
                 <p> <textarea type="text" name="info" ></textarea> </p>
                 <h5><span>亮點資訊(英文)</span></h5>
                 <p> <textarea type="text" name="infoEn" ></textarea> </p>
-                <h5><span>是否啟用</span></h5>
+                <h5>DM(超連結)</h5>
+                <p> <input type="file" name="dm" /> </p>
+                <h5>是否啟用</h5>
                 <p> 
                     <select type="text" name="active"> 
                         <option value="1">是</option>
                         <option value="0">否</option>
                     </select> 
                 </p>
-                <h5><span>DM(超連結)</span></h5>
-                <p> <input type="file" name="dm" /> </p>
 <!--
                 <h5>影片(超連結，非內嵌)</h5>
                 <p> 

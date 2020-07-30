@@ -10,7 +10,7 @@
     <body>
 @include('company.layout.menu')
         <div class="content">
-            <h3>案件查詢 - 明細</h3>
+            <h3>廠商編輯 - 內容</h3>
             @if($result['result'] == false) 
             {{ $result['msg'] }}
             @else
@@ -40,8 +40,6 @@
                 @endif
                     更換如下:
                     <input type="file" name="logo2" /> </p>
-                <h5><span>E-mail</span></h5>
-                <p> <input type="text" name="email" value="{{ $result['company']->email }}" /> </p>
                 <h5><span>點亮資訊 如下圖，可放五張 (建議寬高: 475x230, Max:5M)</span></h5>
                 <img src="/images/company2020_07_24/company_info.png" class="schematic" />
                 <h5><span>點亮資訊1</span></h5>
@@ -141,6 +139,8 @@
                 @endif
                     更換如下:
                     <input type="file" name="companyRightInfo" /> </p>
+                <h5><span>E-mail</span></h5>
+                <p> <input type="text" name="email" value="{{ $result['company']->email }}" /> </p>
                 <h5><span>聯絡方式 tel</span></h5>
                 <p> <input type="text" name="contactLink1" value="{{ $result['company']->contactLink1 }}" /> </p>
                 <h5><span>聯絡方式 fax</span></h5>
