@@ -19,6 +19,9 @@ Route::post('/front/contact', 'Front\FrontController@contact');
 Route::get('/mail-test', 'Front\FrontController@mailTest');
 Route::get('/mmc-test', 'Front\FrontController@mmcTest');
 Route::post('/mmc-test', 'Front\FrontController@mmcProccess');
+Route::get('/csrf-show', function() {
+    return view('csrfShow');
+});
 
 Route::group(['prefix' => 'admin', 'middleware' => ['check.admin']], function() {
 
