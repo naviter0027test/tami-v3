@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes" viewport-fit="cover" />
 <meta name="description" content="">
 <meta name="author" content="">
+<meta http-equiv="Cache-Control" content="no-cache">
 
 <title>{{ $company->nameShow }}</title>
 
@@ -75,13 +76,13 @@
                     @endif
                 </div>
                 <div class="col03">
-                    <div class="img"><a href="#">
+                    <div class="img">
                     @if(trim($company->companyRightInfo) == '')
                         <img src="/images/company_img002.jpg">
                     @else
                         <img src="/uploads{{ $company->companyRightInfo }}">
                     @endif
-                    </a></div>
+                    </div>
                 </div>
             </div>
             <div class="action">
