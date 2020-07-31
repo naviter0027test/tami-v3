@@ -34,10 +34,10 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .company_list .btn_back{ position:absolute; left:140px; top:150px;}
 .company_list .btn_back:hover{ opacity:0.5}
 
-.company_list .outer{ max-width:920px; margin:0 auto; padding-top:140px; padding-bottom:30px;}
+.company_list .outer{ max-width:920px; margin:0 auto; padding-top:135px; padding-bottom:30px;}
 .company_list .outer .logo{ padding-left:115px; height:128px;}
-.company_list .outer .logo div{ width:230px; text-align:center; height:75px;}
-.company_list .outer .logo img{ height:68px;}
+.company_list .outer .logo div{ width:225px; text-align:center; height:75px;display: flex; align-items: center; justify-content: center;}
+.company_list .outer .logo img{ max-height:65px; max-width:170px;}
 .company_list .outer .company_name{ height:150px;}
 .company_list .outer .company_name div{ margin-top:20px; font-size:27px; color:#fff; text-align:center; font-weight:800;}
 .company_list .outer .info{ display:flex; flex-wrap:wrap; height: 360px; }
@@ -160,7 +160,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .scrollbar.mCustomScrollbar{ position:relative;}
 .mCSB_scrollTools .mCSB_draggerContainer{ top:10%; bottom:14%;}
 .mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail{ background-image:none;}
-.mCSB_inside > .mCSB_container{ margin-right:40px;}
+.mCSB_inside > .mCSB_container{ margin-right:40px !important; word-break:break-all;}
 .mCSB_scrollTools{width:30px !important;}
 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background:#73cff5; width:12px !important; height:12px !important; border:6px solid #a7bbf6; }
 
@@ -383,7 +383,8 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 	.company_list{ background-size: calc(1920px * 0.85);background-position-y: -80px; height:700px;}
 	.company_list .btn_back{ position:absolute; left:20px;top: 15%;}
 	.company_list .transform{transform:scale(0.80);transform-origin: center calc(-450px * 0.80);}
-	.company_list .outer{ max-width:970px; padding-top:200px;}
+	.company_list .outer{ max-width:970px; padding-top:190px;}
+	.company_list .outer .logo{ height:138px; padding-left:120px;}
 	.company_list .outer .info{ height:390px;}
 	.company_list .outer .info .col02{ width:613px;}
 	.company_list .outer .info .col02 .img{ margin-top:42px;}
@@ -499,7 +500,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 		text-align: center;
 		height: 4.2vw;
 	}
-	.company_list .outer .logo img{ height:100%;}
+	.company_list .outer .logo img{ max-height: 5vw;  max-width: 10vw;}
 	.company_list .outer .company_name {  height: 8vw;}
 	.company_list .outer .company_name div {
 		margin-top: 2vw;
