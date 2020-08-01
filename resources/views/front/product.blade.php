@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" viewport-fit="cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=cover" />
 <meta name="description" content="">
 <meta name="author" content="">
 <meta http-equiv="Cache-Control" content="no-cache">
@@ -197,7 +197,7 @@
     <input type="hidden" name="none" class="askSuccess" value="{{ trans('front/product.ask_success') }}" />
     <input type="hidden" name="none" class="errMsg" value="{{ trans('front/product.err_msg') }}" />
     <input type="hidden" name="none" class="notifyAdm" value="{{ trans('front/product.notify_adm') }}" />
-    <form action="/front/contact" method="post" class="contact">
+    <form action="/front/contact" method="post" autocomplete="off" class="contact">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <input type="hidden" name="companyId" value="{{ $company->id }}" />
         <input type="hidden" name="productId" value="" />
