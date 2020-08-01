@@ -31,7 +31,7 @@
                 @endif
                     更換如下:
                     <input type="file" name="logo" /> </p>
-                <h5><span>前台公司頁 Logo</span> </h5>
+                <h5><span>前台公司頁 Logo (建議寬高: 125x50)</span> </h5>
                 <p>
                 @if($result['company']->logo2 != '')
                     <img src="/uploads{{ $result['company']->logo2 }}" class="custPic" /> <br />

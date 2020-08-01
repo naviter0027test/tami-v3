@@ -23,7 +23,7 @@
                 <p> <input type="text" name="nameEn" /> </p>
                 <h5><span>Logo</span> </h5>
                 <p> <input type="file" name="logo" /> </p>
-                <h5><span>前台公司頁 Logo</span> </h5>
+                <h5><span>前台公司頁 Logo (建議寬高: 125x50)</span> </h5>
                 <p> <input type="file" name="logo2" /> </p>
                 <h5><span>是否啟用</span></h5>
                 <p> 
