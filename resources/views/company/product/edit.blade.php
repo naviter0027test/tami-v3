@@ -34,7 +34,7 @@
                 <p> <textarea type="text" name="info" >{{ $result['product']->info }}</textarea> </p>
                 <h5><span>亮點資訊(英文)</span></h5>
                 <p> <textarea type="text" name="infoEn" >{{ $result['product']->infoEn }}</textarea> </p>
-                <h5><span>DM(超連結)</span></h5>
+                <h5><span>DM</span></h5>
                 @if($result['product']->dm != '')
                     <a href="/product{{ $result['product']->dm }}"  >連結</a> <br />
                 @else
