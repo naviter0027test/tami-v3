@@ -458,7 +458,7 @@
         </div>
     </div>    
 </div>
-
+<input type="hidden" name="mobileBackground" value="{{ $result['backMobile'] }}" />
 
 
 
@@ -467,6 +467,7 @@
 <script src="js/front/js/jquery.min.js"></script>
 <script src="owl.carousel/owl.carousel.js"></script>
 <script src="js/front/js/script.js"></script>
+<script src="js/front/js/index.js"></script>
 
 </body>
 </html>
