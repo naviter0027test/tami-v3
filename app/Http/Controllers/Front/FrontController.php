@@ -55,6 +55,7 @@ class FrontController extends Controller
             $params['area2'] = 'images/platform_02_title.png';
             $params['area3'] = 'images/platform_03_title.png';
             $params['area4'] = 'images/platform_01_title.png';
+            $params['backMobile'] = '../images/tami_01_mobile.jpg';
             break;
         case 'en':
             $params['logo'] = 'images/home_logo_e2.gif';
@@ -63,6 +64,7 @@ class FrontController extends Controller
             $params['area2'] = 'images/platform_02_title_eng.png';
             $params['area3'] = 'images/platform_03_title_eng.png';
             $params['area4'] = 'images/platform_01_title_eng.png';
+            $params['backMobile'] = '../images/tami_01_mobile_eng.jpg';
             break;
         }
         
@@ -154,11 +156,11 @@ class FrontController extends Controller
             switch($params['lan']) {
             case 'cn':
                 $products[$i]->nameShow = $product->name;
-                $products[$i]->infoShow = $product->info;
+                $products[$i]->infoShow = nl2br($product->info);
                 break;
             case 'en':
                 $products[$i]->nameShow = $product->nameEn;
-                $products[$i]->infoShow = $product->infoEn;
+                $products[$i]->infoShow = nl2br($product->infoEn);
                 break;
             }
         }

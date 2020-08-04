@@ -365,6 +365,7 @@ class CompanyRepository
                 ->where('CompanyAreaRelation.companyAreaId', '=', $companyArea->id)
                 ->where('Company.active', '=', 1)
                 ->select(['Company.*'])
+                ->orderBy('account', 'asc')
                 ->get();
         }
         return $companyAreas;

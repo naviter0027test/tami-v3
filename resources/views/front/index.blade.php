@@ -458,7 +458,7 @@
         </div>
     </div>    
 </div>
-
+<input type="hidden" name="mobileBackground" value="{{ $result['backMobile'] }}" />
 
 
 
@@ -470,5 +470,7 @@
 @if(strpos(\Request::root(), 'tami.twshoemaking.cn') > 0)
 <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279127781'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279127781%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 @endif
+<script src="js/front/js/index.js"></script>
+
 </body>
 </html>

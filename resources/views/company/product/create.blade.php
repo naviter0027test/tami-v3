@@ -25,7 +25,7 @@
                 <p> <textarea type="text" name="info" ></textarea> </p>
                 <h5><span>亮點資訊(英文)</span></h5>
                 <p> <textarea type="text" name="infoEn" ></textarea> </p>
-                <h5><span>DM(超連結)</span></h5>
+                <h5><span>DM</span></h5>
                 <p> <input type="file" name="dm" /> </p>
                 <h5><span>是否啟用</span></h5>
                 <p> 
