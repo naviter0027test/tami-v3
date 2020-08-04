@@ -156,11 +156,11 @@ class FrontController extends Controller
             switch($params['lan']) {
             case 'cn':
                 $products[$i]->nameShow = $product->name;
-                $products[$i]->infoShow = $product->info;
+                $products[$i]->infoShow = nl2br($product->info);
                 break;
             case 'en':
                 $products[$i]->nameShow = $product->nameEn;
-                $products[$i]->infoShow = $product->infoEn;
+                $products[$i]->infoShow = nl2br($product->infoEn);
                 break;
             }
         }
