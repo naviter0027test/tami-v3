@@ -85,40 +85,55 @@ class FrontController extends Controller
             Session::put('lan', $params['lan']);
             \App::setLocale($params['lan']);
         }
-        $companyRepository = new CompanyRepository();
-        $company = $companyRepository->getById($companyId);
-        if(trim($company->contactLink4) == '')
-            $company->contactLink4 = '#';
-        switch($company->frontMode) {
-        case 1:
-            $company->frontModeShow = 'black';
-            break;
-        case 2:
-            $company->frontModeShow = 'blue';
-            break;
-        case 3:
-            $company->frontModeShow = 'green';
-            break;
-        case 4:
-            $company->frontModeShow = 'red';
-            break;
-        case 5:
-            $company->frontModeShow = 'purple';
-            break;
-        case 6:
-            $company->frontModeShow = 'yellow';
-            break;
-        default:
-            $company->frontModeShow = 'black';
-            break;
+        try {
+            $companyRepository = new CompanyRepository();
+            $company = $companyRepository->getById($companyId);
+            if(trim($company->contactLink4) == '')
+                $company->contactLink4 = '#';
+            switch($company->frontMode) {
+            case 1:
+                $company->frontModeShow = 'black';
+                break;
+            case 2:
+                $company->frontModeShow = 'blue';
+                break;
+            case 3:
+                $company->frontModeShow = 'green';
+                break;
+            case 4:
+                $company->frontModeShow = 'red';
+                break;
+            case 5:
+                $company->frontModeShow = 'purple';
+                break;
+            case 6:
+                $company->frontModeShow = 'yellow';
+                break;
+            default:
+                $company->frontModeShow = 'black';
+                break;
+            }
+            switch($params['lan']) {
+            case 'cn':
+                $company->nameShow = $company->name;
+                break;
+            case 'en':
+                $company->nameShow = $company->nameEn;
+                break;
+            }
+        } catch(Exception $e) {
+            $result = [
+                'result' => false,
+                'msg' => $e->getMessage(),
+            ];
+            return view('front.company_not', ['result' => $result]);
         }
-        switch($params['lan']) {
-        case 'cn':
-            $company->nameShow = $company->name;
-            break;
-        case 'en':
-            $company->nameShow = $company->nameEn;
-            break;
+        if($company->active == 0) {
+            $result = [
+                'result' => false,
+                'msg' => '該廠商不開放',
+            ];
+            return view('front.company_not', ['result' => $result]);
         }
         return view('front.company', ['company' => $company]);
     }
