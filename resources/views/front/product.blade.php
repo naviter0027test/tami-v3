@@ -235,8 +235,8 @@
 <script src="/js/front/js/jquery.mCustomScrollbar.js"></script>
 <script src="/js/front/js/script.js"></script>
 <script src="/js/front/js/product.js"></script>
-@if(strpos(\Request::root(), 'tami.twshoemaking.cn') > 0)
-<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279127781'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279127781%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+@if(strpos(\Request::root(), 'www.twshoemaking.cn') > 0)
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279149839'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1279149839%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
 @endif
 </body>
 </html>
