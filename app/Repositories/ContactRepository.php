@@ -104,6 +104,9 @@ class ContactRepository
     }
 
     public function create($params) {
+        if(isset($params['productId']) == false)
+            throw new Exception('product no data');
+
         $contact = new Contact();
         $contact->name = isset($params['name']) ? $params['name'] : '';
         $contact->companyName = isset($params['companyName']) ? $params['companyName'] : '';
