@@ -156,6 +156,31 @@ class FrontController extends Controller
         $company = $companyRepository->getById($companyId);
         if(trim($company->contactLink4) == '')
             $company->contactLink4 = '#';
+        switch($company->frontMode) {
+        case 1:
+            $company->frontModeShow = 'black';
+            break;
+        case 2:
+            $company->frontModeShow = 'blue';
+            break;
+        case 3:
+            $company->frontModeShow = 'green';
+            break;
+        case 4:
+            $company->frontModeShow = 'red';
+            break;
+        case 5:
+            $company->frontModeShow = 'purple';
+            break;
+        case 6:
+            $company->frontModeShow = 'yellow';
+            break;
+        default:
+            $company->frontModeShow = 'black';
+            break;
+        }
+        if(trim($company->contactLink4) == '')
+            $company->contactLink4 = '#';
         switch($params['lan']) {
         case 'cn':
             $company->nameShow = $company->name;

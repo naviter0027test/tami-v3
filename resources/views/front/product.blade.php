@@ -17,25 +17,38 @@
 
 <body class="body_detail body_company">
 
-<div class="company_list blue">
+<div class="company_list {{ $company->frontModeShow }}">
 	<div class="transform">
         <a href="/" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
         <div class="outer">
             <div class="logo"><div>
-            <!--
-                <img src="/images/company_logo_001.png">
-            -->
+                <img src="/uploads{{ $company->logo2 }}">
             </div></div>
-            <div class="company_name"><div></div></div>
+            <div class="company_name"><div>{{ $company->nameShow }}</div></div>
             <div class="info">
                 <div class="col01">
                     <div class="website"><a href="#" target="_blank">Web</a></div>
                     <div class="desc">
-                        <div class="item">EMAIL / <!--info@yehone.com.tw--></div>
-                        <div class="item">TEL / <!--+886-49-2381449--></div>
-                        <div class="item">FAX / <!--+886-49-2381450--><br />
-                        No.11-1, Ln. 159, Sec. 1, Guoguang Rd., Dali Dist., Taichung City 41262, Taiwan (R.O.C.)
-                        </div>
+                        @if(trim($company->email) != '')
+                        <div class="item">EMAIL / {{ $company->email }}</div>
+                        @else
+                        <div class="item">&nbsp;</div>
+                        @endif
+                        @if(trim($company->contactLink1) != '')
+                        <div class="item">TEL / {{ $company->contactLink1 }}</div>
+                        @else
+                        <div class="item">&nbsp;</div>
+                        @endif
+                        @if(trim($company->contactLink2) != '')
+                        <div class="item">FAX / {{ $company->contactLink2 }}</div><br />
+                        @else
+                        <div class="item">&nbsp;</div>
+                        @endif
+                        @if(trim($company->contactLink3) != '')
+                        {{ $company->contactLink3 }}
+                        @else
+                        &nbsp;
+                        @endif
                     </div>
                 </div>
                 <div class="col02">
@@ -43,14 +56,39 @@
                     <!--
                         <img src="/images/company_img001.jpg">
                     -->
+                    @if(trim($company->infoPath1) == '')
+                    <img src="/images/company_img001.jpg" class="infoPathImg">
+                    @elseif(trim($company->infoPath1) != '')
+                    <img src="/uploads{{ $company->infoPath1 }}" class="infoPathImg">
+                    @endif
+                    @if(trim($company->infoPath1) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath1 }}" />
+                    @endif
+                    @if(trim($company->infoPath2) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath2 }}" />
+                    @endif
+                    @if(trim($company->infoPath3) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath3 }}" />
+                    @endif
+                    @if(trim($company->infoPath4) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath4 }}" />
+                    @endif
+                    @if(trim($company->infoPath5) != '')
+                    <input type="hidden" class="infoPath" value="/uploads{{ $company->infoPath5 }}" />
+                    @endif
                     </div>
                 </div>
                 <div class="col03">
-                    <div class="img"><a href="#">
+                    <div class="img">
                     <!--
                         <img src="/images/company_img002.jpg">
                     -->
-                    </a></div>
+                    @if(trim($company->companyRightInfo) == '')
+                        <img src="/images/company_img002.jpg">
+                    @else
+                        <img src="/uploads{{ $company->companyRightInfo }}">
+                    @endif
+                    </div>
                 </div>
             </div>
             <div class="action">
