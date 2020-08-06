@@ -21,24 +21,36 @@
 	<div class="transform">
         <a href="/" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
         <div class="outer">
-            <div class="logo"><div><img src="/images/company_logo_001.png"></div></div>
-            <div class="company_name"><div>益鋐企业有限公司 YE HONE ENTERPRISE CO., LTD.</div></div>
+            <div class="logo"><div>
+            <!--
+                <img src="/images/company_logo_001.png">
+            -->
+            </div></div>
+            <div class="company_name"><div></div></div>
             <div class="info">
                 <div class="col01">
                     <div class="website"><a href="#" target="_blank">Web</a></div>
                     <div class="desc">
-                        <div class="item">EMAIL / info@yehone.com.tw</div>
-                        <div class="item">TEL / +886-49-2381449</div>
-                        <div class="item">FAX / +886-49-2381450<br />
+                        <div class="item">EMAIL / <!--info@yehone.com.tw--></div>
+                        <div class="item">TEL / <!--+886-49-2381449--></div>
+                        <div class="item">FAX / <!--+886-49-2381450--><br />
                         No.11-1, Ln. 159, Sec. 1, Guoguang Rd., Dali Dist., Taichung City 41262, Taiwan (R.O.C.)
                         </div>
                     </div>
                 </div>
                 <div class="col02">
-                    <div class="img"><img src="/images/company_img001.jpg"></div>
+                    <div class="img">
+                    <!--
+                        <img src="/images/company_img001.jpg">
+                    -->
+                    </div>
                 </div>
                 <div class="col03">
-                    <div class="img"><a href="#"><img src="/images/company_img002.jpg"></a></div>
+                    <div class="img"><a href="#">
+                    <!--
+                        <img src="/images/company_img002.jpg">
+                    -->
+                    </a></div>
                 </div>
             </div>
             <div class="action">
