@@ -6,6 +6,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta http-equiv="Cache-Control" content="no-cache">
+<meta name="lan" content="{{ $result['lan'] }}" />
 
 <title>{{ $company->nameShow }}</title>
 

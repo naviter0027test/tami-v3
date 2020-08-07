@@ -27,17 +27,17 @@
                     <div class="website"><a href="{{ $company->contactLink4 }}" target="_blank">Web</a></div>
                     <div class="desc">
                         @if(trim($company->email) != '')
-                        <div class="item">EMAIL / {{ $company->email }}</div>
+                        <div class="item">EMAIL / <br />{{ $company->email }}</div>
                         @else
                         <div class="item">&nbsp;</div>
                         @endif
                         @if(trim($company->contactLink1) != '')
-                        <div class="item">TEL / {{ $company->contactLink1 }}</div>
+                        <div class="item">TEL / <br />{{ $company->contactLink1 }}</div>
                         @else
                         <div class="item">&nbsp;</div>
                         @endif
                         @if(trim($company->contactLink2) != '')
-                        <div class="item">FAX / {{ $company->contactLink2 }}</div><br />
+                        <div class="item">FAX / <br />{{ $company->contactLink2 }}</div><br />
                         @else
                         <div class="item">&nbsp;</div>
                         @endif

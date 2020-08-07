@@ -16,7 +16,14 @@ $(document).ready(function() {
     var pdfHref = $('.pdf'+nowProductNum).val();
     $('.btn_cate').attr('href', '/product'+pdfHref);
 
-    $('#locationHref').val(location.href);
+    switch($("meta[name=lan]").attr('content')) {
+        case 'en':
+            var href = location.protocol+ '//'+ location.host+ location.pathname+ "?lan=en";
+            $('#locationHref').val(href);
+            break;
+        default:
+            $('#locationHref').val(location.href);
+    }
     $('#locationHref').css('position', 'absolute');
     $('#locationHref').css('left', '-99999px');
     $('.btn_share').on('click', function() {

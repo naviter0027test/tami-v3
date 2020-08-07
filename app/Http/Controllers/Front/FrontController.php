@@ -204,7 +204,7 @@ class FrontController extends Controller
                 break;
             }
         }
-        return view('front.product', ['products' => $products, 'company' => $company] );
+        return view('front.product', ['products' => $products, 'company' => $company, 'result' => $params] );
     }
 
     public function mailTest(Request $request) {
