@@ -13,7 +13,14 @@ $(function(){
 		//mobile_transform_scale();
 	});
 	//mobile_transform_scale();
+	set_version();
+	
 });
+function set_version(){
+	if($('.product_detail').length>0){
+		$('.version').prependTo('.product_detail');
+	}
+}
 function mobile_transform_scale(){
 	var maxWidth  = $('.product_detail').width();
 	

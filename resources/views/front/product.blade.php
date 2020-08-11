@@ -19,6 +19,7 @@
 <body class="body_detail body_company">
 
 <div class="company_list {{ $company->frontModeShow }}">
+        <div class="version"><a href="?lan=cn" class="active">简中</a><a href="?lan=en">EN</a></div>                
 	<div class="transform">
         <a href="/" class="btn_back"><img src="/images/icon_back_arrow.svg"></a>
         <div class="outer">

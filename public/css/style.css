@@ -42,6 +42,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .company_list .outer .company_name div{ margin-top:20px; font-size:27px; color:#fff; text-align:center; font-weight:800;}
 .company_list .outer .info{ display:flex; flex-wrap:wrap; height: 360px; }
 .company_list .outer .info .col01{ width:180px; color:#fff; font-size:10px; line-height:1.6;}
+.company_list .outer .info .col01 a{color:#fff;}
 .company_list .outer .info .col01 .website{ margin-bottom:10px;}
 .company_list .outer .info .col01 .website a{ display:inline-block; border:2px solid #fff; border-radius:7px; padding:7px 2px; color:#fff;}
 .company_list .outer .info .col01 .website a:hover{ 
@@ -76,6 +77,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 }
 .company_list .outer .action a i{ display:inline-block; margin-left:20px; background:url(../images/icon_product_list_arrow.svg) center no-repeat; width:20px; height:28px;}
 
+.company_list .version,.product_detail .version{ right:20px; z-index:100;}
 
 .company_list.blue{ background-image:url(../images/blue.jpg);}
 .company_list.blue .outer .action a{ background:url(../images/btn_blue.png) center; }
@@ -157,12 +159,13 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .product_detail .slider .outer .col02 .bottom_div .info{   /* padding: 45px 30px 45px 60px; */position:absolute; left:0px; top:0px; width:100%; height:100%; z-index:999;}
 .product_detail .slider .outer .col02 .bottom_div .info .scrollbar{  position:absolute; left:30px; padding-right: 40px; top:30px; width:calc(100% - 40px); height:calc(100% - 60px); color:#fff;/*font-size:1.3vw;*/font-size:20px; line-height:1.7;/*max-height:20vw;*//*height:15.5vw;*/ }
 .product_detail .slider .outer .col02 .bottom_div .info .add_padding{/*padding:25px 10px 25px 30px;height: -webkit-fill-available;*/ }
+
 .scrollbar.mCustomScrollbar{ position:relative;}
 .mCSB_scrollTools .mCSB_draggerContainer{ top:10%; bottom:14%;}
 .mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail{ background-image:none;}
 .mCSB_inside > .mCSB_container{ margin-right:40px !important; word-break:break-word;}
 .mCSB_scrollTools{width:30px !important;}
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background:#73cff5; width:12px !important; height:12px !important; border:6px solid #a7bbf6; }
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{ background:#73cff5; width:12px !important; height:12px !important; border:6px solid #a7bbf6;  margin:0 5px;}
 
 
 .product_detail .slider .owl_slider .owl-nav.disabled{ display:block;}
@@ -216,10 +219,10 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .home_list .outer .home_title .logo .web{ width:400px; margin-right:-45px; margin-bottom:-55px}
 .home_list .outer .home_title .logo .mobile{ display:none; width:90%;}
 .home_list .outer .home_title .info span{ display:block;}
-.home_list .outer .version{ position:absolute; right:0; top:20px; display:inline-block; background:#fff; border-radius:20px; border:1px solid #666666; padding:3px 10px; font-size:16px;}
-.home_list .outer .version a{ color:#666666; display:inline-block; padding:2px 5px; position:relative;}
-.home_list .outer .version a:first-child:after{ content:''; background:#666666; height:20px; width:1px; position:absolute; right:0; top:3px;}
-.home_list .outer .version a.active{ color:#0068B6;}
+.version{ position:absolute; right:0; top:20px; display:inline-block; background:#fff; border-radius:20px; border:1px solid #666666; padding:3px 10px; font-size:16px;}
+.version a{ color:#666666; display:inline-block; padding:2px 5px; position:relative;}
+.version a:first-child:after{ content:''; background:#666666; height:20px; width:1px; position:absolute; right:0; top:3px;}
+.version a.active{ color:#0068B6;}
 
 .home_list .visited{ color:#fff; font-size:16px; position:absolute; left:20px; bottom:20px;}
 
@@ -435,7 +438,10 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 	.home_list {  background: url(../images/tami_home_bg.jpg) center -50px no-repeat;background-size: cover;}
 	.home_list .transform {  transform-origin: center -150px;}
 	.home_list .outer .home_title{ margin-top:50px;}
-	.home_list .outer .version{ margin-top:50px;}
+	
+	.version{ margin-top:50px;}
+	.company_list .version,.product_detail .version{ margin-top:0px; right:30px; font-size:12px; top:10px; }
+	.company_list .version a:first-child:after,.product_detail .version a:first-child:after{height: 15px;}
 	
 	.home_list .outer .popup_block .box { padding: 15px 0px;}
 	.home_list .outer .popup_block .box .title{ font-size:24px;}
@@ -545,6 +551,8 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 		height: 1.2vw;
 	}
 	.company_list .btn_back img{ height:4vw;}
+	
+	
 }
 
 @media screen and (max-width: 1024px){
@@ -572,7 +580,10 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 	.home_list .outer .home_title .logo .mobile{ display:block;}
 	.home_list .outer .home_title .info{ width:50%;}
 	.home_list .outer .home_title .info span{ display:inline;}
-	.home_list .outer .version{ position:relative; margin-top:20px; top:0; left:15px;}
+	
+	.version{ position:relative; margin-top:20px; top:0; left:15px;}
+	.company_list .version,.product_detail .version{ position:absolute; left:auto;transform: scale(0.7); transform-origin: top; top: 5px;}
+	
 	.home_list .outer .block_img .title{ display:none;}
 	.body_popup_active .home_list .outer .block_img{ display:none;}
 	.body_popup_active .home_list .outer .block_img.active{ display:block;}
