@@ -68,7 +68,8 @@ class FrontController extends Controller
             break;
         }
         
-        return view('front.index', ['result' => $params]);
+        $frontDir = env('FRONT_DIR', 'front');
+        return view($frontDir. '.index', ['result' => $params]);
     }
 
     public function company(Request $request, $companyId) {
@@ -135,7 +136,8 @@ class FrontController extends Controller
             ];
             return view('front.company_not', ['result' => $result]);
         }
-        return view('front.company', ['company' => $company]);
+        $frontDir = env('FRONT_DIR', 'front');
+        return view($frontDir. '.company', ['company' => $company]);
     }
 
     public function product(Request $request, $companyId) {
@@ -204,7 +206,8 @@ class FrontController extends Controller
                 break;
             }
         }
-        return view('front.product', ['products' => $products, 'company' => $company, 'result' => $params] );
+        $frontDir = env('FRONT_DIR', 'front');
+        return view($frontDir. '.product', ['products' => $products, 'company' => $company, 'result' => $params] );
     }
 
     public function mailTest(Request $request) {
