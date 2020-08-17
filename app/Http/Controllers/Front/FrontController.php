@@ -46,29 +46,39 @@ class FrontController extends Controller
                 }
             }
         }
+        
+        $frontDir = env('FRONT_DIR', 'front');
 
         switch($params['lan']) {
         case 'cn':
-            $params['logo'] = 'images/home_logo.gif';
-            $params['logoMobile'] = 'images/home_logo_mobile.png';
-            $params['area1'] = 'images/platform_04_title.png';
-            $params['area2'] = 'images/platform_02_title.png';
-            $params['area3'] = 'images/platform_03_title.png';
-            $params['area4'] = 'images/platform_01_title.png';
-            $params['backMobile'] = '../images/tami_01_mobile.jpg';
+            if($frontDir == 'front-v3') {
+                $params['logo'] = 'images/tami-v3/home_logo_cn.png';
+                $params['logoMobile'] = 'images/tami-v3/home_logo_cn_mobile.png';
+            } else {
+                $params['logo'] = 'images/home_logo.gif';
+                $params['logoMobile'] = 'images/home_logo_mobile.png';
+                $params['area1'] = 'images/platform_04_title.png';
+                $params['area2'] = 'images/platform_02_title.png';
+                $params['area3'] = 'images/platform_03_title.png';
+                $params['area4'] = 'images/platform_01_title.png';
+                $params['backMobile'] = '../images/tami_01_mobile.jpg';
+            }
             break;
         case 'en':
-            $params['logo'] = 'images/home_logo_e2.gif';
-            $params['logoMobile'] = 'images/home_logo_mobile.png';
-            $params['area1'] = 'images/platform_04_title_eng.png';
-            $params['area2'] = 'images/platform_02_title_eng.png';
-            $params['area3'] = 'images/platform_03_title_eng.png';
-            $params['area4'] = 'images/platform_01_title_eng.png';
-            $params['backMobile'] = '../images/tami_01_mobile_eng.jpg';
+            if($frontDir == 'front-v3') {
+                $params['logo'] = 'images/tami-v3/home_logo_eng.png';
+                $params['logoMobile'] = 'images/tami-v3/home_logo_eng_mobile.png';
+            } else {
+                $params['logo'] = 'images/home_logo_e2.gif';
+                $params['logoMobile'] = 'images/home_logo_mobile.png';
+                $params['area1'] = 'images/platform_04_title_eng.png';
+                $params['area2'] = 'images/platform_02_title_eng.png';
+                $params['area3'] = 'images/platform_03_title_eng.png';
+                $params['area4'] = 'images/platform_01_title_eng.png';
+                $params['backMobile'] = '../images/tami_01_mobile_eng.jpg';
+            }
             break;
         }
-        
-        $frontDir = env('FRONT_DIR', 'front');
         return view($frontDir. '.index', ['result' => $params]);
     }
 
