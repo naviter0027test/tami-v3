@@ -1,0 +1,395 @@
+@charset "utf-8";
+/* CSS Document */
+body{ 
+	margin:0;
+	padding:0;
+	font-size:13px;	
+	font-family:Microsoft YaHei,Helvetica,Arial,sans-serif;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;	
+	color:#000;
+	
+}
+a{ text-decoration:none; transition: 0.5s ease;}
+a:hover{ color:#E2AB68; text-decoration:none;}
+input{font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+button,.btn{transition: 0.5s ease;}
+button:hover,.btn:hover{ opacity:0.6;}
+button,select{ cursor:pointer; font-family:Microsoft YaHei,Helvetica,Arial,sans-serif;}
+h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
+
+
+.company_info{ background:url(../../images/tami-v3/bg001.jpg) center top no-repeat; margin-top:-5vh; background-size:100% auto; min-height:105vh;}
+
+.company_info .content{ position:relative;}
+.company_info .brand{width:32.3vw; height:5.5vw; padding-top:6.8vw; padding-left: 18.9vw;display: flex;  align-items: center;  justify-content: center;}
+.company_info .brand .box{}
+.company_info .brand img{ max-width:100%; max-height:100%;}
+.company_info .info{ display: flex;  flex-wrap: wrap;}
+.company_info .info .col01{ padding-left:22.1vw; padding-top:8.5vw; width:44vw;}
+.company_info .info .col01 .company_title{ text-align:center; height:3.6vw;}
+.company_info .info .col01 .company_title h2{ font-size:1.7vw;}
+.company_info .info .col01 .company_title small{ display:block; font-size:1.2vw; font-weight:800;}
+.company_info .info .col01 .info_detail{ display: flex;  flex-wrap: wrap;height: 17vw;}
+.company_info .info .col01 .info_detail .info_left{ width:20.4%;padding-top:3vw; color:#fff;font-size: 12px;word-break: break-word;}
+.company_info .info .col01 .info_detail .info_left .sub_title{ margin-bottom:5px;}
+.company_info .info .col01 .info_detail .info_left .sub_title b{ display:inline-block; border:2px solid #fff; border-radius:0.8vw; padding:0.5vw;  font-size:1.1vw; font-weight:400;}
+.company_info .info .col01 .info_detail .info_left .detail{ overflow:hidden;}
+.company_info .info .col01 .info_detail .info_left .detail a{color:#fff;}
+.company_info .info .col01 .info_detail .info_left .detail p{ transform:scale(0.8);transform-origin: left top; width:11vw; line-height:1.3vw;}
+.company_info .info .col01 .info_detail .info_right{ width:calc(100% - 20.4%);    padding-top: 0.55vw; position:relative;}
+.company_info .info .col01 .info_detail .info_right .box{display: flex;height: 16.5vw; }
+.company_info .info .col01 .info_detail .info_right .img{ width:55%;display: flex; justify-content: center; background-size:cover;}
+.company_info .info .col01 .info_detail .info_right .img img{ max-width:100%; max-height:100%;}
+.company_info .info .col01 .info_detail .info_right .desc{ width:calc(100% - 55% - 1vw); padding:0.5vw; font-size:0.6vw; line-height:1vw; overflow:hidden;line-height:1.2vw;}
+.company_info .info .col01 .info_detail .info_right .desc h3{ color:#2e3189; font-size:1.1vw; font-weight:400; margin-bottom:10px;line-height:1.4vw;}
+
+.company_info .info .col02{padding-top: 1.8vw; width:10.2vw;padding-left: 1.25vw;}
+.company_info .info .col02 .ad{ height:14.3vw;display: flex;  align-items: center;  justify-content: center;}
+.company_info .info .col02 .ad img{ max-width:100%; max-height:100%;}
+.company_info .action{ padding-left:45.6vw; padding-top:1.6vw;}
+.company_info .action a{ display:inline-block; position:relative; color:#fff; font-size: 1.5vw; width:18.2vw;}
+.company_info .action a img{ width:100%;}
+.company_info .action a i{ background:url(../../images/tami-v3/icon_icon_arrow_right.svg) center no-repeat; width:30px; height:30px; display:inline-block;}
+.company_info .action a:hover{ 
+	-ms-transform: scale(1.1, 1.1); 
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+.company_info .action a div{ position:absolute; left:0; top:0; width:100%;     height: 90%;   display: flex; align-items: center; justify-content: center;}
+
+
+.product_detail{ max-width:1330px; position:fixed; left:calc(50% - 665px); top:2.5vw; z-index:20;}
+.product_detail .detail_slider .item .box .top{ display:flex;flex-wrap:wrap;}
+.product_detail .detail_slider .item .box .bottom{ border-radius:1vw; display:flex;flex-wrap:wrap;height: 15vw;}
+.product_detail .detail_slider .item .box .col01{ width:35%; }
+.product_detail .detail_slider .item .box .top .col01{ display:flex; padding-bottom:2vw;}
+.product_detail .detail_slider .item .box .bottom .col01{
+	background:#2dccb2;
+	-webkit-border-top-left-radius: 1vw;
+	-webkit-border-bottom-left-radius: 1vw;
+	-moz-border-radius-topleft: 1vw;
+	-moz-border-radius-bottomleft: 1vw;
+	border-top-left-radius: 1vw;
+	border-bottom-left-radius: 1vw;
+
+}
+.product_detail .detail_slider .item .box .col01 .thumbnail{ display:flex;flex-wrap:wrap;  width: 94%; justify-content: space-between; align-items: flex-end; }
+.product_detail .detail_slider .item .box .col01 .thumbnail .sub_item{ width:45%; overflow:hidden; border-radius:10px; background:#fff; text-align:center;height: 35%; display: flex;
+    justify-content: center;
+    align-items: center;}
+.product_detail .detail_slider .item .box .col01 .thumbnail .sub_item img{ width:100%;}
+.product_detail .detail_slider .item .box .col01 .product_title{		
+	font-size:1.7vw;
+	color:#fff;
+	padding:2vw;
+
+}
+.product_detail .detail_slider .item .box .col02{ width:65%;}
+.product_detail .detail_slider .item .box .col02 .img{ height: 30vw; position:relative; background:rgba(255,255,255,0.65); display:flex;align-items: center; justify-content: center;}
+.product_detail .detail_slider .item .box .col02 .img .big{ width: auto; height: 85%;}
+.product_detail .detail_slider .item .box .col02 .zoom{ position:absolute; right:1vw; bottom:1vw;}
+.product_detail .detail_slider .item .box .col02 .zoom img{ width:3vw;}
+.product_detail .detail_slider .item .box .bottom .col02{
+	color:#fff; font-size:1.1vw; position:relative; line-height:1.65vw;
+	background:url(../../images/tami-v3/gradient_001.jpg) right center repeat-y; background-size:100% auto; overflow:hidden;
+	-webkit-border-top-right-radius: 1vw;
+	-webkit-border-bottom-right-radius: 1vw;
+	-moz-border-radius-topright: 1vw;
+	-moz-border-radius-bottomright: 1vw;
+	border-top-right-radius: 1vw;
+	border-bottom-right-radius: 1vw;
+
+}
+
+
+.product_detail .detail_slider .item .box .bottom .col02 .add_padding{ position:relative; padding:1vw;}
+.product_detail .detail_slider .item .box .bottom .col02 .scrollbar{width:100%; height: 13vw;}
+.product_detail .detail_slider .item .box .bottom .col02 .scrollbar .mCSB_scrollTools{ width:30px; opacity:1; }
+.product_detail .detail_slider .item .box .bottom .col02 .scrollbar .mCSB_dragger_bar{ width:30px; height:27px ; background:none; background:url(../../images/tami-v3/scroller_button.png) center no-repeat; background-size:100% auto;}
+.product_detail .detail_slider .item .box .bottom .col02 .scrollbar .mCSB_scrollTools .mCSB_dragger{height:27px  !important;}
+.product_detail .detail_slider .item .box .bottom .col02 .scrollbar .mCSB_draggerRail{ background:url(../../images/tami-v3/scroller_bar.png) center no-repeat; background-size:auto 100%;}
+.product_detail .detail_slider .owl-nav .owl-prev{ background:url(../../images/tami-v3/arrow_left.png) center no-repeat; background-size:100% auto; width:3.1vw; height:6.6vw; position:absolute; left:-5vw; top:calc(50% - 6.6vw); }
+.product_detail .detail_slider .owl-nav .owl-next{ background:url(../../images/tami-v3/arrow_right.png) center no-repeat; background-size:100% auto; width:3.1vw; height:6.6vw; position:absolute; right:-5vw; top:calc(50% - 6.6vw); }
+.product_detail .detail_slider .owl-nav .owl-prev span{ display:none;}
+.product_detail .detail_slider .owl-nav .owl-next span{ display:none;}
+
+
+
+.product_detail .navi_div{position:absolute; left:0; top:0;z-index: 30;     width: 100%;}
+.product_detail .navi_div .outer{  display:flex; width:32.9%; flex-wrap: wrap;justify-content: space-between;}
+.product_detail .navi_div .item{ width:46%; position:relative; margin-bottom:1vw;}
+.product_detail .navi_div .item img{ width:100%;}
+.product_detail .navi_div .item a{ color:#fff; font-size:1.5vw; position:absolute; left:0; top:0; width:100%; height:90%; display: flex;   justify-content: center;  align-items: center;}
+.product_detail .navi_div .item a img{ width:2.6vw; margin-right:5px;}
+.product_detail .navi_div .item .static{}
+.product_detail .navi_div .item .hover{ position:absolute; left:0; top:0; opacity:0;}
+.product_detail .navi_div .item:hover .static{ opacity:0;}
+.product_detail .navi_div .item:hover .hover{ opacity:1;}
+.product_detail .navi_div .item.active .static{ opacity:0;}
+.product_detail .navi_div .item.active .hover{ opacity:1;}
+.contact_form{ display:none;}
+.contact_form.active{ display:block;}
+.contact_form{ position:fixed;left:0; top:0; width:100%; height:100%; display:none; overflow-y: auto; z-index:999;}
+.contact_form.active{ display:block;}
+.contact_form .outer{
+	width:41.2vw;	
+	margin:0 auto;
+	margin-top: 2vw;
+	background:url(../../images/tami-v3/form_bg.png) top center no-repeat;
+	background-size:100% auto;
+	min-height:47.7vw;
+	
+}
+.contact_form .outer .close_div{ text-align:right;}
+.contact_form .outer .close_div button{ border:none; background:none; padding:0; width: 4vw; height:3vw;}
+.contact_form .outer .form_div{ padding:0 50px;margin-top: 4vw;}
+.contact_form .outer .form_div .item{ color:#fff; font-size:1.2vw; margin-bottom:3vw; }
+.contact_form .outer .form_div .item input{color:#fff; font-size:1.2vw;border:none; border-bottom:1px solid #fff; border-radius:0; width:100%; background:none; }
+.contact_form .outer .form_div .item input::placeholder { color:#fff; }
+.contact_form .outer .form_div .item input:-ms-input-placeholder { color:#fff; }
+.contact_form .outer .form_div .item input::-ms-input-placeholder { color:#fff; }
+.contact_form .outer .form_div .item textarea{ min-height:10vw; border:1px solid #fff; border-radius:0; width:100%; background:none; color:#fff;}
+.contact_form .outer .form_div .item textarea::placeholder { color:#fff; font-size:1.2vw}
+.contact_form .outer .form_div .item textarea:-ms-input-placeholder { color:#fff; font-size:1.2vw}
+.contact_form .outer .form_div .item textarea::-ms-input-placeholder { color:#fff; font-size:1.2vw }
+.contact_form .outer .form_div .item.action{ text-align:center;}
+.contact_form .outer .form_div .item.action button{ font-size:1.8vw; color:#fff; border:none; text-align:center;    width: 15vw;height:55px; background:#27c9ae; border-radius:100px; position:relative;     display: inline-flex; justify-content: center;  align-items: center;}
+.contact_form .outer .form_div .item.action button i{ display:inline-block; background:url(../../images/tami-v3/icon_icon_arrow_right.svg) center no-repeat; width:20px; height:20px; position:absolute; right:20px; top:20px; }
+
+
+.home_div{ background:url(../../images/tami-v3/home_bg001.jpg) center top no-repeat; background-size:cover; min-height:100vh;}
+.home_div .outer{ max-width:1330px; margin:0 auto;position: relative; padding-top:2vw; min-height:100vh;}
+.home_div .brand img{ width:32vw;}
+.home_div .brand img.mobile{ display:none;}
+.home_div .block_img{ position:absolute; }
+.home_div .block_img img{ width:100%;}
+.home_div #block01{ left:0; top:24.4vw; width:34.3vw;}
+.home_div #block02{ right:0; top:4vw; width:34.1vw;}
+.home_div #block03{ left:35vw; top:26.5vw; width:29.7vw;}
+.home_div .block_img .animate{ position:absolute; left:0; top:0; width:100%; height:100%; cursor:pointer;}
+.home_div .block_img .animate div{ position:absolute; left:0; top:0; width:100%; height:100%;}
+.home_div .visited{ display:inline-block; position:absolute; right:0; bottom:2vw; color:#fff; font-size:1vw;}
+.home_div .popup_block{ display:none; position:absolute;}
+.home_div .popup_block.active{ display:block;}
+.home_div #popup01{ right:5vw; top:5vw;}
+.home_div #popup02{ left:5vw;}
+.home_div #popup03{ left:2vw;}
+.home_div .popup_block .bg{ width:30.9vw;}
+.home_div .popup_block .box{ position:absolute; left:0; top:0; width:calc(100% - 6vw); height:calc(100% - 6vw); padding:3vw;}
+.home_div .popup_block .box .list_item .item a{ display:flex; align-items:center; position:relative; margin:1vw 0;}
+.home_div .popup_block .box .list_item .item .img{ border:2px solid #4d4d4d; background:#fff; border-radius:100px; width:5.5vw; height:5.5vw;
+	display:flex; align-items:center;justify-content: center; overflow:hidden;z-index: 2; position: relative;}
+.home_div .popup_block .box .list_item .item .img img{ max-width:60%; max-height:60%;}
+.home_div .popup_block .box .list_item .item .info_outer{
+	color:#fff;
+	background:#fff;
+	border:2px solid #4d4d4d;
+	height: 4.5vw;
+    width: calc(100% - 7vw);
+	padding-left:5vw;
+	position:absolute;	
+	right:0;
+	z-index: 1;
+	-webkit-border-top-right-radius: 100px;
+	-webkit-border-bottom-right-radius: 100px;
+	-moz-border-radius-topright: 100px;
+	-moz-border-radius-bottomright: 100px;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+	background: rgba(18,130,113,1);
+	background: -moz-linear-gradient(left, rgba(18,130,113,1) 0%, rgba(53,206,181,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(18,130,113,1)), color-stop(100%, rgba(53,206,181,1)));
+	background: -webkit-linear-gradient(left, rgba(18,130,113,1) 0%, rgba(53,206,181,1) 100%);
+	background: -o-linear-gradient(left, rgba(18,130,113,1) 0%, rgba(53,206,181,1) 100%);
+	background: -ms-linear-gradient(left, rgba(18,130,113,1) 0%, rgba(53,206,181,1) 100%);
+	background: linear-gradient(to right, rgba(18,130,113,1) 0%, rgba(53,206,181,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#128271', endColorstr='#35ceb5', GradientType=1 );
+	display:flex; align-items:center;
+}
+.home_div .popup_block .box .list_item .item .info_outer h3{ width:100%; font-size:1.1vw;}
+.home_div .popup_block .box .list_item .item .info_outer p{ width:100%; font-size:0.8vw;}
+.version{ position:absolute; z-index:22; right:2vw; top:2vw; display:inline-block; background:#fff; border-radius:20px; border:1px solid #666666; padding:3px 10px; font-size:1.2vw;}
+.version a{ color:#666666; display:inline-block; padding:2px 5px; position:relative;}
+.version a:first-child:after{ content:''; background:#666666; height:1.2vw; width:1px; position:absolute; right:0; top:3px;}
+.version a.active{ color:#2dccb2;}
+
+.back{ position:absolute; top:2vw; left:2vw;z-index:22;}
+.back img{
+	width:5vw; 
+	-webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .3));
+  	filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .3));
+
+}
+
+.mobile_block_bg{ display:none;}
+.mobile_block_bg img{ width:100%;}
+.btn_back{ display:none; position:absolute; left:3vw;top: 25vw; z-index:12;}
+.btn_back img{ width: 10vw;}
+
+.overly{ cursor:pointer;}
+.body_overly,.overly{
+	display:none;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background: rgba(0,0,0,0.8);
+	background: -moz-linear-gradient(-45deg, rgba(0,0,0,0.8) 0%, rgba(224,224,224,0.8) 100%);
+	background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,0,0,0.8)), color-stop(100%, rgba(224,224,224,0.8)));
+	background: -webkit-linear-gradient(-45deg, rgba(0,0,0,0.8) 0%, rgba(224,224,224,0.8) 100%);
+	background: -o-linear-gradient(-45deg, rgba(0,0,0,0.8) 0%, rgba(224,224,224,0.8) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(0,0,0,0.8) 0%, rgba(224,224,224,0.8) 100%);
+	background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(224,224,224,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#e0e0e0', GradientType=1 );
+	z-index:10;
+}
+.body_overly.active{ display:block;}
+.body_popup_active .overly{ display:block;}
+
+.body_popup_active .block_img.active{ z-index:100;}
+.body_popup_active .popup_block{ z-index:100;}
+
+.mobile_rotate{ display:none; position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(230,230,230,1); align-items: center;
+    justify-content: center; z-index:999;text-align: center;}
+.mobile_rotate .img{animation:4s infinite rotate;  animation-delay: 2s; padding:12vw 0 17vw 0; display:block; width:100%;}
+.mobile_rotate .txt{ width:100%;}
+ 	
+.mobile_rotate img{ width:80%; }
+
+.mobile_rotate.active{ display:block;}
+
+
+@-webkit-keyframes rotate {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, -15deg);
+    transform: rotate3d(0, 0, 1, -15deg);
+  }  
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+  }
+}
+
+@keyframes rotate {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, -15deg);
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+  }
+}
+
+.rotate {
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-animation-name: rotate;
+  animation-name: rotate;
+}
+
+
+.body_mobile .company_info .info .col01 .info_detail .info_left{ font-size:1vw;}
+.body_mobile .company_info .action a i{ width:1.8vw; height:1.8vw; background-size:contain; margin-left:2px; }
+
+.body_mobile .product_detail{ top:2vw;}
+.body_mobile .product_detail .detail_slider .item .box .bottom{ height: 12vw;}
+.body_mobile .product_detail .detail_slider .item .box .bottom .col02 .scrollbar{height: 10vw;}
+.body_mobile .company_info .info .col01 .info_detail .info_left .sub_title b {  border: 1px solid #fff;}
+.body_mobile .company_info .info .col01 .info_detail .info_right .desc h3{ margin-bottom:1vw; margin-top:1vw;}
+.body_mobile .company_info .info .col01 .info_detail .info_left .sub_title b{ margin-top:0.5vw;}
+.body_mobile .company_info .info .col01 .company_title h2{ font-size:1.6vw;}
+.body_mobile .company_info .info .col01 .company_title small{ font-size:1.1vw; font-weight:400;}
+
+
+.body_home.version a:first-child:after{ height:2.5vw;}
+
+
+@media screen and (max-width: 1680px){
+	.company_info .info .col01 .info_detail .info_left .sub_title b{ border:1.5px solid #fff; border-radius:0.6vw; padding:0.3vw;  font-size:1vw; }
+	.company_info .info .col01 .info_detail .info_right .desc p{transform:scale(0.8);transform-origin: left top;    width: 18vw; }
+}
+
+@media screen and (max-width: 1480px){
+	.product_detail{ max-width:80%; left:10%;}
+	.home_div .outer{ max-width:80%;}
+	.product_detail{ top:2vw;}
+	.contact_form .outer{ width:40vw;}
+	.contact_form .outer .form_div .item{ }
+}
+@media screen and (max-width: 1280px){
+	.company_info{margin-top: -2vh; min-height:102vh;}
+}
+@media screen and (max-width: 1200px){
+	.contact_form .outer .form_div{ margin-top:1vw;}
+	.contact_form .outer .form_div .item{ margin-bottom:2vw;}
+	.contact_form .outer .form_div .item.action button{height: 4vw;}
+	.contact_form .outer .form_div .item.action button i{    top: 1.2vw; right:1vw; width: 2vw;height: 2vw; background-size: contain;}
+	.product_detail{ top:1vw;}
+	
+}
+@media screen and (max-width: 1024px){
+	.body_home .version{ top:5vw; right: 3vw; z-index:12;}	
+	.body_home .version a{ font-size:2.5vw;}
+	.body_home .version a:first-child:after{ height:2.5vw;}
+	.body_home{background:url(../../images/tami-v3/home_bg001_mobile.jpg) center top no-repeat; background-size:cover;}
+	.home_div{ background:none; }
+	.home_div .outer{ max-width:100%; padding-top:0;}
+	.home_div .visited{ bottom:auto; top: 13vw;right: 3vw; z-index:12; font-size:2.5vw;}
+	.home_div .brand{ background:#2b2b38;padding: 3vw;}
+	.home_div .brand img.mobile{ display:block;}
+	.home_div .brand img.web{ display:none;}	
+	.body_popup_active .home_div .brand{ z-index:11; position:relative;}
+	.home_div #block01{ left:20vw; top:35vw; width: 70vw;}
+	.home_div #block02{ right:20vw; top:150vw; width: 70vw;}
+	.home_div #block03{ left:10vw; top:90vw; width: 70vw;}
+	
+	.body_popup_active .home_div #block01{ left:15vw; top:35vw;width: 70vw; }
+	.body_popup_active .home_div #block02{ right:15vw; top:35vw;width: 70vw; }
+	.body_popup_active .home_div #block03{ left:15vw; top:35vw;width: 70vw; }
+	
+	
+	.body_popup_active .mobile_block_bg{ display:block; position:relative; z-index:11; }
+	.body_popup_active .btn_back{ display:inline-block;}
+	.home_div .popup_block{ position:relative;}
+	.home_div #popup01{ right:0; top:0;}
+	.home_div #popup02{ left:0;}
+	.home_div #popup03{ left:0;}
+	.home_div .popup_block .bg{ display:none;}
+	.home_div .popup_block .box{ position:relative;}
+	.home_div .popup_block .box .list_item .item .img{ width:15vw; height:15vw;}
+	.home_div .popup_block .box .list_item .item .info_outer{ height:12vw;width: calc(100% - 18vw);  padding-left: 8vw;}
+	.home_div .popup_block .box .list_item .item .info_outer h3{ font-size:4vw;}
+	.home_div .popup_block .box .list_item .item .info_outer p{ font-size:2vw;}
+	
+	.body_popup_active .overly:after{ content:''; position:absolute; left:0; top:0; width:100vw; height:100vh;  background:url(../../images/tami-v3/mobile_popup_bg.png) right 90% #cecece no-repeat; background-size:70% auto;}
+	
+}
+
+
