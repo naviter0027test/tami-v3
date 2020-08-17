@@ -21,6 +21,10 @@
                 <p> <input type="email" name="email" /> </p>
                 <h5><span>產品圖片</span></h5>
                 <p> <input type="file" name="picture1" /> </p>
+                <h5><span>產品左下圖片1</span></h5>
+                <p> <input type="file" name="picture2" /> </p>
+                <h5><span>產品左下圖片2</span></h5>
+                <p> <input type="file" name="picture3" /> </p>
                 <h5><span>亮點資訊</span></h5>
                 <p> <textarea type="text" name="info" ></textarea> </p>
                 <h5><span>亮點資訊(英文)</span></h5>

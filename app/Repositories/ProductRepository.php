@@ -28,6 +28,20 @@ class ProductRepository
             $product->save();
             $files['picture1']->move($root. $path, $filename);
         }
+        if(isset($files['picture2'])) {
+            $ext = $files['picture2']->getClientOriginalExtension();
+            $filename = $product->id. "_picture2.$ext";
+            $product->picture2 = $path. $filename;
+            $product->save();
+            $files['picture2']->move($root. $path, $filename);
+        }
+        if(isset($files['picture3'])) {
+            $ext = $files['picture3']->getClientOriginalExtension();
+            $filename = $product->id. "_picture3.$ext";
+            $product->picture3 = $path. $filename;
+            $product->save();
+            $files['picture3']->move($root. $path, $filename);
+        }
         if(isset($files['dm'])) {
             $ext = $files['dm']->getClientOriginalExtension();
             $filename = $product->id. "_dm.$ext";
@@ -104,6 +118,20 @@ class ProductRepository
             $product->picture1 = $path. $filename;
             $product->save();
             $files['picture1']->move($root. $path, $filename);
+        }
+        if(isset($files['picture2'])) {
+            $ext = $files['picture2']->getClientOriginalExtension();
+            $filename = $product->id. "_picture2.$ext";
+            $product->picture2 = $path. $filename;
+            $product->save();
+            $files['picture2']->move($root. $path, $filename);
+        }
+        if(isset($files['picture3'])) {
+            $ext = $files['picture3']->getClientOriginalExtension();
+            $filename = $product->id. "_picture3.$ext";
+            $product->picture3 = $path. $filename;
+            $product->save();
+            $files['picture3']->move($root. $path, $filename);
         }
         if(isset($files['dm'])) {
             $ext = $files['dm']->getClientOriginalExtension();

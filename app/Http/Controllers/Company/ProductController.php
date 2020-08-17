@@ -60,6 +60,10 @@ class ProductController extends Controller
         ];
         if($request->hasFile('picture1'))
             $files['picture1'] = $request->file('picture1');
+        if($request->hasFile('picture2'))
+            $files['picture2'] = $request->file('picture2');
+        if($request->hasFile('picture3'))
+            $files['picture3'] = $request->file('picture3');
         if($request->hasFile('dm'))
             $files['dm'] = $request->file('dm');
 
@@ -102,6 +106,10 @@ class ProductController extends Controller
         ];
         if($request->hasFile('picture1'))
             $files['picture1'] = $request->file('picture1');
+        if($request->hasFile('picture2'))
+            $files['picture2'] = $request->file('picture2');
+        if($request->hasFile('picture3'))
+            $files['picture3'] = $request->file('picture3');
         if($request->hasFile('dm'))
             $files['dm'] = $request->file('dm');
 
