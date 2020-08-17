@@ -60,6 +60,8 @@ class CompanyRepository
         $company->contactLink2 = isset($params['contactLink2']) ? $params['contactLink2'] : '';
         $company->contactLink3 = isset($params['contactLink3']) ? $params['contactLink3'] : '';
         $company->contactLink4 = isset($params['contactLink4']) ? $params['contactLink4'] : '';
+        $company->title = isset($params['title']) ? $params['title'] : '';
+        $company->titleEn = isset($params['titleEn']) ? $params['titleEn'] : '';
         $company->contactDesc = isset($params['contactDesc']) ? $params['contactDesc'] : '';
         $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
         $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
@@ -232,6 +234,8 @@ class CompanyRepository
         $company->contactLink2 = isset($params['contactLink2']) ? $params['contactLink2'] : '';
         $company->contactLink3 = isset($params['contactLink3']) ? $params['contactLink3'] : '';
         $company->contactLink4 = isset($params['contactLink4']) ? $params['contactLink4'] : '';
+        $company->title = isset($params['title']) ? $params['title'] : '';
+        $company->titleEn = isset($params['titleEn']) ? $params['titleEn'] : '';
         $company->contactDesc = isset($params['contactDesc']) ? $params['contactDesc'] : '';
         $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
         $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;

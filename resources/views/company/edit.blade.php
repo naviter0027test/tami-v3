@@ -40,6 +40,14 @@
                 @endif
                     更換如下:
                     <input type="file" name="logo2" /> </p>
+                <h5><span>亮點資訊 標題</span></h5>
+                <p> <input type="text" name="title" value="{{ $result['company']->title }}" /> </p>
+                <h5><span>亮點資訊 標題(英文)</span></h5>
+                <p> <input type="text" name="titleEn" value="{{ $result['company']->titleEn }}" /> </p>
+                <h5><span>亮點資訊 描述</span></h5>
+                <p> <textarea name="contactDesc" >{{ $result['company']->contactDesc }}</textarea> </p>
+                <h5><span>亮點資訊 描述(英文)</span></h5>
+                <p> <textarea name="contactDescEn" >{{ $result['company']->contactDescEn }}</textarea> </p>
                 <h5><span>點亮資訊 如下圖，可放五張 (建議寬高: 475x230, Max:5M)</span></h5>
                 <img src="/images/company2020_07_24/company_info.png" class="schematic" />
                 <h5><span>點亮資訊1</span></h5>
@@ -127,7 +135,7 @@
                     <input type="file" name="infoPath5" /> 
                     <input type="text" name="infoVideo5" /> 
                 </p>
-                <h5><span>前台公司頁右下圖 (建議寬高: 250x290, Max: 5M)</span></h5>
+                <h5><span>前台公司頁右上圖 (建議寬高: 250x290, Max: 5M)</span></h5>
                 <h6>示意圖</h6>
                 <img src="/images/company2020_07_24/company_right_down.png" class="schematic" />
                 <h6></h6>
@@ -149,6 +157,7 @@
                 <p> <input type="text" name="contactLink3" value="{{ $result['company']->contactLink3 }}" /> </p>
                 <h5><span>官網網址 web</span></h5>
                 <p> <input type="text" name="contactLink4" value="{{ $result['company']->contactLink4 }}" /> </p>
+<!--
                 <h5><span>前台樣式</span></h5>
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />
@@ -161,6 +170,7 @@
                         <option value="6" {{ $result['company']->frontMode == '6' ? 'selected="selected"' : '' }} >黃</option>
                     </select> 
                 </p>
+-->
                 <p class=""> <button class="btn">更改</button> </p>
             </form>
 
