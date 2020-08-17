@@ -127,9 +127,13 @@ class FrontController extends Controller
             switch($params['lan']) {
             case 'cn':
                 $company->nameShow = $company->name;
+                $company->titleShow = $company->title;
+                $company->contactDescShow = nl2br($company->contactDesc);
                 break;
             case 'en':
                 $company->nameShow = $company->nameEn;
+                $company->titleShow = $company->titleEn;
+                $company->contactDescShow = nl2br($company->contactDescEn);
                 break;
             }
         } catch(Exception $e) {
