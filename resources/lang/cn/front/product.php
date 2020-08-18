@@ -14,4 +14,9 @@ return [
     'ask_success' => '询问成功，静待厂商回覆',
     'err_msg' => '错误讯息',
     'notify_adm' => '请截图并告知系统管理者',
+    'go_back' => '返回上層',
+    'go_home2' => '返回首页',
+    'website2' => '官 网',
+    'catalog2' => '型 录',
+    'share2' => '分 享',
 ];

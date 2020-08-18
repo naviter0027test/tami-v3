@@ -123,7 +123,7 @@
             </div>       	
         </div>
         <div class="action">
-        	<a href="page03.html"><img src="/images/tami-v3/button_001.png"><div>PRODUCTS LIST<i></i></div></a>
+        	<a href="/front/company/{{ $company->id }}/product"><img src="/images/tami-v3/button_001.png"><div>PRODUCTS LIST<i></i></div></a>
         </div>
 	</div>
 </div>

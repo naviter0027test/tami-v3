@@ -14,4 +14,9 @@ return [
     'ask_success' => 'ask success, please wait for reply',
     'err_msg' => 'error message',
     'notify_adm' => 'please screenshot and notify admin',
+    'go_back' => 'Go Back',
+    'go_home2' => 'Home',
+    'website2' => 'Web',
+    'catalog2' => 'DM',
+    'share2' => 'Share',
 ];
