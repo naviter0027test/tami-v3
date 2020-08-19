@@ -289,29 +289,37 @@
 </div>
 
 <div id="contact_form" class="contact_form">
+    <input type="hidden" name="none" class="askSuccess" value="{{ trans('front/product.ask_success') }}" />
+    <input type="hidden" name="none" class="errMsg" value="{{ trans('front/product.err_msg') }}" />
+    <input type="hidden" name="none" class="notifyAdm" value="{{ trans('front/product.notify_adm') }}" />
+    <form action="/front/contact" method="post" autocomplete="off" class="contact">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="companyId" value="{{ $company->id }}" />
+        <input type="hidden" name="productId" value="" />
 	<div class="outer">
     	<div class="close_div"><button class="btn_close"></button></div>
 		<div class="form_div">
         	<div class="item">
-        		<input type="text" placeholder="公司名称">
+        		<input type="text" name="companyName" placeholder="{{ trans('front/product.company_name') }}" required>
             </div>
         	<div class="item">
-        		<input type="text" placeholder="Email">
+        		<input type="text" name="email" placeholder="Email" required>
             </div>
             <div class="item">
-        		<input type="text" placeholder="联络人">
+        		<input type="text" name="name" placeholder="{{ trans('front/product.contact_name') }}" required>
             </div>
             <div class="item">
-        		<input type="text" placeholder="连络电话">
+        		<input type="text" name="phone" placeholder="{{ trans('front/product.phone') }}" required>
             </div>
             <div class="item">
-            	<textarea placeholder="问题内容"></textarea>        		
+            	<textarea name="content" placeholder="{{ trans('front/product.content') }}" required></textarea>        		
             </div>
             <div class="item action">
-        		<button>提 交<i></i></button>
+        		<button>{{ trans('front/product.submit') }}<i></i></button>
             </div>
         </div>
 	</div>
+    </form>
 </div>
 
 
