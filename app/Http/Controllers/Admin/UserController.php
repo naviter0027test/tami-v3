@@ -35,6 +35,7 @@ class UserController extends Controller
         ];
         $contactRepository = new ContactRepository();
         $result['processCount'] = $contactRepository->amountListByAdmin();
+        $result['jobTitleList'] = $contactRepository->statisticsJobTitleListByAdmin();
         return view('admin.home', ['adm' => $admin, 'result' => $result]);
     }
 

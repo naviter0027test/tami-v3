@@ -124,6 +124,13 @@ body {
     border-left: 3px solid #0073aa;
 }
 
+.content h4 {
+    margin: 20px 0 30px 0;
+    padding: 5px 5px 5px 10px;
+
+    border-left: 3px solid #0073aa;
+}
+
 .content h3 i {
     top: 3px;
 }

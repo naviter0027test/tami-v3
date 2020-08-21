@@ -5,6 +5,9 @@ namespace App\Repositories;
 use App\Contact;
 use App\Company;
 use App\Product;
+use App\Industry;
+use App\IndustryContactRelation;
+use App\JobTitle;
 use Exception;
 use Config;
 
@@ -144,5 +147,15 @@ class ContactRepository
             });
         else
             \Log::info('product id:['. $product->id. '], name:['. $product->name. '] email is empty');
+    }
+
+    public function statisticsJobTitleListByAdmin() {
+        $jobTitles = JobTitle::orderBy('sort', 'asc')
+            ->get();
+        foreach($jobTitles as $i => $jobTitle) {
+            $jobTitles[$i]['count'] = Contact::where('jobTitleId' ,'=', $jobTitle->id)
+                ->count();
+        }
+        return $jobTitles;
     }
 }
