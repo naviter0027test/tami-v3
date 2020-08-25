@@ -13,7 +13,7 @@ body{
 }
 a{ text-decoration:none; transition: 0.5s ease;}
 a:hover{ color:#E2AB68; text-decoration:none;}
-input{font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;}
+input,textarea{font-family: Microsoft YaHei,Helvetica,Arial,sans-serif;}
 input:focus,
 select:focus,
 textarea:focus,
@@ -150,9 +150,12 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 }
 .contact_form .outer .close_div{ text-align:right;}
 .contact_form .outer .close_div button{ border:none; background:none; padding:0; width: 4vw; height:3vw;}
-.contact_form .outer .form_div{ padding:0 50px;margin-top: 4vw;}
-.contact_form .outer .form_div .item{ color:#fff; font-size:1.2vw; margin-bottom:3vw; }
-.contact_form .outer .form_div .item input{color:#fff; font-size:1.2vw;border:none; border-bottom:1px solid #fff; border-radius:0; width:100%; background:none; }
+.contact_form .outer .form_div{ padding:0 3vw;margin-top: 3vw;}
+.contact_form .outer .form_div .item{ color:#fff; font-size:1.2vw; margin-bottom:2vw; }
+.contact_form .outer .form_div .item.fixed_margin_bottom{ margin-bottom:0.5vw;}
+.contact_form .outer .form_div .item.two_col{ display:flex;justify-content: space-between;}
+.contact_form .outer .form_div .item.two_col .col{ width:48%;}
+.contact_form .outer .form_div .item input{     line-height: 1.6vw; padding:0.5vw 0;color:#fff; font-size:1.2vw;border:none; border-bottom:1px solid #fff; border-radius:0; width:100%; background:none; }
 .contact_form .outer .form_div .item input::placeholder { color:#fff; }
 .contact_form .outer .form_div .item input:-ms-input-placeholder { color:#fff; }
 .contact_form .outer .form_div .item input::-ms-input-placeholder { color:#fff; }
@@ -164,6 +167,102 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .contact_form .outer .form_div .item.action button{ font-size:1.8vw; color:#fff; border:none; text-align:center;    width: 15vw;height:55px; background:#27c9ae; border-radius:100px; position:relative;     display: inline-flex; justify-content: center;  align-items: center;}
 .contact_form .outer .form_div .item.action button i{ display:inline-block; background:url(../../images/tami-v3/icon_icon_arrow_right.svg) center no-repeat; width:20px; height:20px; position:absolute; right:20px; top:20px; }
 
+.contact_form .outer .form_div .item .drop_down_menu{ position:relative;}
+.contact_form .outer .form_div .item .drop_down_menu button{     line-height: 1.6vw;border-radius:0;padding: 0.5vw 0;background:none; text-align:left; color:#fff; font-size: 1.2vw;border:0; width:100%; border-bottom: 1px solid #fff;}
+.contact_form .outer .form_div .item .drop_down_menu button span{ display:inline-block;}
+/*.drop_down_menu:hover .list_item{ display:block;}*/
+.contact_form .outer .form_div .item .drop_down_menu .list_item{ display:none; position:absolute;  z-index:111;width:100%;}
+.contact_form .outer .form_div .item .drop_down_menu .list_item .scrollbar{height:15vw; padding:0.3vw 0; width:100%; background:rgba(14,29,69,0.7); }
+.contact_form .outer .form_div .item .drop_down_menu .list_item .scrollbar .mCSB_scrollTools{ width:30px; opacity:1; }
+.contact_form .outer .form_div .item .drop_down_menu .list_item .scrollbar .mCSB_dragger_bar{ width:30px; height:27px ; background:none; background:url(../../images/tami-v3/scroller_button.png) center no-repeat; background-size:100% auto;}
+.contact_form .outer .form_div .item .drop_down_menu .list_item .scrollbar .mCSB_scrollTools .mCSB_dragger{height:27px  !important;}
+.contact_form .outer .form_div .item .drop_down_menu .list_item .scrollbar .mCSB_draggerRail{ background:url(../../images/tami-v3/scroller_bar.png) center no-repeat; background-size:auto 100%;}
+
+
+
+.contact_form .outer .form_div .item .drop_down_menu .list_item .item{ color:#fff; margin-bottom:0;}
+.contact_form .outer .form_div .item .drop_down_menu .list_item .item .container{ padding:0.2vw;display:block;}
+.contact_form .outer .form_div .item .drop_down_menu .list_item .item .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.contact_form .outer .form_div .item .drop_down_menu .list_item .item .container input:checked ~ .checkmark {
+  color:#231815;
+}
+
+
+
+.contact_form .outer .form_div .item .checkbox_list{}
+.contact_form .outer .form_div .item .checkbox_list .checkbox_outer{ display:inline-block;margin-bottom: 0.3vw; margin-right:0.3vw;}
+.contact_form .outer .form_div .item .chk_container {
+  display: inline-flex;
+  position: relative;
+  padding-left: 1.6vw;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 1.2vw;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.contact_form .outer .form_div .item label{    display: block; margin-bottom:0.1vw;}
+.contact_form .outer .form_div .item .chk_container i{ font-style:normal; color:#fff;}
+.contact_form .outer .form_div .item .chk_container  input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  border:none !important;  
+}
+.contact_form .outer .form_div .item .chk_container .checkmark {
+  position: absolute;
+  top: 0.4vw;
+  left: 0;
+  height: 1vw;
+  width: 1vw; 
+  border:1px solid #fff;
+  border-radius:2px;
+}
+.contact_form .outer .form_div .item .chk_container :hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.contact_form .outer .form_div .item .chk_container  input:checked ~ .checkmark {
+ 
+  border:1px solid #fff;
+}
+.contact_form .outer .form_div .item .chk_container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.contact_form .outer .form_div .item .chk_container  input:checked ~ .checkmark:after {
+  display: block;
+}
+.contact_form .outer .form_div .item .chk_container  .checkmark:after {
+	left: 0.2vw;
+    top: 0.02vw;
+  width: 0.3vw;
+  height: 0.7vw;
+  border: solid #fff;
+  border-width: 0 0.15vw 0.15vw 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.body_mobile .contact_form .outer{
+	background: url(../../images/tami-v3/form_bg_mobile.png) top center no-repeat;
+    background-size: 100% auto;
+	width:80vw;
+	margin-top: 5vw;
+}
+.body_mobile .contact_form .outer .form_div{ display:flex; justify-content: space-between; margin-top:3vw;}
+.body_mobile .contact_form .outer .form_div .form_left{ width:48%;}
+.body_mobile .contact_form .outer .form_div .form_right{ width:48%;    padding-top: 2.2vw;}
+.body_mobile .contact_form .outer .form_div .item textarea{ min-height:15vw;}
 
 .home_div{ background:url(../../images/tami-v3/home_bg001.jpg) center top no-repeat; background-size:cover; min-height:100vh;}
 .home_div .outer{ max-width:1330px; margin:0 auto;position: relative; padding-top:2vw; min-height:100vh;}
@@ -327,8 +426,9 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .body_mobile .company_info .info .col01 .company_title h2{ font-size:1.6vw;}
 .body_mobile .company_info .info .col01 .company_title small{ font-size:1.1vw; font-weight:400;}
 
-
 .body_home.version a:first-child:after{ height:2.5vw;}
+
+
 
 
 @media screen and (max-width: 1680px){

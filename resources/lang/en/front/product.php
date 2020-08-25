@@ -19,4 +19,5 @@ return [
     'website2' => 'Web',
     'catalog2' => 'DM',
     'share2' => 'Share',
+    'success_copy' => 'Success Copy',
 ];
