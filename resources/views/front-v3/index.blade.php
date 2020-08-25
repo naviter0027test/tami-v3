@@ -272,5 +272,6 @@
 <script src="/js/front-v3/js/fastclick.js"></script>
 <script src="/js/front-v3/js/owl.carousel.js"></script>
 <script src="/js/front-v3/js/script.js"></script>
+<script src="/js/front-v3/js/index.js"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
 <body>
 <div class="company_info">
         <div class="version"><a href="?lan=cn" class="active">简中</a><a href="?lan=en">EN</a></div>                
-    <div class="back"><a href="page01.html"><img src="/images/tami-v3/icon_back_white.svg"></a></div> 	
+    <div class="back"><a href="/"><img src="/images/tami-v3/icon_back_white.svg"></a></div> 	
 	<div class="content">
 		<div class="brand">
         	<div class="box">
@@ -139,5 +139,6 @@
 <script src="/js/front-v3/js/fastclick.js"></script>
 <script src="/js/front-v3/js/owl.carousel.js"></script>
 <script src="/js/front-v3/js/script.js"></script>
+<script src="/js/front-v3/js/company.js"></script>
 </body>
 </html>
