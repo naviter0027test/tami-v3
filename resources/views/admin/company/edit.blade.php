@@ -187,7 +187,6 @@
                 <p> <input type="text" name="contactLink3" value="{{ $result['company']->contactLink3 }}" /> </p>
                 <h5><span>官網網址 web</span></h5>
                 <p> <input type="text" name="contactLink4" value="{{ $result['company']->contactLink4 }}" /> </p>
-<!--
                 <h5><span>前台樣式</span></h5>
                 <p>
                     <img src="/" class="custPic frontModePic" /> <br />
@@ -200,7 +199,6 @@
                         <option value="6" {{ $result['company']->frontMode == '6' ? 'selected="selected"' : '' }} >黃</option>
                     </select> 
                 </p>
--->
                 <p class=""> <button class="btn">更改</button> </p>
             </form>
 

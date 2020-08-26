@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<div class="company_info">
+<div class="company_info {{ $company->frontModeShow }}">
         <div class="version"><a href="?lan=cn" class="active">简中</a><a href="?lan=en">EN</a></div>                
     <div class="back"><a href="/"><img src="/images/tami-v3/icon_back_white.svg"></a></div> 	
 	<div class="content">

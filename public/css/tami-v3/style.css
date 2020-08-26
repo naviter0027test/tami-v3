@@ -26,7 +26,13 @@ button,select{ cursor:pointer; font-family:Microsoft YaHei,Helvetica,Arial,sans-
 h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 
 
-.company_info{ background:url(../../images/tami-v3/bg001.jpg) center top no-repeat; margin-top:-5vh; background-size:100% auto; min-height:105vh;}
+.company_info{ background:url(../../images/tami-v3/bg001.jpg) center top no-repeat;background-size:100% auto; margin-top:-5vh;  min-height:105vh;}
+.company_info.green{background:url(../../images/tami-v3/bg001.jpg) center top no-repeat;background-size:100% auto;}
+.company_info.red{background:url(../../images/tami-v3/bg002.jpg) center top no-repeat;background-size:100% auto;}
+.company_info.yellow{background:url(../../images/tami-v3/bg003.jpg) center top no-repeat;background-size:100% auto;}
+.company_info.blue{background:url(../../images/tami-v3/bg004.jpg) center top no-repeat;background-size:100% auto;}
+.company_info.black{background:url(../../images/tami-v3/bg005.jpg) center top no-repeat;background-size:100% auto;}
+.company_info.purple{background:url(../../images/tami-v3/bg006.jpg) center top no-repeat;background-size:100% auto;}
 
 .company_info .content{ position:relative;}
 .company_info .brand{width:32.3vw; height:5.5vw; padding-top:6.8vw; padding-left: 18.9vw;display: flex;  align-items: center;  justify-content: center;}
@@ -56,7 +62,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .company_info .info .col02 .ad img{ max-width:100%; max-height:100%;}
 .company_info .action{ padding-left:45.6vw; padding-top:1.6vw;}
 .company_info .action a{ display:inline-block; position:relative; color:#fff; font-size: 1.5vw; width:18.2vw;}
-.company_info .action a img{ width:100%;}
+.company_info .action a img{ width:100%; opacity:0;}
 .company_info .action a i{ background:url(../../images/tami-v3/icon_icon_arrow_right.svg) center no-repeat; width:30px; height:30px; display:inline-block;}
 .company_info .action a:hover{ 
 	-ms-transform: scale(1.1, 1.1); 
@@ -64,6 +70,14 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
     transform: scale(1.1, 1.1);
 }
 .company_info .action a div{ position:absolute; left:0; top:0; width:100%;     height: 90%;   display: flex; align-items: center; justify-content: center;}
+
+.company_info .action a{ background:url(../../images/tami-v3/button_001.png) top center no-repeat; background-size:100% auto;}
+.company_info.green .action a{ background:url(../../images/tami-v3/button_001.png) top center no-repeat; background-size:100% auto;}
+.company_info.red .action a{ background:url(../../images/tami-v3/button_002.png) top center no-repeat; background-size:100% auto;}
+.company_info.yellow .action a{ background:url(../../images/tami-v3/button_003.png) top center no-repeat; background-size:100% auto;}
+.company_info.blue .action a{ background:url(../../images/tami-v3/button_004.png) top center no-repeat; background-size:100% auto;}
+.company_info.black .action a{ background:url(../../images/tami-v3/button_005.png) top center no-repeat; background-size:100% auto;}
+.company_info.purple .action a{ background:url(../../images/tami-v3/button_006.png) top center no-repeat; background-size:100% auto;}
 
 
 .product_detail{ max-width:1330px; position:fixed; left:calc(50% - 665px); top:2.5vw; z-index:20;}
