@@ -5,4 +5,6 @@ $(document).ready(function() {
     $('.company_info .owl-item .box .img').css('background-size', '100% 100%');
     $('.col02 .ad img').css('width', '80%');
     $('.col02 .ad img').css('height', '90%');
+
+    $( ".info_slider" ).trigger('play.owl.autoplay', [4000]);
 });
