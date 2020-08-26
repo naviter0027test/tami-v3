@@ -51,8 +51,8 @@
                 <p> <textarea name="contactDesc" ></textarea> </p>
                 <h5><span>亮點資訊 描述(英文)</span></h5>
                 <p> <textarea name="contactDescEn" ></textarea> </p>
-                <h5><span>點亮資訊 如下圖，可放五張 (建議寬高: 475x230, Max:5M)</span></h5>
-                <img src="/images/company2020_07_24/company_info.png" class="schematic" />
+                <h5><span>點亮資訊 如下圖，可放五張 (建議寬高: 250x210, Max:5M)</span></h5>
+                <img src="/images/tami-v3/company_info.png" class="schematic" />
                 <h5><span>點亮資訊1</span></h5>
                 <p> 
                     <select type="text" name="infoMode1" class="infoMode hidden" infoNum="1"> 
@@ -98,9 +98,9 @@
                     <input type="file" name="infoPath5" /> 
                     <input type="text" name="infoVideo5" /> 
                 </p>
-                <h5><span>前台公司頁右上圖 (建議寬高: 250x290, Max: 5M)</span></h5>
+                <h5><span>前台公司頁右上圖 (建議寬高: 80x125, Max: 5M)</span></h5>
                 <h6>示意圖</h6>
-                <img src="/images/company2020_07_24/company_right_down.png" class="schematic" />
+                <img src="/images/tami-v3/company_right_down.png" class="schematic" />
                 <h6></h6>
                 <p> <input type="file" name="companyRightInfo" /> </p>
                 <h5><span>E-mail</span></h5>
