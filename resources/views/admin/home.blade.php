@@ -46,6 +46,7 @@
             </div>
             <h4 class="col-lg-12 col-xs-12">稱謂 統計</h4>
             <div class="flot-jobtitle" ></div>
+            <div class="pie-industry" ></div>
             <div class="pagination paginationCenter">
             </div>
         </div>
@@ -61,6 +62,11 @@
     <script type="text/javascript" src="/lib/flot/source/jquery.flot.uiConstants.js"></script>
     <script type="text/javascript" src="/lib/flot/source/jquery.flot.symbol.js"></script>
     <script type="text/javascript" src="/lib/flot/source/jquery.flot.axislabels.js"></script>
+
+<!-- pie plugin -->
+    <script type="text/javascript" src="/lib/flot/source/jquery.flot.legend.js"></script>
+    <script type="text/javascript" src="/lib/flot/source/jquery.flot.pie.js"></script>
+<!-- pie plugin -->
     <script type="text/javascript">
         var isAllSamllThan5 = true;
         //******* 2012 Average Temperature - BAR CHART
@@ -104,7 +110,7 @@
             axisLabelFontFamily: 'serif, Verdana, Arial',
             axisLabelPadding: 10,
             font: {
-                size: 8
+                size: 12
             },
             ticks: ticks
         },
@@ -130,8 +136,24 @@
             }
         };
 
+        //pie start
+        var pieData = [
+            { label: "種類 A", data: 10 },
+            { label: "種類 B", data: 20 },
+            { label: "種類 C", data: 30 },
+            { label: "種類 D", data: 40 }
+        ];
+        //pie end
+
         $(document).ready(function () {
             $.plot($(".flot-jobtitle"), dataset, options);
+            $.plot(".pie-industry", pieData, {
+                series: {
+                    pie: {
+                        show: true
+                    }
+                }
+            });
             //$(".flot-jobtitle").UseTooltip();
         });
     </script>
