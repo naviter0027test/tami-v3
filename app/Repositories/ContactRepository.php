@@ -118,7 +118,16 @@ class ContactRepository
         $contact->content = isset($params['content']) ? $params['content'] : '';
         $contact->companyId = isset($params['companyId']) ? $params['companyId'] : 0;
         $contact->productId = isset($params['productId']) ? $params['productId'] : 0;
+        $contact->jobTitleId = isset($params['radio_position']) ? $params['radio_position'] : 0;
         $contact->save();
+
+        if(isset($params['industryRelations']))
+            foreach($params['industryRelations'] as $industryRelationId) {
+                $industryRelation = new IndustryContactRelation();
+                $industryRelation->contactId = $contact->id;
+                $industryRelation->industryId = $industryRelationId;
+                $industryRelation->save();
+            }
 
         $params['contactId'] = $contact->id;
         $this->notify($params);
