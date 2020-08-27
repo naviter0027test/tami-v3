@@ -145,7 +145,7 @@
         	<img src="/images/tami-v3/home_company_list_bg_four_itmes.png" class="bg">
             <div class="box">                
                 <div class="list_item">
-                        @foreach($result['companyAreas']['右下區域']['companies'] as $company)
+                        @foreach($result['companyAreas']['右上區域']['companies'] as $company)
                     <div class="item">
                         <a href="front/company/{{ $company->id }}">
                             <div class="img"><img src="/uploads{{ $company->logo }}"></div>
@@ -211,7 +211,7 @@
         	<img src="/images/tami-v3/home_company_list_bg_three_itmes.png" class="bg">
             <div class="box">                
                 <div class="list_item">
-                        @foreach($result['companyAreas']['右上區域']['companies'] as $company)
+                        @foreach($result['companyAreas']['右下區域']['companies'] as $company)
                     <div class="item">
                         <a href="front/company/{{ $company->id }}">
                             <div class="img"><img src="/uploads{{ $company->logo }}"></div>

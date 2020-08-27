@@ -1,6 +1,6 @@
 // JavaScript Document
 
-$(function(){
+window.onload = function(){
 	FastClick.attach(document.body);
 	set_slider();
 	toggle_contact_form();
@@ -14,7 +14,7 @@ $(function(){
 	change_small_big_img();
 	set_product_detail_version();
 	set_drop_down_menu('#drop_down_position');
-});
+};
 function set_product_detail_version(){
 	if($('.product_detail').length>0){
 		$('.version').insertBefore('.product_detail');
