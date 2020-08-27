@@ -417,8 +417,8 @@
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">{{ trans('front/product.other_machine') }}
-                              <input type="checkbox" name="industryRelations[]" value="10" />
+                            <label class="chk_container">{{ trans('front/product.mpac') }}
+                              <input type="checkbox" name="industryRelations[]" value="9" />
                               <span class="checkmark"></span>
                             </label>
                         </div>                    

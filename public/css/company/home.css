@@ -36,3 +36,18 @@
     background: #f39c12 !important;
     color: #fff !important;
 }
+
+.flot-jobtitle {
+    display: inline-block;
+    margin-top: 10px;
+    min-width: 1000px;
+    width: 100%;
+    height: 300px;
+}
+
+.pie-industry {
+    display: inline-block;
+    margin-top: 10px;
+    width: 50%;
+    height: 300px;
+}
