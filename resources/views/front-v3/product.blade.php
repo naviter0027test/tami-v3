@@ -208,7 +208,7 @@
                 <div class="item">
                     <img src="/images/tami-v3/icon_button.png" class="static">
                     <img src="/images/tami-v3/icon_button_hover.png" class="hover">
-                    <a href="javasscript:;" onClick="share_url('{{ trans('front/product.success_copy') }} URL:'); return false;"><img src="/images/tami-v3/icon_006.png">{{ trans('front/product.share2') }}</a>
+                    <a href="javasscript:;" onClick="share_url('{{ trans('front/product.share_link') }} {{ trans('front/product.success_copy') }}'); return false;"><img src="/images/tami-v3/icon_006.png">{{ trans('front/product.share2') }}</a>
                 </div>
             </div>
         </div>

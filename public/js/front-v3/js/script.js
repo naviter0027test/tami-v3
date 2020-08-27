@@ -145,7 +145,7 @@ function share_url(msg){
 	inputDump.select();
 	$('input').on('focus', function() { $(this).blur(); });
 	document.execCommand('copy');
-	alert(msg + location.href);
+	alert(msg);
 	
 	
 }

@@ -20,4 +20,5 @@ return [
     'catalog2' => '型 录',
     'share2' => '分 享',
     'success_copy' => '成功複製',
+    'share_link' => '分享连結',
 ];

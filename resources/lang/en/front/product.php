@@ -20,4 +20,5 @@ return [
     'catalog2' => 'DM',
     'share2' => 'Share',
     'success_copy' => 'Success Copy',
+    'share_link' => 'Share Link',
 ];
