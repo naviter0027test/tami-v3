@@ -167,4 +167,19 @@ class ContactRepository
         }
         return $jobTitles;
     }
+
+    public function statisticsIndustryListByAdmin() {
+        $industries = Industry::orderBy('sort', 'asc')
+            ->get();
+        $sum = 0;
+        foreach($industries as $i => $industry) {
+            $industries[$i]['count'] = IndustryContactRelation::where('industryId', '=', $industry->id)
+                ->count();
+            $sum += $industries[$i]['count'];
+        }
+        foreach($industries as $i => $industry) {
+            $industries[$i]['percent'] = round($industries[$i]['count'] / $sum * 100);
+        }
+        return $industries;
+    }
 }
