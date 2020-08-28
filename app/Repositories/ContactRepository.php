@@ -41,6 +41,11 @@ class ContactRepository
         if(isset($contact->id) == false) {
             throw new Exception("資料不存在 id:[$id]");
         }
+        $contact['jobTitle'] = JobTitle::where('id', '=', $contact->jobTitleId)->first();
+        $contact['industries'] = Industry::join('IndustryContactRelation', 'IndustryContactRelation.industryId', '=', 'Industry.id')
+            ->where('IndustryContactRelation.contactId', '=', $contact->id)
+            ->select(['Industry.*'])
+            ->get();
         return $contact;
     }
 
@@ -51,6 +56,11 @@ class ContactRepository
         if(isset($contact->id) == false) {
             throw new Exception("資料不存在 id:[$id]");
         }
+        $contact['jobTitle'] = JobTitle::where('id', '=', $contact->jobTitleId)->first();
+        $contact['industries'] = Industry::join('IndustryContactRelation', 'IndustryContactRelation.industryId', '=', 'Industry.id')
+            ->where('IndustryContactRelation.contactId', '=', $contact->id)
+            ->select(['Industry.*'])
+            ->get();
         return $contact;
     }
 
