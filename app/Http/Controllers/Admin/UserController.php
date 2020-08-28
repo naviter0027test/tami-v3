@@ -47,7 +47,7 @@ class UserController extends Controller
         catch(Exception $e) {
             $result['result'] = false;
             $result['msg'] = $e->getMessage();
-            return view('company.proccessResult', ['adm' => $company, 'result' => $result]);
+            return view('admin.proccessResult', ['adm' => $admin, 'result' => $result]);
         }
         return view('admin.home', ['adm' => $admin, 'result' => $result]);
     }
