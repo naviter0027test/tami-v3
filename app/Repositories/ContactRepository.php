@@ -118,7 +118,16 @@ class ContactRepository
         $contact->content = isset($params['content']) ? $params['content'] : '';
         $contact->companyId = isset($params['companyId']) ? $params['companyId'] : 0;
         $contact->productId = isset($params['productId']) ? $params['productId'] : 0;
+        $contact->jobTitleId = isset($params['radio_position']) ? $params['radio_position'] : 0;
         $contact->save();
+
+        if(isset($params['industryRelations']))
+            foreach($params['industryRelations'] as $industryRelationId) {
+                $industryRelation = new IndustryContactRelation();
+                $industryRelation->contactId = $contact->id;
+                $industryRelation->industryId = $industryRelationId;
+                $industryRelation->save();
+            }
 
         $params['contactId'] = $contact->id;
         $this->notify($params);
@@ -157,5 +166,52 @@ class ContactRepository
                 ->count();
         }
         return $jobTitles;
+    }
+
+    public function statisticsIndustryListByAdmin() {
+        $industries = Industry::orderBy('sort', 'asc')
+            ->get();
+        $sum = 0;
+        foreach($industries as $i => $industry) {
+            $industries[$i]['count'] = IndustryContactRelation::where('industryId', '=', $industry->id)
+                ->count();
+            $sum += $industries[$i]['count'];
+        }
+        foreach($industries as $i => $industry) {
+            $industries[$i]['percent'] = round($industries[$i]['count'] / $sum * 100);
+        }
+        return $industries;
+    }
+
+    public function statisticsJobTitleListByCompany($companyId = 0) {
+        if($companyId == 0)
+            throw new Exception('please input company id');
+        $jobTitles = JobTitle::orderBy('sort', 'asc')
+            ->get();
+        foreach($jobTitles as $i => $jobTitle) {
+            $jobTitles[$i]['count'] = Contact::where('jobTitleId' ,'=', $jobTitle->id)
+                ->where('companyId', '=', $companyId)
+                ->count();
+        }
+        return $jobTitles;
+    }
+
+    public function statisticsIndustryListByCompany($companyId = 0) {
+        if($companyId == 0)
+            throw new Exception('please input company id');
+        $industries = Industry::orderBy('sort', 'asc')
+            ->get();
+        $sum = 0;
+        foreach($industries as $i => $industry) {
+            $industries[$i]['count'] = IndustryContactRelation::join('Contact', 'Contact.id', '=', 'IndustryContactRelation.contactId')
+                ->where('Contact.companyId', '=', $companyId)
+                ->where('industryId', '=', $industry->id)
+                ->count();
+            $sum += $industries[$i]['count'];
+        }
+        foreach($industries as $i => $industry) {
+            $industries[$i]['percent'] = round($industries[$i]['count'] / $sum * 100);
+        }
+        return $industries;
     }
 }

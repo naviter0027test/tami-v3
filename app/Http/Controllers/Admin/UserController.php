@@ -34,8 +34,21 @@ class UserController extends Controller
             'offset' => $params['offset'],
         ];
         $contactRepository = new ContactRepository();
-        $result['processCount'] = $contactRepository->amountListByAdmin();
-        $result['jobTitleList'] = $contactRepository->statisticsJobTitleListByAdmin();
+        try {
+            $result['processCount'] = $contactRepository->amountListByAdmin();
+            if($contactRepository->listsAmountByAdmin($params) > 0) {
+                $result['jobTitleList'] = $contactRepository->statisticsJobTitleListByAdmin();
+                $result['industryList'] = $contactRepository->statisticsIndustryListByAdmin();
+            } else {
+                $result['jobTitleList'] = [];
+                $result['industryList'] = [];
+            }
+        }
+        catch(Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+            return view('company.proccessResult', ['adm' => $company, 'result' => $result]);
+        }
         return view('admin.home', ['adm' => $admin, 'result' => $result]);
     }
 

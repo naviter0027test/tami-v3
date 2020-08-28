@@ -160,6 +160,7 @@ function set_drop_down_menu(id){
 	$(id +' button').click(function(){
 		$(id).find('.list_item').show();
 		
+                return false;
 	});
 	$(id +' .item').click(function(event){
 		event.stopPropagation();	

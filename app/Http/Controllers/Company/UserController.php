@@ -41,7 +41,21 @@ class UserController extends Controller
             'nowPage' => $params['nowPage'],
             'offset' => $params['offset'],
         ];
-        $result['processCount'] = $contactRepository->amountList($params);
+        try {
+            $result['processCount'] = $contactRepository->amountList($params);
+            if($contactRepository->listsAmount($params) > 0) {
+                $result['jobTitleList'] = $contactRepository->statisticsJobTitleListByCompany($company->id);
+                $result['industryList'] = $contactRepository->statisticsIndustryListByCompany($company->id);
+            } else {
+                $result['jobTitleList'] = [];
+                $result['industryList'] = [];
+            }
+        }
+        catch(Exception $e) {
+            $result['result'] = false;
+            $result['msg'] = $e->getMessage();
+            return view('company.proccessResult', ['adm' => $company, 'result' => $result]);
+        }
         return view('company.home', ['adm' => $company, 'result' => $result]);
     }
 

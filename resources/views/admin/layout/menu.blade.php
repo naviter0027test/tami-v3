@@ -7,6 +7,10 @@
 
 <div class="admin-menu">
     <div class="menu1">
+        <a href="/admin/home" class="{{ strpos(\Request::path(), 'admin/home') === false ? '' : 'clicked' }} glyphicon glyphicon-home">
+        首頁查看</a>
+    </div>
+    <div class="menu1">
         <a href="/admin/setting" class="{{ strpos(\Request::path(), 'admin/setting') === false ? '' : 'clicked' }} glyphicon glyphicon-lock">
         密碼更改</a>
     </div>

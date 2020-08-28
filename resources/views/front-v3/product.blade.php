@@ -215,128 +215,137 @@
     </div>
 
 <div id="contact_form" class="contact_form">
+    <input type="hidden" name="none" class="askSuccess" value="{{ trans('front/product.ask_success') }}" />
+    <input type="hidden" name="none" class="errMsg" value="{{ trans('front/product.err_msg') }}" />
+    <input type="hidden" name="none" class="notifyAdm" value="{{ trans('front/product.notify_adm') }}" />
+    <form action="/front/contact" method="post" autocomplete="off" class="contact">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+        <input type="hidden" name="companyId" value="{{ $company->id }}" />
+        <input type="hidden" name="productId" value="" />
 	<div class="outer">
     	<div class="close_div"><button class="btn_close"></button></div>
 		<div class="form_div">
         	<div class="form_left">
                 <div class="item">
-                    <input type="text" placeholder="公司名称">
+                    <input type="text" name="companyName" placeholder="{{ trans('front/product.company_name') }}" required>
                 </div>
                 <div class="item">
-                    <input type="text" placeholder="Email">
+                    <input type="text" name="email" placeholder="Email" required>
                 </div>
                 <div class="item two_col">
-                    <div class="col"><input type="text" placeholder="联络人"></div>
+                    <div class="col">
+        		<input type="text" name="name" placeholder="{{ trans('front/product.contact_name') }}" required>
+                    </div>
                     <div class="col">
                         <div class="dropdown_div">
                             
                             <div class="radiobox_list">
                                 <div class="drop_down_menu" id="drop_down_position">
                                     <button>
-                                        <span>职称</span>                                        
+                                        <span>{{ trans('front/product.job_name') }}</span>                                        
                                     </button>
                                     <div class="list_item">
                                     	<div class="scrollbar">
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">技術長</span>
+                                                  <input type="radio" name="radio_position" value="3">
+                                                  <span class="checkmark">{{ trans('front/product.cto') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">顧問</span>
+                                                  <input type="radio" name="radio_position" value="4">
+                                                  <span class="checkmark">{{ trans('front/product.consultant') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">特別助理</span>
+                                                  <input type="radio" name="radio_position" value="5">
+                                                  <span class="checkmark">{{ trans('front/product.sa') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">廠長</span>
+                                                  <input type="radio" name="radio_position" value="6">
+                                                  <span class="checkmark">{{ trans('front/product.fc') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">協理</span>
+                                                  <input type="radio" name="radio_position" value="7">
+                                                  <span class="checkmark">{{ trans('front/product.director') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">經理</span>
+                                                  <input type="radio" name="radio_position" value="8">
+                                                  <span class="checkmark">{{ trans('front/product.manager') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">課長</span>
+                                                  <input type="radio" name="radio_position" value="9">
+                                                  <span class="checkmark">{{ trans('front/product.sm') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">主任</span>
+                                                  <input type="radio" name="radio_position" value="10">
+                                                  <span class="checkmark">{{ trans('front/product.supervisor') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">管理師</span>
+                                                  <input type="radio" name="radio_position" value="11">
+                                                  <span class="checkmark">{{ trans('front/product.administrator') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">行政人員</span>
+                                                  <input type="radio" name="radio_position" value="12">
+                                                  <span class="checkmark">{{ trans('front/product.as') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">職員</span>
+                                                  <input type="radio" name="radio_position" value="13">
+                                                  <span class="checkmark">{{ trans('front/product.oc') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">助理</span>
+                                                  <input type="radio" name="radio_position" value="14">
+                                                  <span class="checkmark">{{ trans('front/product.assistant') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">業務</span>
+                                                  <input type="radio" name="radio_position" value="15">
+                                                  <span class="checkmark">{{ trans('front/product.sales') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">企劃</span>
+                                                  <input type="radio" name="radio_position" value="16">
+                                                  <span class="checkmark">{{ trans('front/product.marcom') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">行銷</span>
+                                                  <input type="radio" name="radio_position" value="17">
+                                                  <span class="checkmark">{{ trans('front/product.marketing') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">工程師</span>
+                                                  <input type="radio" name="radio_position" value="18">
+                                                  <span class="checkmark">{{ trans('front/product.engineer') }}</span>
                                                 </label>
                                             </div>
                                             <div class="item">
                                                 <label class="container">
-                                                  <input type="radio" name="radio_position">
-                                                  <span class="checkmark">其他</span>
+                                                  <input type="radio" name="radio_position" value="19">
+                                                  <span class="checkmark">{{ trans('front/product.other') }}</span>
                                                 </label>
                                             </div>  
                                         </div>                                      
@@ -348,68 +357,68 @@
                     </div>
                 </div>
                 <div class="item fixed_margin_bottom">
-                    <input type="text" placeholder="连络电话">
+                    <input type="text" name="phone" placeholder="{{ trans('front/product.phone') }}" required>
                 </div>
                 <div class="item fixed_margin_bottom">
-                    <label>请勾选 贵公司产业属性，</label>
+                    <label>{{ trans('front/product.please_check_industry_attr') }}，</label>
                     <div class="checkbox_list">
                         <div class="checkbox_outer">
-                            <label class="chk_container">工具机
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.mt') }}
+                              <input type="checkbox" name="industryRelations[]" value="1" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">塑橡胶机械
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.mfpp') }}
+                              <input type="checkbox" name="industryRelations[]" value="2" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">纺织机械
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.tm') }}
+                              <input type="checkbox" name="industryRelations[]" value="3" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">食品机械暨包装机械
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.fbpmp') }}
+                              <input type="checkbox" name="industryRelations[]" value="4" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">印刷机械
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.pbm') }}
+                              <input type="checkbox" name="industryRelations[]" value="5" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">木工机械
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.wm') }}
+                              <input type="checkbox" name="industryRelations[]" value="6" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">模具
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.dies') }}
+                              <input type="checkbox" name="industryRelations[]" value="7" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">表面处理
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.efsf') }}
+                              <input type="checkbox" name="industryRelations[]" value="8" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">其他产业机械
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.other_machine') }}
+                              <input type="checkbox" name="industryRelations[]" value="10" />
                               <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkbox_outer">
-                            <label class="chk_container">零组件
-                              <input type="checkbox">
+                            <label class="chk_container">{{ trans('front/product.mpac') }}
+                              <input type="checkbox" name="industryRelations[]" value="9" />
                               <span class="checkmark"></span>
                             </label>
                         </div>                    
@@ -418,14 +427,15 @@
 			</div>
             <div class="form_right"> 
                 <div class="item">
-                    <textarea placeholder="问题内容"></textarea>        		
+                    <textarea name="content" placeholder="{{ trans('front/product.content') }}" required></textarea>        		
                 </div>
                 <div class="item action">
-                    <button>提 交<i></i></button>
+                    <button>{{ trans('front/product.submit') }}<i></i></button>
                 </div>
             </div>    
         </div>
 	</div>
+    </form>
 </div>
 
 
@@ -441,5 +451,6 @@
 <script src="/js/front-v3/js/owl.carousel.js"></script>
 <script src="/js/front-v3/js/jquery.mCustomScrollbar.js"></script>
 <script src="/js/front-v3/js/script.js"></script>
+<script src="/js/front-v3/js/product.js"></script>
 </body>
 </html>
