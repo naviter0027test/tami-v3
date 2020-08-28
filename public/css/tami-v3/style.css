@@ -37,7 +37,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .company_info .content{ position:relative;}
 .company_info .brand{width:32.3vw; height:5.5vw; padding-top:6.8vw; padding-left: 18.9vw;display: flex;  align-items: center;  justify-content: center;}
 .company_info .brand .box{}
-.company_info .brand img{ max-width:100%; max-height:100%;}
+.company_info .brand img{ max-width:100%; max-height:4.2vw;}
 .company_info .info{ display: flex;  flex-wrap: wrap;}
 .company_info .info .col01{ padding-left:22.1vw; padding-top:8.5vw; width:44vw;}
 .company_info .info .col01 .company_title{ text-align:center; height:3.6vw;}
@@ -164,7 +164,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 }
 .contact_form .outer .close_div{ text-align:right;}
 .contact_form .outer .close_div button{ border:none; background:none; padding:0; width: 4vw; height:3vw;}
-.contact_form .outer .form_div{ padding:0 3vw;margin-top: 3vw;}
+.contact_form .outer .form_div{ padding:0 3vw;margin-top:0vw;}
 .contact_form .outer .form_div .item{ color:#fff; font-size:1.2vw; margin-bottom:2vw; }
 .contact_form .outer .form_div .item.fixed_margin_bottom{ margin-bottom:0.5vw;}
 .contact_form .outer .form_div .item.two_col{ display:flex;justify-content: space-between;}
@@ -173,7 +173,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .contact_form .outer .form_div .item input::placeholder { color:#fff; }
 .contact_form .outer .form_div .item input:-ms-input-placeholder { color:#fff; }
 .contact_form .outer .form_div .item input::-ms-input-placeholder { color:#fff; }
-.contact_form .outer .form_div .item textarea{ min-height:10vw; border:1px solid #fff; border-radius:0; width:100%; background:none; color:#fff;}
+.contact_form .outer .form_div .item textarea{ min-height:8vw; border:1px solid #fff; border-radius:0; width:100%; background:none; color:#fff;}
 .contact_form .outer .form_div .item textarea::placeholder { color:#fff; font-size:1.2vw}
 .contact_form .outer .form_div .item textarea:-ms-input-placeholder { color:#fff; font-size:1.2vw}
 .contact_form .outer .form_div .item textarea::-ms-input-placeholder { color:#fff; font-size:1.2vw }
@@ -273,7 +273,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 	width:80vw;
 	margin-top: 5vw;
 }
-.body_mobile .contact_form .outer .form_div{ display:flex; justify-content: space-between; margin-top:3vw;}
+.body_mobile .contact_form .outer .form_div{ display:flex; justify-content: space-between; margin-top:0vw;}
 .body_mobile .contact_form .outer .form_div .form_left{ width:48%;}
 .body_mobile .contact_form .outer .form_div .form_right{ width:48%;    padding-top: 2.2vw;}
 .body_mobile .contact_form .outer .form_div .item textarea{ min-height:15vw;}
@@ -380,7 +380,6 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 
 .mobile_rotate.active{ display:block;}
 
-
 @-webkit-keyframes rotate {
   20% {
     -webkit-transform: rotate3d(0, 0, 1, -15deg);
@@ -444,7 +443,8 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 
 
 
-
+.body_mobile .contact_form .outer .form_div .item{ margin-bottom:1vw;}
+.body_mobile .contact_form .outer .form_div .item .chk_container .checkmark{ top:0.1vw;}
 @media screen and (max-width: 1680px){
 	.company_info .info .col01 .info_detail .info_left .sub_title b{ border:1.5px solid #fff; border-radius:0.6vw; padding:0.3vw;  font-size:1vw; }
 	.company_info .info .col01 .info_detail .info_right .desc p{transform:scale(0.8);transform-origin: left top;    width: 18vw; }
