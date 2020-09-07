@@ -44,7 +44,7 @@
                 </div>
                 <div class="info_detail">
             	<div class="info_left">
-                	<div class="sub_title"><b>Web</b></div>
+                    <!-- <div class="sub_title"><b>Web</b></div> -->
                     <div class="detail">
                     	<p>
                         @if(trim($company->email) != '')

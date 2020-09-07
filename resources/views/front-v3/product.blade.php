@@ -27,7 +27,7 @@
 </head>
 
 <body>
-<div class="company_info">
+<div class="company_info {{ $company->frontModeShow }}">
         <div class="version"><a href="?lan=cn" class="active">简中</a><a href="?lan=en">EN</a></div>                
 	<div class="content">
 		<div class="brand">
@@ -183,7 +183,7 @@
                 <div class="item active">
                     <img src="/images/tami-v3/icon_button.png" class="static">
                     <img src="/images/tami-v3/icon_button_hover.png" class="hover">
-                    <a href="javascript:window.history.back();"><img src="/images/tami-v3/icon_001.png">{{ trans('front/product.go_back') }}</a>
+                    <a href="/front/company/{{ $company->id }}"><img src="/images/tami-v3/icon_001.png">{{ trans('front/product.go_back') }}</a>
                 </div>
                 <div class="item">
                     <img src="/images/tami-v3/icon_button.png" class="static">
@@ -198,7 +198,7 @@
                 <div class="item">
                     <img src="/images/tami-v3/icon_button.png" class="static">
                     <img src="/images/tami-v3/icon_button_hover.png" class="hover">
-                    <a href="#" target="_blank"><img src="/images/tami-v3/icon_004.png">{{ trans('front/product.catalog2') }}</a>
+                    <a href="#" target="_blank" class="btn_cate"><img src="/images/tami-v3/icon_004.png">{{ trans('front/product.catalog2') }}</a>
                 </div>
                 <div class="item">
                     <img src="/images/tami-v3/icon_button.png" class="static">
