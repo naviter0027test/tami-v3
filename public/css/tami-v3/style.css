@@ -108,7 +108,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 }
 .product_detail .detail_slider .item .box .col02{ width:65%;}
 .product_detail .detail_slider .item .box .col02 .img{ height: 30vw; position:relative; background:rgba(255,255,255,0.65); display:flex;align-items: center; justify-content: center;}
-.product_detail .detail_slider .item .box .col02 .img .big{ width: auto; height: 85%;}
+.product_detail .detail_slider .item .box .col02 .img .big{ width: auto; height: 85%;max-width: 95%;}
 .product_detail .detail_slider .item .box .col02 .zoom{ position:absolute; right:1vw; bottom:1vw;}
 .product_detail .detail_slider .item .box .col02 .zoom img{ width:3vw;}
 .product_detail .detail_slider .item .box .bottom .col02{
