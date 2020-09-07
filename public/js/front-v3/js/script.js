@@ -16,6 +16,32 @@ window.onload = function(){
 	set_drop_down_menu('#drop_down_position');
 
         $( ".info_slider" ).trigger('play.owl.autoplay', [4000]);
+
+    $('.owl-prev').on('click', function() {
+        if(nowProductNum - 1 < 0)
+            nowProductNum = maxProductNum - 1;
+        else 
+            --nowProductNum;
+        pdfHref = $('.pdf'+nowProductNum).val();
+        if(pdfHref == '')
+            $('.btn_cate').attr('href', '#');
+        else
+            $('.btn_cate').attr('href', '/product'+pdfHref);
+        return false;
+    });
+
+    $('.owl-next').on('click', function() {
+        if(nowProductNum + 1 >= maxProductNum)
+            nowProductNum = 0;
+        else 
+            ++nowProductNum;
+        pdfHref = $('.pdf'+nowProductNum).val();
+        if(pdfHref == '' || typeof(pdfHref) == 'undefined')
+            $('.btn_cate').attr('href', '#');
+        else
+            $('.btn_cate').attr('href', '/product'+pdfHref);
+        return false;
+    });
 };
 function set_product_detail_version(){
 	if($('.product_detail').length>0){

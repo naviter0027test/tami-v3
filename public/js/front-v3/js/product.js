@@ -25,32 +25,6 @@ $(document).ready(function() {
             $('#locationHref').val(location.href);
     }
 
-    $('.owl-prev').on('click', function() {
-        if(nowProductNum - 1 < 0)
-            nowProductNum = maxProductNum - 1;
-        else 
-            --nowProductNum;
-        pdfHref = $('.pdf'+nowProductNum).val();
-        if(pdfHref == '')
-            $('.btn_cate').attr('href', '#');
-        else
-            $('.btn_cate').attr('href', '/product'+pdfHref);
-        return false;
-    });
-
-    $('.owl-next').on('click', function() {
-        if(nowProductNum + 1 >= maxProductNum)
-            nowProductNum = 0;
-        else 
-            ++nowProductNum;
-        pdfHref = $('.pdf'+nowProductNum).val();
-        if(pdfHref == '' || typeof(pdfHref) == 'undefined')
-            $('.btn_cate').attr('href', '#');
-        else
-            $('.btn_cate').attr('href', '/product'+pdfHref);
-        return false;
-    });
-
     $('.contact').submit(function() {
         var productId = $('.product'+nowProductNum).val();
         $('[name=productId]').val(productId);
