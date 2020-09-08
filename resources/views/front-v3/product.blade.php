@@ -39,7 +39,7 @@
             <div class="col01">
                 <div class="company_title">
                     <h2>{{ $company->nameShow }}</h2>
-                    <small>HSIN LONG THREAD  ROLLING MACHINE CO., LTD.</small>
+                    <!-- <small>HSIN LONG THREAD  ROLLING MACHINE CO., LTD.</small> -->
                 </div>
                 <div class="info_detail">
             	    <div class="info_left">
