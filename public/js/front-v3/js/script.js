@@ -23,10 +23,14 @@ window.onload = function(){
         else 
             --nowProductNum;
         pdfHref = $('.pdf'+nowProductNum).val().trim();
-        if(pdfHref == '')
+        if(pdfHref == '' || typeof(pdfHref) == 'undefined') {
             $('.btn_cate').attr('href', '#');
-        else
+            $('.btn_cate').removeAttr('target');
+        }
+        else {
             $('.btn_cate').attr('href', '/product'+pdfHref);
+            $('.btn_cate').attr('target', '_blank');
+        }
         return false;
     });
 
@@ -36,10 +40,14 @@ window.onload = function(){
         else 
             ++nowProductNum;
         pdfHref = $('.pdf'+nowProductNum).val().trim();
-        if(pdfHref == '' || typeof(pdfHref) == 'undefined')
+        if(pdfHref == '' || typeof(pdfHref) == 'undefined') {
             $('.btn_cate').attr('href', '#');
-        else
+            $('.btn_cate').removeAttr('target');
+        }
+        else {
             $('.btn_cate').attr('href', '/product'+pdfHref);
+            $('.btn_cate').attr('target', '_blank');
+        }
         return false;
     });
 };

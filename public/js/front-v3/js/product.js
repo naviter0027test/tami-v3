@@ -14,10 +14,14 @@ $(document).ready(function() {
     maxProductNum = $('.maxProductNum').val();
 
     var pdfHref = $('.pdf'+nowProductNum).val().trim();
-    if(pdfHref == '')
+    if(pdfHref == '') {
         $('.btn_cate').attr('href', '#');
-    else
+        $('.btn_cate').removeAttr('target');
+    }
+    else {
         $('.btn_cate').attr('href', '/product'+pdfHref);
+        $('.btn_cate').attr('target', '_blank');
+    }
 
     switch($("meta[name=lan]").attr('content')) {
         case 'en':
