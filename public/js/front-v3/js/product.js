@@ -13,8 +13,11 @@ function col02ImgImgResize() {
 $(document).ready(function() {
     maxProductNum = $('.maxProductNum').val();
 
-    var pdfHref = $('.pdf'+nowProductNum).val();
-    $('.btn_cate').attr('href', '/product'+pdfHref);
+    var pdfHref = $('.pdf'+nowProductNum).val().trim();
+    if(pdfHref == '')
+        $('.btn_cate').attr('href', '#');
+    else
+        $('.btn_cate').attr('href', '/product'+pdfHref);
 
     switch($("meta[name=lan]").attr('content')) {
         case 'en':

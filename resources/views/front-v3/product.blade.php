@@ -116,7 +116,7 @@
 
         @foreach($products as $i => $product)
             <div class="item">
-                <input type="hidden" class="pdf{{ $i }}" value="{{ $product->dm }}" />
+                <input type="hidden" class="pdf{{ $i }}" value="{{ trim($product->dm) }}" />
                 <input type="hidden" class="product{{ $i }}" value="{{ $product->id }}" />
                 <div class="box">
                     <div class="top">

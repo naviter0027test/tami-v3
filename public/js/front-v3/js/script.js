@@ -22,7 +22,7 @@ window.onload = function(){
             nowProductNum = maxProductNum - 1;
         else 
             --nowProductNum;
-        pdfHref = $('.pdf'+nowProductNum).val();
+        pdfHref = $('.pdf'+nowProductNum).val().trim();
         if(pdfHref == '')
             $('.btn_cate').attr('href', '#');
         else
@@ -35,7 +35,7 @@ window.onload = function(){
             nowProductNum = 0;
         else 
             ++nowProductNum;
-        pdfHref = $('.pdf'+nowProductNum).val();
+        pdfHref = $('.pdf'+nowProductNum).val().trim();
         if(pdfHref == '' || typeof(pdfHref) == 'undefined')
             $('.btn_cate').attr('href', '#');
         else

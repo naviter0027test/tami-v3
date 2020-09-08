@@ -22,7 +22,7 @@
                 <p> <input type="text" name="name" value="{{ $result['company']->name }}" /> </p>
                 <h5><span>廠商名稱(英文)</span></h5>
                 <p> <input type="text" name="nameEn" value="{{ $result['company']->nameEn }}" /> </p>
-                <h5><span>Logo(建議寬高: 150x150)</span> </h5>
+                <h5><span>Logo (建議寬高: 150x150)</span> </h5>
                 <p>
                 @if($result['company']->logo != '')
                     <img src="/uploads{{ $result['company']->logo }}" class="custPic" /> <br />
@@ -155,7 +155,7 @@
                 <p> <input type="text" name="contactLink2" value="{{ $result['company']->contactLink2 }}" /> </p>
                 <h5><span>聯絡方式 add</span></h5>
                 <p> <input type="text" name="contactLink3" value="{{ $result['company']->contactLink3 }}" /> </p>
-                <h5><span>官網網址 web(ex: http://www.google.com)</span></h5>
+                <h5><span>官網網址 web ("http://"為必加  ex: http://www.google.com)</span></h5>
                 <p> <input type="text" name="contactLink4" value="{{ $result['company']->contactLink4 }}" /> </p>
                 <h5><span>前台樣式</span></h5>
                 <p>
