@@ -60,7 +60,7 @@ h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0;}
 .company_info .info .col02{padding-top: 1.8vw; width:10.2vw;padding-left: 1.25vw;}
 .company_info .info .col02 .ad{ height:14.3vw;display: flex;  align-items: center;  justify-content: center;}
 .company_info .info .col02 .ad img{ max-width:100%; max-height:100%;}
-.company_info .action{ padding-left:45.6vw; padding-top:1.6vw;}
+.company_info .action{ margin-bottom: 5px; padding-left:45.6vw; padding-top:1.6vw;}
 .company_info .action a{ display:inline-block; position:relative; color:#fff; font-size: 1.5vw; width:18.2vw;}
 .company_info .action a img{ width:100%; opacity:0;}
 .company_info .action a i{ background:url(../../images/tami-v3/icon_icon_arrow_right.svg) center no-repeat; width:30px; height:30px; display:inline-block;}
