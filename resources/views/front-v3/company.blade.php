@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=yes, viewport-fit=cover" />
-<meta name="description" content="">
+<meta name="description" content="{{ $result['description'] }}">
 <meta name="author" content="">
 
-<title>TAMI</title>
+<title>{{ $result['title'] }}</title>
 
 <link rel="stylesheet" type="text/css" href="/css/tami-v3/animate.css">
 <link rel="stylesheet" type="text/css" href="/css/tami-v3/owl.carousel.css">
