@@ -124,16 +124,12 @@
                 	<div class="col01">
                             <div class="thumbnail">
                                 <div class="sub_item">
-                                @if(trim($product->picture2) == '')
-                                    <img src="/images/tami-v3/thumbnail_001.jpg" />
-                                @else
+                                @if(trim($product->picture2) != '')
                                     <img src="/product{{ $product->picture2 }}" />
                                 @endif
                                 </div>
                                 <div class="sub_item">
-                                @if(trim($product->picture3) == '')
-                                    <img src="/images/tami-v3/thumbnail_001.jpg" />
-                                @else
+                                @if(trim($product->picture3) != '')
                                     <img src="/product{{ $product->picture3 }}" />
                                 @endif
                                 </div>
