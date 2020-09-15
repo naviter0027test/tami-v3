@@ -70,8 +70,8 @@ class FrontController extends Controller
             if($frontDir == 'front-v3') {
                 $params['logo'] = 'images/tami-v3/home_logo_eng.png';
                 $params['logoMobile'] = 'images/tami-v3/home_logo_eng_mobile.png';
-                $params['title'] = "Malaysia International Plastic, Mould & Tools Exhibition";
-                $params['description'] = 'Malaysia International Plastic, Mould & Tools Exhibition "International Exhibition for Plastic & Plastic Products Industry"
+                $params['title'] = "m”sia -plas 2020 Malaysia International Plastic, Mould & Tools Exhibition";
+                $params['description'] = 'm”sia -plas 2020 Malaysia International Plastic, Mould & Tools Exhibition "International Exhibition for Plastic & Plastic Products Industry"
 Malaysia International Plastic, Mould & Tools Exhibition will display products like Plastic Injection & Blow, Molding Machinery, Plastic Welding Equipment, Sealing Machine, Material Formulating and Compounding, Mould & Dies, Chemicals & Raw Materials, Extrusion Machinery, Coating Compounds, Auxiliary & Testing Equipment, Semi-Finished Products, Plastic Tooling & Engineering Products, Bio-Plastics & Degradable Plastic and much more.';
             } else {
                 $params['logo'] = 'images/home_logo_e2.gif';
@@ -141,8 +141,8 @@ Malaysia International Plastic, Mould & Tools Exhibition will display products l
                 $company->nameShow = $company->nameEn;
                 $company->titleShow = $company->titleEn;
                 $company->contactDescShow = nl2br($company->contactDescEn);
-                $params['title'] = "Malaysia International Plastic, Mould & Tools Exhibition";
-                $params['description'] = 'Malaysia International Plastic, Mould & Tools Exhibition "International Exhibition for Plastic & Plastic Products Industry"
+                $params['title'] = "m”sia -plas 2020 Malaysia International Plastic, Mould & Tools Exhibition";
+                $params['description'] = 'm”sia -plas 2020 Malaysia International Plastic, Mould & Tools Exhibition "International Exhibition for Plastic & Plastic Products Industry"
 Malaysia International Plastic, Mould & Tools Exhibition will display products like Plastic Injection & Blow, Molding Machinery, Plastic Welding Equipment, Sealing Machine, Material Formulating and Compounding, Mould & Dies, Chemicals & Raw Materials, Extrusion Machinery, Coating Compounds, Auxiliary & Testing Equipment, Semi-Finished Products, Plastic Tooling & Engineering Products, Bio-Plastics & Degradable Plastic and much more.';
                 break;
             }
@@ -215,8 +215,8 @@ Malaysia International Plastic, Mould & Tools Exhibition will display products l
             break;
         case 'en':
             $company->nameShow = $company->nameEn;
-            $params['title'] = "Malaysia International Plastic, Mould & Tools Exhibition";
-            $params['description'] = 'Malaysia International Plastic, Mould & Tools Exhibition "International Exhibition for Plastic & Plastic Products Industry"
+            $params['title'] = "m”sia -plas 2020 Malaysia International Plastic, Mould & Tools Exhibition";
+            $params['description'] = 'm”sia -plas 2020 Malaysia International Plastic, Mould & Tools Exhibition "International Exhibition for Plastic & Plastic Products Industry"
 Malaysia International Plastic, Mould & Tools Exhibition will display products like Plastic Injection & Blow, Molding Machinery, Plastic Welding Equipment, Sealing Machine, Material Formulating and Compounding, Mould & Dies, Chemicals & Raw Materials, Extrusion Machinery, Coating Compounds, Auxiliary & Testing Equipment, Semi-Finished Products, Plastic Tooling & Engineering Products, Bio-Plastics & Degradable Plastic and much more.';
             break;
         }
