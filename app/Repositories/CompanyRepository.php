@@ -65,6 +65,40 @@ class CompanyRepository
         $company->contactDesc = isset($params['contactDesc']) ? $params['contactDesc'] : '';
         $company->contactDescEn = isset($params['contactDescEn']) ? $params['contactDescEn'] : '';
         $company->frontMode = isset($params['frontMode']) ? $params['frontMode'] : 1;
+
+        if(isset($files['logo'])) {
+            $ext = $files['logo']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['logo2'])) {
+            $ext = $files['logo2']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath1']) && $company->infoMode1 == 1) {
+            $ext = $files['infoPath1']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath2']) && $company->infoMode2 == 1) {
+            $ext = $files['infoPath2']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath3']) && $company->infoMode3 == 1) {
+            $ext = $files['infoPath3']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath4']) && $company->infoMode4 == 1) {
+            $ext = $files['infoPath4']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath5']) && $company->infoMode5 == 1) {
+            $ext = $files['infoPath5']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['companyRightInfo'])) {
+            $ext = $files['companyRightInfo']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+
         $company->save();
 
         if(isset($params['companyAreaId']) && count($params['companyAreaId']) > 0) {
@@ -202,6 +236,40 @@ class CompanyRepository
     public function updateById($id, $params, $admin = null, $files) {
         $company = Company::where('id', '=', $id)
             ->first();
+
+        if(isset($files['logo'])) {
+            $ext = $files['logo']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['logo2'])) {
+            $ext = $files['logo2']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath1']) && $company->infoMode1 == 1) {
+            $ext = $files['infoPath1']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath2']) && $company->infoMode2 == 1) {
+            $ext = $files['infoPath2']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath3']) && $company->infoMode3 == 1) {
+            $ext = $files['infoPath3']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath4']) && $company->infoMode4 == 1) {
+            $ext = $files['infoPath4']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['infoPath5']) && $company->infoMode5 == 1) {
+            $ext = $files['infoPath5']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+        if(isset($files['companyRightInfo'])) {
+            $ext = $files['companyRightInfo']->getClientOriginalExtension();
+            $this->checkExt($ext);
+        }
+
         if(isset($company->id) == false)
             throw new Exception("廠商不存在 id:[$id]");
         if(isset($params['account']) == true)
@@ -373,5 +441,12 @@ class CompanyRepository
                 ->get();
         }
         return $companyAreas;
+    }
+
+    public function checkExt($ext) {
+        $validExtArr = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'tiff', 'pdf'];
+        $ext = strtolower(trim($ext));
+        if(in_array($ext, $validExtArr) == false)
+            throw new Exception('上傳檔案格式限定:'. implode(',', $validExtArr) );
     }
 }

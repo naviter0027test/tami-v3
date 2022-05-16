@@ -17,8 +17,8 @@ Route::get('/front/company/{companyId}/product', 'Front\FrontController@product'
 Route::post('/front/contact', 'Front\FrontController@contact');
 
 Route::get('/mail-test', 'Front\FrontController@mailTest');
-Route::get('/mmc-test', 'Front\FrontController@mmcTest');
-Route::post('/mmc-test', 'Front\FrontController@mmcProccess');
+//Route::get('/mmc-test', 'Front\FrontController@mmcTest');
+//Route::post('/mmc-test', 'Front\FrontController@mmcProccess');
 Route::get('/csrf-show', function() {
     return view('csrfShow');
 });
